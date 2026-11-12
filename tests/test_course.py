@@ -42,7 +42,69 @@ class CourseTests(unittest.IsolatedAsyncioTestCase):
             with mock.patch.object(client, "_request", return_value=truncated):
                 with self.assertRaisesRegex(ValueError, r"max_tokens=3072.*incomplete"):
                     await client.propose("improve the instruction")
-            self.assertEqual(client.statistics()["truncated_calls"], 1)
+            self.assertEqual(client.statistics()["truncated_calls"], 3)
+
+    async def test_text_truncation_retries_concisely_with_accurate_call_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            client = ChatClient("http://127.0.0.1:1/v1", "test", 1, Path(directory) / "calls.jsonl",
+                                max_tokens=2048)
+            replies = [
+                {"choices": [{"message": {"content": "LOOP_MARKER " * 20}, "finish_reason": "length"}],
+                 "usage": {"prompt_tokens": 20, "completion_tokens": 2048}},
+                {"choices": [{"message": {"content": "Complete response."}, "finish_reason": "stop"}],
+                 "usage": {"prompt_tokens": 65, "completion_tokens": 8}},
+            ]
+            with mock.patch.object(client, "_request", side_effect=replies) as request:
+                result = await client.call("Original task only.", temperature=0.25)
+            self.assertEqual(result, "Complete response.")
+            self.assertEqual(request.call_count, 2)
+            first, second = client.calls
+            self.assertEqual(first["prompt"], "Original task only.")
+            self.assertFalse(first["output_complete"])
+            self.assertEqual(second["retry_reason"], "truncated_text")
+            self.assertEqual([first["attempt"], second["attempt"]], [0, 1])
+            self.assertEqual([first["format_attempt"], second["format_attempt"]], [0, 1])
+            self.assertEqual(second["temperature"], 0.25)
+            self.assertEqual(second["max_tokens"], 2048)
+            self.assertNotIn("LOOP_MARKER", second["prompt"])
+            self.assertIn("Do not repeat", second["prompt"])
+            for invocation, event in zip(request.call_args_list, client.calls):
+                sent = invocation.args[0]
+                self.assertEqual(sent["messages"][0]["content"], event["prompt"])
+                self.assertEqual(sent["temperature"], event["temperature"])
+            self.assertEqual(client.statistics()["completion_tokens"], 2056)
+
+    async def test_valid_json_at_length_limit_is_complete_without_retry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            client = ChatClient("http://127.0.0.1:1/v1", "test", 1, Path(directory) / "calls.jsonl")
+            content = '{"feedback":"checked","violations":[]}' + " \n" * 100
+            reply = {"choices": [{"message": {"content": content}, "finish_reason": "length"}]}
+            with mock.patch.object(client, "_request", return_value=reply) as request:
+                actual = await client.judge("Audit this message.")
+            self.assertEqual(json.loads(actual), {"feedback": "checked", "violations": []})
+            self.assertEqual(request.call_count, 1)
+            self.assertEqual(client.calls[0]["finish_reason"], "length")
+            self.assertTrue(client.calls[0]["output_complete"])
+            self.assertEqual(client.calls[0]["completeness_check"], "complete_json_object")
+
+    async def test_incomplete_json_is_retried_and_never_accepted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            client = ChatClient("http://127.0.0.1:1/v1", "test", 1, Path(directory) / "calls.jsonl")
+            invalid = {"choices": [{"message": {"content": '{"feedback":"unfinished' + " \n" * 50},
+                                     "finish_reason": "length"}]}
+            valid = {"choices": [{"message": {"content": '{"feedback":"checked","violations":[]}'},
+                                   "finish_reason": "stop"}]}
+            with mock.patch.object(client, "_request", side_effect=[invalid, valid]):
+                actual = await client.judge("Audit this message.")
+            self.assertEqual(json.loads(actual)["violations"], [])
+            self.assertFalse(client.calls[0]["output_complete"])
+            self.assertEqual(client.calls[1]["retry_reason"], "invalid_json_object")
+            self.assertIn("complete JSON object", client.calls[1]["prompt"])
+            with mock.patch.object(client, "_request", return_value=invalid) as request:
+                with self.assertRaisesRegex(ValueError, "invalid after 2 format retries"):
+                    await client.judge("Audit this other message.")
+            self.assertEqual(request.call_count, 3)
+            self.assertTrue(all(not row["output_complete"] for row in client.calls[-3:]))
 
     async def test_resume_rejects_same_id_changed_data_or_prompts(self):
         with tempfile.TemporaryDirectory() as directory:

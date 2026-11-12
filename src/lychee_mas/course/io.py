@@ -12,6 +12,7 @@ from pathlib import Path
 
 TASK = contextvars.ContextVar("course_task", default="")
 PURPOSE = contextvars.ContextVar("course_purpose", default="")
+MAX_OUTPUT_RETRIES = 2
 
 
 def write_json(path: str | Path, data: object) -> None:
@@ -68,39 +69,82 @@ class ChatClient:
         }
         if json_mode:
             payload["response_format"] = {"type": "json_object"}
-        started = time.monotonic()
-        for attempt in range(3):
-            try:
-                async with self.semaphore:
-                    response = await asyncio.to_thread(self._request, payload)
-                choice = response["choices"][0]
-                message = choice["message"]
-                content = message.get("content") or ""
-                if not content.strip():
-                    raise ValueError("model returned empty content")
-                if message.get("reasoning_content"):
-                    raise ValueError("server returned reasoning although enable_thinking=false")
-                event = {
-                    "task_id": TASK.get(), "purpose": purpose or PURPOSE.get(),
-                    "model": self.model, "attempt": attempt, "prompt": prompt,
-                    "content": content, "usage": response.get("usage", {}),
-                    "finish_reason": choice.get("finish_reason"),
-                    "elapsed_s": round(time.monotonic() - started, 3),
-                    "enable_thinking": False, "temperature": temperature,
-                    "max_tokens": payload["max_tokens"],
-                }
-                self.calls.append(event)
-                self.events.append(event)
-                if choice.get("finish_reason") == "length":
-                    raise ValueError(f"generation reached max_tokens={payload['max_tokens']} "
-                                     f"({event['purpose']}); output is incomplete")
+        request_attempt = -1
+        retry_reason = None
+        for format_attempt in range(MAX_OUTPUT_RETRIES + 1):
+            if format_attempt:
+                if json_mode:
+                    limit = 60 if format_attempt == 1 else 40
+                    instruction = (
+                        "The previous response was not a complete JSON object. "
+                        "Return only one complete JSON object with the requested keys. "
+                        f"Keep feedback under {limit} words. Use plain text without LaTeX or "
+                        "backslash notation, escape quotation marks correctly, and close all "
+                        "strings and braces. Do not repeat text or add whitespace padding."
+                    )
+                else:
+                    limit = 160 if format_attempt == 1 else 100
+                    instruction = (
+                        "The previous response reached the output limit before completion. "
+                        "Respond to the original request again in a concise, complete form. "
+                        f"Use at most {limit} words. Do not repeat deductions, equations, "
+                        "examples or paragraphs. Preserve all required output tags and format."
+                    )
+                actual_prompt = prompt + f"\n\n[Output-format retry {format_attempt}]\n" + instruction
+                payload = {**payload, "messages": [{"role": "user", "content": actual_prompt}]}
+            else:
+                actual_prompt = prompt
+            for transport_attempt in range(3):
+                request_attempt += 1
+                started = time.monotonic()
+                try:
+                    async with self.semaphore:
+                        response = await asyncio.to_thread(self._request, payload)
+                    break
+                except (urllib.error.URLError, TimeoutError) as error:
+                    if isinstance(error, urllib.error.HTTPError) and error.code not in (429, 500, 502, 503, 504):
+                        raise RuntimeError(f"HTTP {error.code}: {error.read().decode()[:800]}") from error
+                    if transport_attempt == 2:
+                        raise
+                    await asyncio.sleep(2 ** transport_attempt)
+            choice = response["choices"][0]
+            message = choice["message"]
+            content = message.get("content") or ""
+            if not content.strip():
+                raise ValueError("model returned empty content")
+            if message.get("reasoning_content"):
+                raise ValueError("server returned reasoning although enable_thinking=false")
+            if json_mode:
+                try:
+                    complete = isinstance(json.loads(content), dict)
+                except (ValueError, TypeError):
+                    complete = False
+                completeness_check = "complete_json_object" if complete else "invalid_json_object"
+            else:
+                complete = choice.get("finish_reason") != "length"
+                completeness_check = "not_length_limited" if complete else "truncated_text"
+            event = {
+                "task_id": TASK.get(), "purpose": purpose or PURPOSE.get(),
+                "model": self.model, "attempt": request_attempt, "prompt": actual_prompt,
+                "content": content, "usage": response.get("usage", {}),
+                "finish_reason": choice.get("finish_reason"),
+                "elapsed_s": round(time.monotonic() - started, 3),
+                "enable_thinking": False, "temperature": payload["temperature"],
+                "max_tokens": payload["max_tokens"], "json_mode": json_mode,
+                "format_attempt": format_attempt, "transport_attempt": transport_attempt,
+                "retry_reason": retry_reason, "output_complete": complete,
+                "completeness_check": completeness_check,
+                "client_protocol": "complete-output-retry-v1",
+            }
+            self.calls.append(event)
+            self.events.append(event)
+            if complete:
                 return content.strip()
-            except (urllib.error.URLError, TimeoutError) as error:
-                if isinstance(error, urllib.error.HTTPError) and error.code not in (429, 500, 502, 503, 504):
-                    raise RuntimeError(f"HTTP {error.code}: {error.read().decode()[:800]}") from error
-                if attempt == 2:
-                    raise
-                await asyncio.sleep(2 ** attempt)
+            retry_reason = completeness_check
+            if format_attempt == MAX_OUTPUT_RETRIES:
+                raise ValueError(f"generation failed completeness check at max_tokens={payload['max_tokens']} "
+                                 f"({event['purpose']}); output is incomplete or invalid after "
+                                 f"{MAX_OUTPUT_RETRIES} format retries")
         raise AssertionError("unreachable")
 
     async def generate(self, prompt: str) -> str:
