@@ -15,6 +15,15 @@ PURPOSE = contextvars.ContextVar("course_purpose", default="")
 MAX_OUTPUT_RETRIES = 2
 
 
+def judge_schema_complete(value: object) -> bool:
+    if not isinstance(value, dict) or set(value) != {"violations", "feedback"}:
+        return False
+    violations, feedback = value["violations"], value["feedback"]
+    return (isinstance(violations, list) and all(isinstance(item, str) for item in violations)
+            and len(set(violations)) == len(violations) and isinstance(feedback, str)
+            and (not violations or bool(feedback.strip())))
+
+
 def write_json(path: str | Path, data: object) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -82,6 +91,12 @@ class ChatClient:
                         "backslash notation, escape quotation marks correctly, and close all "
                         "strings and braces. Do not repeat text or add whitespace padding."
                     )
+                    if retry_reason == "invalid_judge_schema":
+                        instruction += (
+                            " Use exactly two keys: violations (a list of indicator ID strings) "
+                            "and feedback (a string). Include both keys and provide the actual "
+                            "audit verdict; a missing verdict is not accepted."
+                        )
                 else:
                     limit = 160 if format_attempt == 1 else 100
                     instruction = (
@@ -116,10 +131,14 @@ class ChatClient:
                 raise ValueError("server returned reasoning although enable_thinking=false")
             if json_mode:
                 try:
-                    complete = isinstance(json.loads(content), dict)
+                    parsed = json.loads(content)
+                    complete = isinstance(parsed, dict)
                 except (ValueError, TypeError):
                     complete = False
                 completeness_check = "complete_json_object" if complete else "invalid_json_object"
+                if complete and purpose == "adv2_judge" and not judge_schema_complete(parsed):
+                    complete = False
+                    completeness_check = "invalid_judge_schema"
             else:
                 complete = choice.get("finish_reason") != "length"
                 completeness_check = "not_length_limited" if complete else "truncated_text"
@@ -134,7 +153,7 @@ class ChatClient:
                 "format_attempt": format_attempt, "transport_attempt": transport_attempt,
                 "retry_reason": retry_reason, "output_complete": complete,
                 "completeness_check": completeness_check,
-                "client_protocol": "complete-output-retry-v1",
+                "client_protocol": "complete-output-retry-v2-judge-schema",
             }
             self.calls.append(event)
             self.events.append(event)
