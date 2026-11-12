@@ -30,6 +30,8 @@ def arguments(argv=None):
     parser.add_argument("--eval-n", type=int, default=12)
     parser.add_argument("--concurrency", type=int, default=8)
     parser.add_argument("--max-tokens", type=int, default=1024)
+    parser.add_argument("--proposal-max-tokens", type=int, default=1536,
+                        help="MASPO proposal output budget, independent of agent generation")
     parser.add_argument("--timeout", type=float, default=180)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--depth", type=int, default=1)
@@ -70,6 +72,8 @@ def summarize(results: dict, selected: list[dict], elapsed_s: float) -> dict:
 async def run(args):
     if args.concurrency < 1 or args.depth < 1 or args.eval_batch < 2:
         raise ValueError("concurrency/depth must be positive; eval-batch must be at least 2")
+    if args.proposal_max_tokens < 1:
+        raise ValueError("proposal-max-tokens must be positive")
     output = args.output
     output.mkdir(parents=True, exist_ok=True)
     train = choose(read_rows(args.train_file, args.benchmark, "train"), args.train_n, args.seed)
@@ -85,8 +89,12 @@ async def run(args):
                    "optimization_gate": False, "evaluation_gate": True,
                    "shared_prompts_across_rounds": True})
     config_path = output / "config.json"
-    if config_path.exists() and json.loads(config_path.read_text(encoding="utf-8")) != json.loads(json.dumps(config)):
-        raise ValueError("existing run configuration differs; choose a fresh output directory")
+    if config_path.exists():
+        saved_config = json.loads(config_path.read_text(encoding="utf-8"))
+        # Runs created before this option used the same fixed proposal budget.
+        saved_config.setdefault("proposal_max_tokens", 1536)
+        if saved_config != json.loads(json.dumps(config)):
+            raise ValueError("existing run configuration differs; choose a fresh output directory")
     selection = {"train": train, "test": test}
     selection_path = output / "selection.json"
     if selection_path.exists() and json.loads(selection_path.read_text(encoding="utf-8")) != selection:
@@ -94,7 +102,8 @@ async def run(args):
     write_json(config_path, config)
     write_json(selection_path, selection)
     client = ChatClient(args.base_url, args.model, args.concurrency, output / "calls.jsonl",
-                        args.max_tokens, args.timeout, os.environ.get("MODEL_API_KEY", ""))
+                        args.max_tokens, args.timeout, os.environ.get("MODEL_API_KEY", ""),
+                        proposal_max_tokens=args.proposal_max_tokens)
     view = make_view(args.benchmark)
     prompt_file = output / "prompts.json"
     if args.phase in ("both", "optimize") and not prompt_file.exists():

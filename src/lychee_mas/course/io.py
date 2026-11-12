@@ -36,9 +36,13 @@ class JSONLines:
 
 class ChatClient:
     def __init__(self, base_url: str, model: str, concurrency: int, log_path: Path,
-                 max_tokens: int = 768, timeout: float = 180, api_key: str = ""):
+                 max_tokens: int = 768, timeout: float = 180, api_key: str = "", *,
+                 proposal_max_tokens: int = 1536):
+        if type(proposal_max_tokens) is not int or proposal_max_tokens < 1:
+            raise ValueError("proposal_max_tokens must be a positive integer")
         self.url = base_url.rstrip("/") + "/chat/completions"
         self.model, self.max_tokens = model, max_tokens
+        self.proposal_max_tokens = proposal_max_tokens
         self.timeout, self.api_key = timeout, api_key
         self.semaphore = asyncio.Semaphore(concurrency)
         self.events = JSONLines(log_path)
@@ -83,11 +87,13 @@ class ChatClient:
                     "finish_reason": choice.get("finish_reason"),
                     "elapsed_s": round(time.monotonic() - started, 3),
                     "enable_thinking": False, "temperature": temperature,
+                    "max_tokens": payload["max_tokens"],
                 }
                 self.calls.append(event)
                 self.events.append(event)
                 if choice.get("finish_reason") == "length":
-                    raise ValueError("generation reached max_tokens; output is incomplete")
+                    raise ValueError(f"generation reached max_tokens={payload['max_tokens']} "
+                                     f"({event['purpose']}); output is incomplete")
                 return content.strip()
             except (urllib.error.URLError, TimeoutError) as error:
                 if isinstance(error, urllib.error.HTTPError) and error.code not in (429, 500, 502, 503, 504):
@@ -114,7 +120,8 @@ class ChatClient:
         return response
 
     async def propose(self, prompt: str) -> str:
-        return await self.call(prompt, purpose="maspo_propose", temperature=0.7, max_tokens=1536)
+        return await self.call(prompt, purpose="maspo_propose", temperature=0.7,
+                               max_tokens=self.proposal_max_tokens)
 
     async def judge(self, prompt: str) -> str:
         return await self.call(prompt, purpose="adv2_judge", json_mode=True, max_tokens=768)

@@ -5,12 +5,13 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from lychee_mas.course.cli import summarize, arguments, run as run_cli
 from lychee_mas.course.data import check_disjoint, score_answer
-from lychee_mas.course.io import PURPOSE
+from lychee_mas.course.io import PURPOSE, ChatClient
 from lychee_mas.course.workflow import AGENTS, CourseExecutor, fixed_indicators, make_view, safe_arithmetic, run_langgraph
 from lychee_mas.methods.prerun.maspo.optimizer import MASPOOptimizer
 from lychee_mas.methods.prerun.maspo.textops import parse_comparison_result
@@ -18,6 +19,31 @@ from lychee_mas.methods.runtime.agentdropout_v2 import AgentDropoutV2Controller
 
 
 class CourseTests(unittest.IsolatedAsyncioTestCase):
+    async def test_proposal_budget_is_independent_and_truncation_fails(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            default = ChatClient("http://127.0.0.1:1/v1", "test", 1, root / "default.jsonl")
+            client = ChatClient("http://127.0.0.1:1/v1", "test", 1, root / "calls.jsonl",
+                                max_tokens=1024, proposal_max_tokens=3072)
+            def response(payload):
+                return {"choices": [{"message": {"content": "<prompt>instruction</prompt>"},
+                                     "finish_reason": "stop"}], "usage": {"completion_tokens": 5}}
+            with mock.patch.object(default, "_request", side_effect=response) as request:
+                await default.propose("improve the instruction")
+                self.assertEqual(request.call_args.args[0]["max_tokens"], 1536)
+            with mock.patch.object(client, "_request", side_effect=response) as request:
+                await client.generate("ordinary agent task")
+                self.assertEqual(request.call_args.args[0]["max_tokens"], 1024)
+                await client.propose("improve the instruction")
+                self.assertEqual(request.call_args.args[0]["max_tokens"], 3072)
+                self.assertEqual(client.calls[-1]["max_tokens"], 3072)
+            truncated = response({})
+            truncated["choices"][0]["finish_reason"] = "length"
+            with mock.patch.object(client, "_request", return_value=truncated):
+                with self.assertRaisesRegex(ValueError, r"max_tokens=3072.*incomplete"):
+                    await client.propose("improve the instruction")
+            self.assertEqual(client.statistics()["truncated_calls"], 1)
+
     async def test_resume_rejects_same_id_changed_data_or_prompts(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -34,6 +60,17 @@ class CourseTests(unittest.IsolatedAsyncioTestCase):
                               "--train-n", "2", "--eval-n", "1"])
             with self.assertRaisesRegex(ValueError, "completed optimization"):
                 await run_cli(args)
+            config_path = output / "config.json"
+            old_config = json.loads(config_path.read_text(encoding="utf-8"))
+            self.assertEqual(old_config.pop("proposal_max_tokens"), 1536)
+            config_path.write_text(json.dumps(old_config), encoding="utf-8")
+            # The old absent option means 1536, while a real change must not resume.
+            with self.assertRaisesRegex(ValueError, "completed optimization"):
+                await run_cli(args)
+            args.proposal_max_tokens = 3072
+            with self.assertRaisesRegex(ValueError, "configuration differs"):
+                await run_cli(args)
+            args.proposal_max_tokens = 1536
             test[0]["answer"] = "999"
             test_path.write_text(json.dumps(test), encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "example content differs"):
