@@ -12,6 +12,7 @@ from ..methods.prerun.maspo.executor import CachedExecutor, InferenceCache, form
 from ..methods.prerun.maspo.textops import extract_answer
 from ..methods.runtime.agentdropout_v2 import AgentDropoutV2Controller, Indicator
 from ..plugins.prerun.graphview import GraphView
+from .data import CHOICE_BENCHMARKS
 from .io import PURPOSE
 
 AGENTS = ("A", "B", "C", "D", "E")
@@ -80,8 +81,9 @@ def tool_result(raw: str) -> str:
 
 
 def seed_prompts(benchmark: str) -> dict[str, str]:
-    choice = benchmark in ("arc_easy", "openbookqa")
-    finish = ("Finish with <answer>the single option letter</answer>." if choice else
+    choice = benchmark in CHOICE_BENCHMARKS
+    label = "label exactly as shown" if benchmark == "arc_challenge" else "letter"
+    finish = (f"Finish with <answer>the single option {label}</answer>." if choice else
               "Finish with <answer>the exact numeric or mathematical answer</answer>.")
     instructions = {
         "A": "Solve the task independently, using prior messages as fallible suggestions.",
@@ -121,7 +123,8 @@ def make_view(benchmark: str, rounds: int = 2) -> GraphView:
                                          "round": turn, "agent": agent, "benchmark": benchmark})
     names.append("final")
     predecessors["final"] = [f"{a}_r2" for a in AGENTS]
-    output_rule = ("the option letter" if benchmark in ("arc_easy", "openbookqa")
+    option_label = "the option label exactly as shown" if benchmark == "arc_challenge" else "the option letter"
+    output_rule = (option_label if benchmark in CHOICE_BENCHMARKS
                    else "the exact numeric or mathematical answer")
     specs["final"] = AgentSpec(
         name="final", role="final",
@@ -133,7 +136,7 @@ def make_view(benchmark: str, rounds: int = 2) -> GraphView:
 
 
 def fixed_indicators(benchmark: str) -> list[Indicator]:
-    choice = benchmark in ("arc_easy", "openbookqa")
+    choice = benchmark in CHOICE_BENCHMARKS
     return [
         Indicator("task_fidelity", "Use the original task facts, units, conditions and requested quantity; do not introduce contradictory assumptions."),
         Indicator("reasoning_validity", ("Scientific facts and logical implications must support the chosen option; an upstream assertion alone is not evidence."

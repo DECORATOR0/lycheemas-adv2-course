@@ -20,7 +20,7 @@ def arguments(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--phase", choices=["both", "optimize", "eval"], default="both")
     parser.add_argument("--benchmark", type=lambda value: "math" if value == "math500" else value,
-                        choices=["gsm8k", "math", "arc_easy", "openbookqa"], required=True)
+                        choices=["gsm8k", "math", "arc_easy", "arc_challenge", "openbookqa"], required=True)
     parser.add_argument("--train-file", type=Path, required=True)
     parser.add_argument("--test-file", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)

@@ -10,6 +10,8 @@ from pathlib import Path
 
 from ..methods.prerun.maspo.textops import extract_answer
 
+CHOICE_BENCHMARKS = frozenset({"arc_easy", "arc_challenge", "openbookqa"})
+
 
 def read_rows(path: str | Path, benchmark: str, split: str) -> list[dict]:
     path = Path(path)
@@ -82,7 +84,7 @@ def normalize_math(value: str) -> str:
 def score_answer(prediction: str, reference: str, benchmark: str, question: str = "") -> dict:
     if not prediction.strip():
         return {"correct": False, "scorer": "empty_prediction"}
-    if benchmark in ("arc_easy", "openbookqa"):
+    if benchmark in CHOICE_BENCHMARKS:
         match = re.fullmatch(r"\s*\(?([A-E1-5])\)?[.\s]*", prediction)
         pred = match.group(1) if match else prediction.strip()
         return {"correct": pred == reference.strip(), "scorer": "option_exact"}

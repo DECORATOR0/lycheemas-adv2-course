@@ -18,6 +18,27 @@ from lychee_mas.methods.runtime.agentdropout_v2 import AgentDropoutV2Controller
 
 
 class CourseTests(unittest.IsolatedAsyncioTestCase):
+    async def test_arc_challenge_uses_choice_workflow_and_preserves_numeric_labels(self):
+        args = arguments(["--benchmark", "arc_challenge", "--train-file", "train.jsonl",
+                          "--test-file", "test.jsonl", "--output", "new-run",
+                          "--base-url", "http://127.0.0.1:1/v1", "--model", "unused"])
+        self.assertEqual(args.benchmark, "arc_challenge")
+        view = make_view(args.benchmark)
+        self.assertEqual(fixed_indicators("arc_challenge"), fixed_indicators("arc_easy"))
+        seen_prompts = []
+        async def llm(prompt):
+            seen_prompts.append(prompt)
+            return "The evidence supports option 2. <answer>2</answer>"
+        executor = CourseExecutor(view, llm)
+        prediction, cache = await executor.run("Which is a mammal?\n1. trout\n2. whale\n3. ant\n4. frog")
+        self.assertEqual(prediction, "2")
+        self.assertTrue(score_answer(prediction, "2", "arc_challenge")["correct"])
+        self.assertFalse(score_answer(prediction, "3", "arc_challenge")["correct"])
+        self.assertTrue(score_answer("(C)", "C", "arc_challenge")["correct"])
+        self.assertIn("option label exactly as shown", seen_prompts[0])
+        self.assertIn("scientific facts", seen_prompts[2])
+        self.assertNotIn("Arithmetic tool", cache.node_outputs_raw["C"])
+
     async def test_proposal_budget_is_independent_and_truncation_fails(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
