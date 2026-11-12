@@ -1,0 +1,173 @@
+{
+  "batch": "histmain13x4_20260711_111716",
+  "selection": {
+    "gsm8k": 2,
+    "math500": 2
+  },
+  "selection_reason": "Use the same July repeat number for both benchmarks, extending the already verified unresumed GSM8K r2 comparison. All complete candidates are retained here; their original correctness fields are not modified.",
+  "gsm8k": [
+    {
+      "repeat": 1,
+      "run_id": "histmain13x4_20260711_111716_r1__math_main__gsm8k",
+      "correct": 1210,
+      "total": 1319,
+      "unique_ids": 1319,
+      "complete_id_set": true,
+      "resume_detected": true,
+      "original_summary": {
+        "status": "completed",
+        "started_at": "2026-07-12T01:13:11",
+        "ended_at": "2026-07-12T01:14:46",
+        "total_samples": 1319,
+        "completed_samples": 1319,
+        "num_correct": 1210,
+        "accuracy": 0.9173616376042456
+      }
+    },
+    {
+      "repeat": 2,
+      "run_id": "histmain13x4_20260711_111716_r2__math_main__gsm8k",
+      "correct": 1213,
+      "total": 1319,
+      "unique_ids": 1319,
+      "complete_id_set": true,
+      "resume_detected": false,
+      "original_summary": {
+        "status": "completed",
+        "started_at": "2026-07-11T16:11:48",
+        "ended_at": "2026-07-11T17:44:23",
+        "total_samples": 1319,
+        "completed_samples": 1319,
+        "num_correct": 1213,
+        "accuracy": 0.9196360879454132
+      }
+    },
+    {
+      "repeat": 3,
+      "run_id": "histmain13x4_20260711_111716_r3__math_main__gsm8k",
+      "correct": 1209,
+      "total": 1319,
+      "unique_ids": 1319,
+      "complete_id_set": true,
+      "resume_detected": false,
+      "original_summary": {
+        "status": "completed",
+        "started_at": "2026-07-11T16:55:49",
+        "ended_at": "2026-07-11T18:30:02",
+        "total_samples": 1319,
+        "completed_samples": 1319,
+        "num_correct": 1209,
+        "accuracy": 0.9166034874905231
+      }
+    },
+    {
+      "repeat": 4,
+      "run_id": "histmain13x4_20260711_111716_r4__math_main__gsm8k",
+      "correct": 1206,
+      "total": 1319,
+      "unique_ids": 1319,
+      "complete_id_set": true,
+      "resume_detected": false,
+      "original_summary": {
+        "status": "completed",
+        "started_at": "2026-07-11T17:44:29",
+        "ended_at": "2026-07-11T19:04:28",
+        "total_samples": 1319,
+        "completed_samples": 1319,
+        "num_correct": 1206,
+        "accuracy": 0.9143290371493555
+      }
+    }
+  ],
+  "math500": [
+    {
+      "repeat": 1,
+      "run_id": "histmain13x4_20260711_111716_r1__math_main__math500",
+      "correct": 397,
+      "total": 500,
+      "unique_ids": 500,
+      "complete_id_set": true,
+      "resume_detected": true,
+      "original_summary": {
+        "task": "math500",
+        "status": "completed",
+        "exit_code": 0,
+        "started_at": "2026-07-12T07:43:24",
+        "ended_at": "2026-07-12T08:57:11",
+        "wall_time_seconds": 4426.798,
+        "total_samples": 500,
+        "completed_samples": 500,
+        "scored_samples": 500,
+        "num_correct": 397,
+        "accuracy": 0.794,
+        "prompt_tokens": 98986093,
+        "completion_tokens": 16223563,
+        "total_tokens": 115209656,
+        "model_call_count": 83017
+      }
+    },
+    {
+      "repeat": 2,
+      "run_id": "histmain13x4_20260711_111716_r2__math_main__math500",
+      "correct": 387,
+      "total": 500,
+      "unique_ids": 500,
+      "complete_id_set": true,
+      "resume_detected": true,
+      "original_summary": {
+        "task": "math500",
+        "status": "completed",
+        "exit_code": 0,
+        "started_at": "2026-07-12T01:27:08",
+        "ended_at": "2026-07-12T05:21:03",
+        "wall_time_seconds": 14034.696,
+        "total_samples": 500,
+        "completed_samples": 500,
+        "scored_samples": 500,
+        "num_correct": 387,
+        "accuracy": 0.774,
+        "prompt_tokens": 49707345,
+        "completion_tokens": 8104491,
+        "total_tokens": 57811836,
+        "model_call_count": 41493
+      }
+    },
+    {
+      "repeat": 3,
+      "run_id": "histmain13x4_20260711_111716_r3__math_main__math500",
+      "correct": 389,
+      "total": 500,
+      "unique_ids": 500,
+      "complete_id_set": true,
+      "resume_detected": true,
+      "final_attempt_completed": 494,
+      "prior_successes_retained": 6
+    },
+    {
+      "repeat": 4,
+      "run_id": "histmain13x4_20260711_111716_r4__math_main__math500",
+      "correct": 390,
+      "total": 500,
+      "unique_ids": 500,
+      "complete_id_set": true,
+      "resume_detected": true,
+      "original_summary": {
+        "task": "math500",
+        "status": "completed",
+        "exit_code": 0,
+        "started_at": "2026-07-12T05:46:38",
+        "ended_at": "2026-07-12T07:12:03",
+        "wall_time_seconds": 5124.978,
+        "total_samples": 500,
+        "completed_samples": 500,
+        "scored_samples": 500,
+        "num_correct": 390,
+        "accuracy": 0.78,
+        "prompt_tokens": 75031923,
+        "completion_tokens": 12329632,
+        "total_tokens": 87361555,
+        "model_call_count": 62462
+      }
+    }
+  ]
+}

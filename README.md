@@ -143,17 +143,16 @@ MASPO 改变了 GSM8K 的 E、MATH 的 C、ARC-Easy 的 D 提示词；OpenBookQA
 
 初始实验及其保留的中止尝试共 5,181 次模型调用；后续五项运行新增 9,880 次，合计 15,061 次，输入 11,698,496 token、输出 1,757,360 token。所有失败与恢复调用均计入；MATH 原 790 次优化仅计在初始账本，ARC 702 次优化仅计在 254 原运行。逐项成本、版本及复算方法见 [实验细节](docs/extension_details.md)。
 
-### 历史主实验复算
+### 当前论文主配置的独立重复
 
-历史复算使用同批完整数学主运行的原评分字段：
+采用另一组同配置历史运行，对照当前 MASRubric 稿件表 1 的 Dynamic-MAS + MASRubric 结果：
 
-| 基准 | 正确 / 全集 | 准确率 | 推理日期 |
+| 基准 | 当前论文 | 同配置复现 | 差值（百分点） |
 |---|---:|---:|---|
-| GSM8K | 1209 / 1319 | 91.66% | 2026-04-23 |
-| MATH500 | 398 / 500 | 79.60% | 2026-04-23 |
-| GSM8K 独立重复 | 1213 / 1319 | 91.96% | 2026-07-11 |
+| GSM8K | 1209 / 1319 = 91.66% | 1213 / 1319 = 91.96% | +0.30 |
+| MATH500 | 398 / 500 = 79.60% | 387 / 500 = 77.40% | −2.20 |
 
-论文 v1 Table 1 的相应结果为 91.74% 和 78.40%。归档主配置使用 Qwen3.5-9B 选择器、top-20 后选择 1–5 个指标、60% 通过阈值；v1 使用 GPT-4.1-mini 选择器、直接 top-5 和零容忍审核。版本与配置说明见 [历史证据](evidence/reproduction/README.md)。
+共同配置为 Qwen3.5-9B 动态发言者选择器、Qwen3-8B 角色推理及审核；先检索 20 项指标，再选择 1–5 项，通过率阈值为 60%，修订预算为 3。逐题记录与运行来源见 [复现证据](evidence/reproduction/README.md)。
 
 ```bash
 python evidence/reproduction/verify_records.py
@@ -175,7 +174,7 @@ python evidence/reproduction/verify_records.py
 
 本仓库选取并适配 LycheeMAS 所需核心模块，新增课程执行层。MASPO 保留多粒度比较和提示词搜索机制，改用共享两轮执行器；ADv2 保留逐消息审核、反馈重生成和拒绝。本次课程集成使用固定人工指标池。
 
-- [AgentDropoutV2 v1](https://arxiv.org/abs/2602.23258v1)
+- [MASRubric 当前论文与代码入口](https://github.com/TonySY2/MASRubric)
 - [MASPO](https://arxiv.org/abs/2605.06623)
 - [LycheeMAS](https://github.com/ecoli-hit/LycheeMAS)
 

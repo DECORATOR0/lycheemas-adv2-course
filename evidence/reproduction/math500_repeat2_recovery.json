@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-11-12",
+  "run_id": "histmain13x4_20260711_111716_r2__math_main__math500",
+  "benchmark": "math500",
+  "record_policy": "latest_success_per_id",
+  "selection_by_correctness": false,
+  "description": "Both invocations belong to the same run_id and configuration. Each invocation processes the full dataset. A successful result overwrites the existing record for that ID. An exception is logged without overwriting or deleting an existing successful record. The final archive therefore contains the latest successful record per ID, irrespective of whether its answer was correct.",
+  "evidence_files_inspected": [
+    "config.json",
+    "summary.json",
+    "result.json",
+    "run.log",
+    "atomic_trace.jsonl",
+    "usage_events.jsonl"
+  ],
+  "time_basis": "Invocation start_utc and end_utc below are the first and last observed atomic-trace timestamps. The final summary's process timestamps are also supplied separately. All times are UTC.",
+  "invocations": [
+    {
+      "index": 1,
+      "start_utc": "2026-07-11T15:37:02.719Z",
+      "end_utc": "2026-07-11T17:21:32.581Z",
+      "task_start_events": 500,
+      "unique_started_ids": 500,
+      "task_end_events": 493,
+      "unique_completed_ids": 493,
+      "exception_events": 7,
+      "exception_ids": ["60", "101", "110", "136", "308", "324", "497"],
+      "successful_final_decision_usage_events": 493,
+      "duplicate_task_end_ids": []
+    },
+    {
+      "index": 2,
+      "start_utc": "2026-07-11T17:27:13.935Z",
+      "end_utc": "2026-07-11T21:21:02.695Z",
+      "summary_process_started_at_utc": "2026-07-11T17:27:08Z",
+      "summary_process_ended_at_utc": "2026-07-11T21:21:03Z",
+      "task_start_events": 500,
+      "unique_started_ids": 500,
+      "task_end_events": 496,
+      "unique_completed_ids": 496,
+      "exception_events": 4,
+      "exception_ids": ["100", "108", "239", "481"],
+      "successful_final_decision_usage_events": 496,
+      "duplicate_task_end_ids": [],
+      "exception_category": "Model context limit exceeded: the error reports an 8192-token context limit and at least 8193 input tokens."
+    }
+  ],
+  "records_retained_from_first_invocation": [
+    {
+      "id": "100",
+      "original_is_correct": false,
+      "first_invocation_task_end_utc": "2026-07-11T17:00:07.774Z",
+      "final_invocation_exception_utc": "2026-07-11T18:48:22.545Z",
+      "saved_score_message_created_at_min_utc": "2026-07-11T16:45:52.405305Z",
+      "saved_score_message_created_at_max_utc": "2026-07-11T16:59:51.521149Z",
+      "saved_raw_response_prefix_matches_first_invocation": true
+    },
+    {
+      "id": "108",
+      "original_is_correct": true,
+      "first_invocation_task_end_utc": "2026-07-11T16:53:14.734Z",
+      "final_invocation_exception_utc": "2026-07-11T19:03:28.681Z",
+      "saved_score_message_created_at_min_utc": "2026-07-11T16:43:40.266597Z",
+      "saved_score_message_created_at_max_utc": "2026-07-11T16:53:02.702685Z",
+      "saved_raw_response_prefix_matches_first_invocation": true
+    },
+    {
+      "id": "239",
+      "original_is_correct": false,
+      "first_invocation_task_end_utc": "2026-07-11T16:10:10.849Z",
+      "final_invocation_exception_utc": "2026-07-11T18:43:15.302Z",
+      "saved_score_message_created_at_min_utc": "2026-07-11T15:55:25.745425Z",
+      "saved_score_message_created_at_max_utc": "2026-07-11T16:09:52.112683Z",
+      "saved_raw_response_prefix_matches_first_invocation": true
+    },
+    {
+      "id": "481",
+      "original_is_correct": false,
+      "first_invocation_task_end_utc": "2026-07-11T15:54:16.619Z",
+      "final_invocation_exception_utc": "2026-07-11T18:22:58.205Z",
+      "saved_score_message_created_at_min_utc": "2026-07-11T15:39:16.552618Z",
+      "saved_score_message_created_at_max_utc": "2026-07-11T15:54:10.818626Z",
+      "saved_raw_response_prefix_matches_first_invocation": true
+    }
+  ],
+  "record_matching_evidence": {
+    "raw_response_comparison": "For each retained ID, the first 160 characters of the saved raw_response match a first-invocation final-output preview in the atomic trace. Its saved score-message timestamps also precede the second invocation.",
+    "final_invocation_completed_records_checked": 496,
+    "final_invocation_task_end_correctness_matches_saved_is_correct": 496,
+    "final_invocation_correctness_mismatches": 0,
+    "final_invocation_completed_correct": 386,
+    "retained_first_invocation_correct": 1,
+    "new_answer_judging_performed": false,
+    "comparison_basis": "Compare original task_end Correct flags to saved is_correct flags; preserve the original answer extraction and grading outcomes."
+  },
+  "final_archive": {
+    "records": 500,
+    "unique_ids": 500,
+    "expected_id_range": "0-499",
+    "boolean_correctness_records": 500,
+    "empty_raw_response_records": 0,
+    "records_with_nonempty_error": 0,
+    "records_from_final_invocation": 496,
+    "records_retained_from_first_invocation": 4,
+    "original_correct": 387,
+    "denominator": 500,
+    "original_accuracy": 0.774,
+    "single_invocation_completed_all_500": false
+  },
+  "original_summary_cost": {
+    "accounting_scope": "Cumulative usage_events across both invocations, as aggregated by the original summary. Includes work from the first invocation and work preceding exceptions; it is not a cost restricted to the final 500 saved records.",
+    "model_call_count": 41493,
+    "prompt_tokens": 49707345,
+    "completion_tokens": 8104491,
+    "total_tokens": 57811836,
+    "successful_final_decision_usage_events_across_invocations": 989,
+    "summary_wall_time_seconds": 14034.696,
+    "summary_wall_time_scope": "Final invocation only; unlike the token and call aggregates, this elapsed-time field is not cumulative across both invocations."
+  },
+  "audit_actions": {
+    "model_calls_made": 0,
+    "original_outputs_modified": false,
+    "original_scores_modified": false,
+    "cross_run_record_selection": false
+  }
+}

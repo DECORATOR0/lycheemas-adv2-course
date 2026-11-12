@@ -57,7 +57,9 @@
       "extra_ids": [],
       "matches_saved_correct_count": true
     },
-    "records_file": "gsm8k_main.jsonl"
+    "records_file": "gsm8k_main.jsonl",
+    "full_records_file": "gsm8k_main_full.jsonl",
+    "role": "paper_adopted"
   },
   "math500_main": {
     "run_id": "math9_v2_top5_pass3of5_gpu234567_4lane_sel16k_2026-04-22-16-38-53__math500",
@@ -117,7 +119,9 @@
       "extra_ids": [],
       "matches_saved_correct_count": true
     },
-    "records_file": "math500_main.jsonl"
+    "records_file": "math500_main.jsonl",
+    "full_records_file": "math500_main_full.jsonl",
+    "role": "paper_adopted"
   },
   "gsm8k_repeat2": {
     "run_id": "histmain13x4_20260711_111716_r2__math_main__gsm8k",
@@ -180,12 +184,95 @@
       "extra_ids": [],
       "matches_saved_correct_count": true
     },
-    "records_file": "gsm8k_repeat2.jsonl"
+    "records_file": "gsm8k_repeat2.jsonl",
+    "full_records_file": "gsm8k_repeat2_full.jsonl",
+    "role": "selected_repetition"
   },
   "cross_run_check": {
     "same_full_id_set": true,
     "different_raw_response_count": 1319,
     "different_correctness_count": 74,
-    "repeat_selection": "earliest complete July run without resume; run2, not selected by accuracy"
+    "repeat_selection": "GSM8K r2 was the earliest complete unresumed July run; the final two-benchmark comparison uses July r2 for both datasets. MATH r2 includes documented recovery."
+  },
+  "math500_repeat2": {
+    "run_id": "histmain13x4_20260711_111716_r2__math_main__math500",
+    "task": "math500",
+    "total": 500,
+    "config": {
+      "task": "math500",
+      "mode": "rerank",
+      "agent_mode": "supervisor",
+      "concurrency_limit": 50,
+      "max_turns": 7,
+      "retries_times": 3,
+      "pass_rate": 0.6,
+      "baseline_only": false,
+      "force_direct_search": false,
+      "direct_k": 5,
+      "retrieve_p": 20,
+      "select_q": 5,
+      "selection_count_instruction": "1-5",
+      "lock_metrics_after_first_round": false,
+      "batch_audit_metrics": true,
+      "exact_select_q": false,
+      "cheap_precheck": false,
+      "limit": null,
+      "math_team_variant": "verifier",
+      "resume_detected": true,
+      "reasoning_model": "Qwen3-8B",
+      "supervisor_model": "Qwen3-8B",
+      "embedding_model": "Qwen3-Embedding-8B",
+      "selector_model": "Qwen3.5-9B",
+      "metric_pool_file": "deduped-mixed_metrics_two_pool.json",
+      "embedding_cache_file": "deduped-mixed_two_pool-trigger.jsonl"
+    },
+    "original_summary": {
+      "task": "math500",
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-07-12T01:27:08",
+      "ended_at": "2026-07-12T05:21:03",
+      "wall_time_seconds": 14034.696,
+      "total_samples": 500,
+      "completed_samples": 500,
+      "scored_samples": 500,
+      "num_correct": 387,
+      "accuracy": 0.774,
+      "prompt_tokens": 49707345,
+      "completion_tokens": 8104491,
+      "total_tokens": 57811836,
+      "model_call_count": 41493
+    },
+    "verification": {
+      "serialized_records": 500,
+      "unique_ids": 500,
+      "duplicate_ids": 0,
+      "boolean_correctness_records": 500,
+      "correct": 387,
+      "denominator": 500,
+      "accuracy_percent": 77.4,
+      "missing_ids": [],
+      "extra_ids": [],
+      "matches_saved_correct_count": true
+    },
+    "records_file": "math500_repeat2.jsonl",
+    "full_records_file": "math500_repeat2_full.jsonl",
+    "record_semantics": "Final saved successful result per ID within one logical run, including service-failure recovery; original correctness unchanged.",
+    "recovery_file": "math500_repeat2_recovery.json",
+    "role": "selected_repetition"
+  },
+  "current_paper_repeat_checks": {
+    "gsm8k": {
+      "same_full_id_set": true,
+      "same_questions_and_references": true,
+      "different_raw_response_count": 1319,
+      "different_correctness_count": 74
+    },
+    "math500": {
+      "same_full_id_set": true,
+      "same_questions_and_references": true,
+      "different_raw_response_count": 500,
+      "different_correctness_count": 65
+    }
   }
 }

@@ -1,0 +1,47 @@
+{
+  "manuscript": {
+    "title": "MASRubric: Auditing Information Flow in Multi-Agent Systems with Failure-Distilled Pitfall Rubrics",
+    "version_date": "2026-09-28",
+    "page": 6,
+    "table": "Table 1",
+    "row": "Dynamic-MAS + MASRubric",
+    "project_url": "https://github.com/TonySY2/MASRubric"
+  },
+  "paper_source_run": "math9_v2_top5_pass3of5_gpu234567_4lane_sel16k_2026-04-22-16-38-53",
+  "selected_batch": "histmain13x4_20260711_111716_r2",
+  "score_policy": "Reaggregate saved Boolean correctness on both sides; no rejudging.",
+  "comparisons": [
+    {
+      "benchmark": "gsm8k",
+      "paper_entry": "gsm8k_main",
+      "repeat_entry": "gsm8k_repeat2",
+      "paper_correct": 1209,
+      "repeat_correct": 1213,
+      "total": 1319,
+      "delta_percentage_points": 0.3032600454890068
+    },
+    {
+      "benchmark": "math500",
+      "paper_entry": "math500_main",
+      "repeat_entry": "math500_repeat2",
+      "paper_correct": 398,
+      "repeat_correct": 387,
+      "total": 500,
+      "delta_percentage_points": -2.2
+    }
+  ],
+  "independence_checks": {
+    "gsm8k": {
+      "same_full_id_set": true,
+      "same_questions_and_references": true,
+      "different_raw_response_count": 1319,
+      "different_correctness_count": 74
+    },
+    "math500": {
+      "same_full_id_set": true,
+      "same_questions_and_references": true,
+      "different_raw_response_count": 500,
+      "different_correctness_count": 65
+    }
+  }
+}
