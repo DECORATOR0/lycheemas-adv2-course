@@ -38,6 +38,8 @@ def arguments(argv=None):
     parser.add_argument("--eval-batch", type=int, default=4)
     parser.add_argument("--beam-width", type=int, default=2)
     parser.add_argument("--max-retries", type=int, default=1)
+    parser.add_argument("--disable-adv2", action="store_true",
+                        help="disable only the evaluation-time ADv2 gate; keep prompts and execution unchanged")
     parser.add_argument("--engine", choices=["graphview", "langgraph"], default="graphview")
     return parser.parse_args(argv)
 
@@ -82,11 +84,11 @@ async def run(args):
         raise ValueError("MASPO's two proposal subsets require at least two training questions")
     check_disjoint(train, test)
     config = {key: str(value) if isinstance(value, Path) else value for key, value in vars(args).items()
-              if key not in ("phase", "output", "base_url", "timeout", "concurrency")}
+              if key not in ("phase", "output", "base_url", "timeout", "concurrency", "disable_adv2")}
     config.update({"enable_thinking": False, "rounds": 2, "agents": list(AGENTS),
                    "train_ids": [r["id"] for r in train], "test_ids": [r["id"] for r in test],
                    "indicators": [vars(i) for i in fixed_indicators(args.benchmark)],
-                   "optimization_gate": False, "evaluation_gate": True,
+                   "optimization_gate": False, "evaluation_gate": not args.disable_adv2,
                    "shared_prompts_across_rounds": True})
     config_path = output / "config.json"
     if config_path.exists():
@@ -143,8 +145,9 @@ async def run(args):
     if evaluation_prompt_path.exists() and json.loads(evaluation_prompt_path.read_text(encoding="utf-8")) != prompts:
         raise ValueError("evaluation prompts changed; results cannot be resumed with new prompts")
     write_json(evaluation_prompt_path, prompts)
-    gate = AgentDropoutV2Controller(client.judge, max_retries=args.max_retries,
-                                    indicators=fixed_indicators(args.benchmark), top_k=None)
+    gate = (None if args.disable_adv2 else
+            AgentDropoutV2Controller(client.judge, max_retries=args.max_retries,
+                                    indicators=fixed_indicators(args.benchmark), top_k=None))
     result_log = JSONLines(output / "results.jsonl")
     results = {}
     if result_log.path.exists():

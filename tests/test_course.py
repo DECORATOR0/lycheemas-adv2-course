@@ -9,7 +9,7 @@ from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from lychee_mas.course.cli import summarize, arguments, run as run_cli
-from lychee_mas.course.data import check_disjoint, score_answer
+from lychee_mas.course.data import check_disjoint, score_answer, read_rows
 from lychee_mas.course.io import PURPOSE, ChatClient
 from lychee_mas.course.workflow import AGENTS, CourseExecutor, fixed_indicators, make_view, safe_arithmetic, run_langgraph
 from lychee_mas.methods.prerun.maspo.optimizer import MASPOOptimizer
@@ -18,6 +18,68 @@ from lychee_mas.methods.runtime.agentdropout_v2 import AgentDropoutV2Controller
 
 
 class CourseTests(unittest.IsolatedAsyncioTestCase):
+    async def test_disable_adv2_only_removes_audits_from_cli_evaluation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            train_path, test_path = root / "train.json", root / "test.json"
+            train_path.write_text(json.dumps([
+                {"id": "train1", "question": "First training task?", "answer": "A", "split": "train"},
+                {"id": "train2", "question": "Second training task?", "answer": "B", "split": "train"},
+            ]), encoding="utf-8")
+            test_path.write_text(json.dumps([
+                {"id": "test1", "question": "Test task? A. first B. second", "answer": "B", "split": "test"},
+            ]), encoding="utf-8")
+            view = make_view("arc_easy")
+            prompts = {name: spec.system_prompt for name, spec in view.specs.items()}
+            runs = {}
+            for disabled in (False, True):
+                output = root / ("off" if disabled else "on")
+                output.mkdir()
+                (output / "prompts.json").write_text(json.dumps({"prompts": prompts}), encoding="utf-8")
+                argv = ["--phase", "eval", "--benchmark", "arc_easy", "--train-file", str(train_path),
+                        "--test-file", str(test_path), "--output", str(output), "--train-n", "2",
+                        "--eval-n", "1", "--base-url", "http://127.0.0.1:1/v1", "--model", "mock"]
+                args = arguments(argv + (["--disable-adv2"] if disabled else []))
+                self.assertEqual(args.disable_adv2, disabled)
+                sent = []
+                def response(payload):
+                    sent.append(payload)
+                    text = ('{"feedback":"checked","violations":[]}' if "response_format" in payload
+                            else "The task supports B. <answer>B</answer>")
+                    return {"choices": [{"message": {"content": text}, "finish_reason": "stop"}],
+                            "usage": {"prompt_tokens": 1, "completion_tokens": 1}}
+                with mock.patch.object(ChatClient, "_request", side_effect=response):
+                    await run_cli(args)
+                config = json.loads((output / "config.json").read_text(encoding="utf-8"))
+                self.assertNotIn("disable_adv2", config)
+                self.assertEqual(config["evaluation_gate"], not disabled)
+                row = json.loads((output / "results.jsonl").read_text(encoding="utf-8"))
+                self.assertEqual([node["node"] for node in row["nodes"]], view.names)
+                self.assertEqual(row["prediction"], "B")
+                self.assertEqual(sum("response_format" in p for p in sent), 0 if disabled else 11)
+                if disabled:
+                    self.assertTrue(all(node["gate"] is None for node in row["nodes"]))
+                    self.assertTrue(all(node["initial_output"] == node["accepted_output"] for node in row["nodes"]))
+                    summary = json.loads((output / "summary.json").read_text(encoding="utf-8"))
+                    self.assertEqual(summary["gate_attempt_decisions"], {"pass": 0, "retry": 0, "reject": 0})
+                else:
+                    self.assertTrue(all(node["gate"]["decision"] == "pass" for node in row["nodes"]))
+                runs[disabled] = (config, [p for p in sent if "response_format" not in p])
+                # The persisted config has the old single evaluation_gate field;
+                # default resume must still accept it and skip the completed example.
+                with mock.patch.object(ChatClient, "_request") as request:
+                    await run_cli(args)
+                    request.assert_not_called()
+                args.disable_adv2 = not disabled
+                with self.assertRaisesRegex(ValueError, "configuration differs"):
+                    await run_cli(args)
+            on_config, on_generation = runs[False]
+            off_config, off_generation = runs[True]
+            self.assertEqual(len(on_generation), 11)
+            self.assertEqual(on_generation, off_generation)
+            self.assertEqual({k: v for k, v in on_config.items() if k != "evaluation_gate"},
+                             {k: v for k, v in off_config.items() if k != "evaluation_gate"})
+
     async def test_arc_challenge_uses_choice_workflow_and_preserves_numeric_labels(self):
         args = arguments(["--benchmark", "arc_challenge", "--train-file", "train.jsonl",
                           "--test-file", "test.jsonl", "--output", "new-run",
@@ -29,8 +91,18 @@ class CourseTests(unittest.IsolatedAsyncioTestCase):
         async def llm(prompt):
             seen_prompts.append(prompt)
             return "The evidence supports option 2. <answer>2</answer>"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "challenge.jsonl"
+            path.write_text(json.dumps({"id": "challenge:test:1", "question": "Which is a mammal?",
+                                        "choices": {"label": ["1", "2", "3", "4"],
+                                                    "text": ["trout", "whale", "ant", "frog"]},
+                                        "answerKey": "2", "split": "test"}), encoding="utf-8")
+            row = read_rows(path, "arc_challenge", "test")[0]
+        self.assertEqual(row["answer"], "2")
+        self.assertEqual(row["benchmark"], "arc_challenge")
+        self.assertIn("2. whale", row["question"])
         executor = CourseExecutor(view, llm)
-        prediction, cache = await executor.run("Which is a mammal?\n1. trout\n2. whale\n3. ant\n4. frog")
+        prediction, cache = await executor.run(row["question"])
         self.assertEqual(prediction, "2")
         self.assertTrue(score_answer(prediction, "2", "arc_challenge")["correct"])
         self.assertFalse(score_answer(prediction, "3", "arc_challenge")["correct"])
