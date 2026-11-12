@@ -1,0 +1,12 @@
+This course project includes selected interfaces and algorithm implementations
+from ecoli-hit/LycheeMAS and its local AgentDropoutV2 course branch.
+
+Upstream project: https://github.com/ecoli-hit/LycheeMAS
+Upstream baseline: 9189cc27abc6f1440b45b36d90be1999aa9ab957
+Upstream package metadata declares the MIT license and names LycheeMAS as author.
+
+MASPO algorithm reference: https://github.com/wangzx1219/MASPO
+MASPO paper: https://arxiv.org/abs/2605.06623
+AgentDropoutV2 paper version: https://arxiv.org/abs/2602.23258v1
+
+File-level provenance and modifications are recorded in THIRD_PARTY.md.

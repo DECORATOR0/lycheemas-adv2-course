@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lycheemas-adv2-course"
+version = "0.1.0"
+description = "MASPO prompt optimization and two-round ADv2 message control"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+graph = ["langgraph>=1.0,<2"]
+data = ["datasets", "sympy"]
+dev = ["ruff"]
+
+[project.scripts]
+lychee-course = "lychee_mas.course.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["F", "E9"]

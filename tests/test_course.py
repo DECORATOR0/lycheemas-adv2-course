@@ -1,0 +1,199 @@
+import asyncio
+import importlib.util
+import json
+from pathlib import Path
+import sys
+import tempfile
+import unittest
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+from lychee_mas.course.cli import summarize, arguments, run as run_cli
+from lychee_mas.course.data import check_disjoint, score_answer
+from lychee_mas.course.io import PURPOSE
+from lychee_mas.course.workflow import AGENTS, CourseExecutor, fixed_indicators, make_view, safe_arithmetic, run_langgraph
+from lychee_mas.methods.prerun.maspo.optimizer import MASPOOptimizer
+from lychee_mas.methods.prerun.maspo.textops import parse_comparison_result
+from lychee_mas.methods.runtime.agentdropout_v2 import AgentDropoutV2Controller
+
+
+class CourseTests(unittest.IsolatedAsyncioTestCase):
+    async def test_resume_rejects_same_id_changed_data_or_prompts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            train = [{"id": "tr1", "question": "First?", "answer": "1", "split": "train"},
+                     {"id": "tr2", "question": "Second?", "answer": "2", "split": "train"}]
+            test = [{"id": "te1", "question": "Third?", "answer": "3", "split": "test"}]
+            train_path, test_path = root / "train.json", root / "test.json"
+            train_path.write_text(json.dumps(train), encoding="utf-8")
+            test_path.write_text(json.dumps(test), encoding="utf-8")
+            output = root / "run"
+            args = arguments(["--phase", "eval", "--benchmark", "gsm8k", "--train-file", str(train_path),
+                              "--test-file", str(test_path), "--output", str(output),
+                              "--base-url", "http://127.0.0.1:1/v1", "--model", "unused",
+                              "--train-n", "2", "--eval-n", "1"])
+            with self.assertRaisesRegex(ValueError, "completed optimization"):
+                await run_cli(args)
+            test[0]["answer"] = "999"
+            test_path.write_text(json.dumps(test), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "example content differs"):
+                await run_cli(args)
+            test[0]["answer"] = "3"
+            test_path.write_text(json.dumps(test), encoding="utf-8")
+            prompts = {name: spec.system_prompt for name, spec in make_view("gsm8k").specs.items()}
+            (output / "prompts.json").write_text(json.dumps({"prompts": prompts}), encoding="utf-8")
+            changed_prompts = {**prompts, "final": "changed"}
+            (output / "evaluation_prompts.json").write_text(json.dumps(changed_prompts), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "prompts changed"):
+                await run_cli(args)
+
+    @unittest.skipUnless(importlib.util.find_spec("langgraph"), "optional langgraph dependency")
+    async def test_native_langgraph_and_graphview_match(self):
+        async def llm(prompt):
+            return f"node={PURPOSE.get()} <answer>A</answer>"
+        async def judge(prompt):
+            payload = json.loads(prompt.rsplit("\n", 1)[1])
+            return json.dumps({"feedback": "checked", "violations":
+                               ["task_fidelity"] if payload["agent"] == "B" else []})
+        view = make_view("arc_easy")
+        gate = AgentDropoutV2Controller(judge, max_retries=0, indicators=fixed_indicators("arc_easy"))
+        direct = CourseExecutor(view, llm, gate=gate)
+        native = CourseExecutor(view, llm, gate=gate)
+        expected, direct_cache = await direct.run("Choose A")
+        actual, native_cache = await run_langgraph(view, native, "Choose A")
+        self.assertEqual(actual, expected)
+        self.assertEqual(native_cache.node_inputs, direct_cache.node_inputs)
+        self.assertEqual(native_cache.node_outputs_raw, direct_cache.node_outputs_raw)
+        self.assertEqual(native.records, direct.records)
+
+    def test_topology_exact_spatial_temporal(self):
+        view = make_view("gsm8k")
+        self.assertEqual(view.predecessors["A"], [])
+        self.assertEqual(view.predecessors["C"], ["A", "B"])
+        self.assertEqual(view.predecessors["A_r2"], ["A"])
+        self.assertEqual(view.predecessors["C_r2"], ["A_r2", "B_r2", "A", "B", "C"])
+        self.assertEqual(view.predecessors["final"], ["A_r2", "B_r2", "C_r2", "D_r2", "E_r2"])
+
+    async def test_rejection_is_absent_in_spatial_temporal_and_final(self):
+        async def llm(prompt):
+            return f"output-{PURPOSE.get()} <answer>7</answer>"
+        async def judge(prompt):
+            payload = json.loads(prompt.rsplit("\n", 1)[1])
+            blocked = payload["agent"] in ("B", "C_r2")
+            return json.dumps({"feedback": "contradiction" if blocked else "checked",
+                               "violations": ["task_fidelity"] if blocked else []})
+        gate = AgentDropoutV2Controller(judge, max_retries=0, indicators=fixed_indicators("gsm8k"))
+        executor = CourseExecutor(make_view("gsm8k"), llm, gate=gate)
+        prediction, cache = await executor.run("There are seven objects. How many?")
+        self.assertEqual(prediction, "7")
+        self.assertEqual(cache.node_outputs_raw["B"], "")
+        records = {r["node"]: r for r in executor.records}
+        self.assertNotIn("B", records["C"]["visible_sources"])
+        self.assertNotIn("B", records["B_r2"]["visible_sources"])
+        self.assertNotIn("C_r2", records["final"]["visible_sources"])
+        self.assertNotIn("output-B <", records["C"]["input_context"])
+
+    async def test_retry_propagates_only_corrected_output(self):
+        async def llm(prompt):
+            if PURPOSE.get() == "B":
+                return "fixed <answer>2</answer>" if "Verifier feedback:" in prompt else "bad B"
+            return "valid <answer>2</answer>"
+        async def judge(prompt):
+            payload = json.loads(prompt.rsplit("\n", 1)[1])
+            bad = payload["candidate"] == "bad B"
+            return json.dumps({"feedback": "Use 2" if bad else "Checked 2", "violations": ["reasoning_validity"] if bad else []})
+        gate = AgentDropoutV2Controller(judge, max_retries=1, indicators=fixed_indicators("gsm8k"))
+        executor = CourseExecutor(make_view("gsm8k"), llm, gate=gate)
+        _, cache = await executor.run("1 + 1?")
+        self.assertEqual(cache.node_outputs_raw["B"], "fixed <answer>2</answer>")
+        self.assertIn("fixed", cache.node_inputs["C"])
+        self.assertNotIn("bad B", cache.node_inputs["B_r2"])
+        self.assertEqual(executor.records[1]["gate"]["attempts"][0]["decision"], "retry")
+
+    async def test_candidate_prompt_is_shared_and_reexecutes_both_rounds(self):
+        seen = []
+        async def llm(prompt):
+            seen.append((PURPOSE.get(), prompt))
+            return "<answer>3</answer>"
+        executor = CourseExecutor(make_view("arc_easy"), llm)
+        _, base = await executor.run("Choose A")
+        self.assertEqual([node for node, _ in seen], executor.view.names)
+        seen.clear()
+        _, candidate = await executor.run_from_node("B", base, "CANDIDATE {question} {context}")
+        self.assertIn(("B",), [(node,) for node, text in seen if text.startswith("CANDIDATE")])
+        self.assertIn(("B_r2",), [(node,) for node, text in seen if text.startswith("CANDIDATE")])
+        self.assertNotIn("A", [node for node, _ in seen])
+        self.assertEqual(candidate.node_outputs_raw["A"], base.node_outputs_raw["A"])
+        self.assertIn("final", [node for node, _ in seen])
+
+    async def test_actual_maspo_optimizes_five_shared_roles(self):
+        async def llm(prompt):
+            return "<answer>A</answer>"
+        async def proposer(prompt):
+            old = prompt.split("Current instruction:\n", 1)[1].split("\nObserved training", 1)[0]
+            return "<prompt>Verify independently. " + old + "</prompt>"
+        async def compare(prompt):
+            return "The first output is better. <choose>A</choose>"
+        view = make_view("arc_easy")
+        with tempfile.TemporaryDirectory() as directory:
+            optimizer = MASPOOptimizer(mode="optimize", prompt_file=str(Path(directory) / "prompts.json"),
+                trainset=["Question one", "Question two"], agent_llm=llm, evaluator_llm=compare,
+                proposer_llm=proposer, max_total_depth=1, rounds_per_turn=1, eval_batch=2,
+                executor_factory=CourseExecutor, optimize_nodes=list(AGENTS), verbose=False)
+            prompts, statistics = await optimizer._optimize_with_limits(view)
+            self.assertEqual(set(statistics["final_scores"]), set(AGENTS))
+            self.assertTrue(all(prompts[a].startswith("Verify independently.") for a in AGENTS))
+            executor = CourseExecutor(view, llm, prompts)
+            self.assertTrue(all(executor._template(a) == executor._template(a + "_r2") for a in AGENTS))
+
+    def test_data_leakage_rejected(self):
+        train = [{"id": "train:1", "question": "How many?", "split": "train"}]
+        test = [{"id": "test:1", "question": " how MANY? ", "split": "test"}]
+        with self.assertRaises(ValueError):
+            check_disjoint(train, test)
+
+    def test_math_and_choice_scoring(self):
+        self.assertTrue(score_answer("0.5", r"\frac{1}{2}", "math")["correct"])
+        self.assertTrue(score_answer(r"\sqrt{4}", "2", "math")["correct"])
+        self.assertFalse(score_answer("", "0", "gsm8k")["correct"])
+        self.assertFalse(score_answer("B", "A", "arc_easy")["correct"])
+        self.assertFalse(score_answer("(1,23)", "(12,3)", "math")["correct"])
+        self.assertFalse(score_answer(r"\text{no solution}", r"\text{all real numbers}", "math")["correct"])
+        self.assertTrue(score_answer("1,234", "1234", "math")["correct"])
+        self.assertFalse(score_answer("-21", "-2,1", "math")["correct"])
+        self.assertFalse(score_answer("1000000001", "1000000000", "gsm8k")["correct"])
+        self.assertFalse(score_answer("1e-9", "0", "gsm8k")["correct"])
+        self.assertTrue(score_answer("7*pi", r"7\pi", "math")["correct"])
+        self.assertTrue(score_answer("6-5*i", "6 - 5i", "math")["correct"])
+        self.assertTrue(score_answer("1,-2", "-2,1", "math",
+                                     "Find all integer roots, separated by commas.")["correct"])
+        self.assertFalse(score_answer("(2,1)", "(1,2)", "math",
+                                      "Find the point coordinates.")["correct"])
+
+    def test_malformed_comparison_cannot_win(self):
+        self.assertTrue(parse_comparison_result("reason <choose>A</choose>"))
+        self.assertFalse(parse_comparison_result("reason <choose>B</choose>"))
+        for malformed in ("123", "A", "<choose>AB</choose>", "<choose>A</choose><choose>B</choose>"):
+            with self.assertRaises(ValueError):
+                parse_comparison_result(malformed)
+
+    def test_restricted_arithmetic_runs_and_refuses_external_operations(self):
+        self.assertEqual(safe_arithmetic("apples = 8\nanswer = apples * 3 - 4"), "20")
+        with self.assertRaises(ValueError):
+            safe_arithmetic("import os\nanswer = 1")
+        with self.assertRaises(ValueError):
+            safe_arithmetic("answer = open('a').read()")
+
+    def test_full_denominator_includes_errors_and_rejections(self):
+        rows = [{"id": str(i)} for i in range(4)]
+        results = {"0": {"status": "ok", "score": {"correct": True}},
+                   "1": {"status": "error", "score": {"correct": False}},
+                   "2": {"status": "terminal_rejected", "score": {"correct": False}}}
+        summary = summarize(results, rows, 1)
+        self.assertEqual(summary["accuracy_full_denominator"], 0.25)
+        self.assertEqual(summary["completed_examples"], 2)
+        self.assertEqual(summary["status"], "incomplete")
+
+
+if __name__ == "__main__":
+    unittest.main()
