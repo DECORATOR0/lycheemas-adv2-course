@@ -1,0 +1,427 @@
+{
+  "run_name": "arc_challenge_100",
+  "state": "review_complete",
+  "selected": 100,
+  "append_only_result_events": 100,
+  "latest_records": 100,
+  "completed": 100,
+  "error_ids": [],
+  "missing_ids": [],
+  "terminal_rejected": 0,
+  "correct_saved": 91,
+  "accuracy_saved_full_denominator": 0.91,
+  "changed_roles": [],
+  "prompt_application_checks": 1100,
+  "complete_audit_source_checks": 1138,
+  "gate_attempt_decisions": {
+    "pass": 1076,
+    "retry": 38,
+    "reject": 24
+  },
+  "rejection_checks": [
+    {
+      "id": "arc_challenge_test_NAEP_2000_8_S11+10",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_NAEP_2000_8_S11+10",
+      "node": "A_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_TIMSS_2003_8_pg87",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_400084",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_400084",
+      "node": "C",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_400084",
+      "node": "D",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_400084",
+      "node": "A_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_400084",
+      "node": "B_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_400084",
+      "node": "E_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7139650",
+      "node": "A_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_402985",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_407613",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_407613",
+      "node": "A_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_412463",
+      "node": "D",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_408366",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_408366",
+      "node": "A_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_409241",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_409241",
+      "node": "A_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_401360",
+      "node": "D",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_401360",
+      "node": "E",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_MCAS_2009_8_12",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_MCAS_2009_8_12",
+      "node": "A_r2",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_404638",
+      "node": "A",
+      "accepted_output_absent": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_404638",
+      "node": "D",
+      "accepted_output_absent": true
+    }
+  ],
+  "retry_pass_transitions": [
+    {
+      "id": "arc_challenge_test_Mercury_7219678",
+      "node": "A",
+      "reference": "A",
+      "before": "D",
+      "after": "A",
+      "before_label_match": false,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_400134",
+      "node": "A",
+      "reference": "D",
+      "before": "D",
+      "after": "B",
+      "before_label_match": true,
+      "after_label_match": false,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_MCAS_2006_8_24",
+      "node": "A",
+      "reference": "A",
+      "before": "A",
+      "after": "A",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_ACTAAP_2014_7_5",
+      "node": "D_r2",
+      "reference": "D",
+      "before": "D",
+      "after": "D",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_402985",
+      "node": "A_r2",
+      "reference": "B",
+      "before": "B",
+      "after": "B",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_AKDE&ED_2012_8_6",
+      "node": "A",
+      "reference": "A",
+      "before": "A",
+      "after": "B",
+      "before_label_match": true,
+      "after_label_match": false,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7172708",
+      "node": "A",
+      "reference": "B",
+      "before": "D",
+      "after": "B",
+      "before_label_match": false,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_412463",
+      "node": "D_r2",
+      "reference": "D",
+      "before": "D",
+      "after": "D",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_409241",
+      "node": "B",
+      "reference": "C",
+      "before": "C",
+      "after": "C",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7210210",
+      "node": "D",
+      "reference": "C",
+      "before": "C",
+      "after": "C",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_MCAS_2009_8_12",
+      "node": "B",
+      "reference": "A",
+      "before": "A",
+      "after": "A",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7111178",
+      "node": "A",
+      "reference": "C",
+      "before": "C",
+      "after": "C",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_404638",
+      "node": "B",
+      "reference": "D",
+      "before": "A",
+      "after": "D",
+      "before_label_match": false,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    },
+    {
+      "id": "arc_challenge_test_Mercury_404638",
+      "node": "A_r2",
+      "reference": "D",
+      "before": "D",
+      "after": "D",
+      "before_label_match": true,
+      "after_label_match": true,
+      "classification_requires_manual_review": true
+    }
+  ],
+  "manual_scoring_candidates": [
+    {
+      "id": "arc_challenge_test_Mercury_SC_400134",
+      "question": "Which tool would be the most helpful in an investigation of the life cycle of a monarch butterfly?\nA. a sharp knife\nB. a magnifying glass\nC. a long piece of string\nD. a large jar with air holes in the top",
+      "prediction": "B",
+      "reference": "D",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_NAEP_2000_8_S11+10",
+      "question": "All of the following would be helpful in separating a mixture of sand and salt EXCEPT\nA. a magnet\nB. a glass cup\nC. a filter paper and funnel\nD. water",
+      "prediction": "B",
+      "reference": "A",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7235638",
+      "question": "Images from the Voyager and the Galileo spacecraft provide evidence Europa has a liquid ocean under a surface of ice that results in part from distinctive, surface-cracking patterns produced by which events?\nA. volcanic eruptions\nB. tectonic movements\nC. asteroid impacts\nD. solar flares",
+      "prediction": "B",
+      "reference": "C",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_175053",
+      "question": "A science student notices that the contents of one of the test tubes in an experiment are bubbling and changing colors. Before completing the experiment, the student records that the substance in this particular test tube is undergoing a chemical change. The student's statement is an example of\nA. an observation.\nB. a hypothesis.\nC. a conclusion.\nD. an inference.",
+      "prediction": "A",
+      "reference": "D",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7139650",
+      "question": "Some new cars use special braking systems to recover energy when the brakes are applied. This energy is stored in special batteries and is used to power the electric motor. What type of energy are the brakes storing as they slow down the car?\nA. gravitational\nB. kinetic\nC. potential\nD. thermal",
+      "prediction": "D",
+      "reference": "C",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7212888",
+      "question": "Researchers at a science laboratory have found ways to make carbon nanotubes from recycled plastic grocery bags. These nanotubes are then used as components of batteries. This approach best illustrates the ability of technology to\nA. increase resource availability.\nB. improve existing products.\nC. deplete available resources.\nD. cause environmental degradation.",
+      "prediction": "B",
+      "reference": "A",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_AKDE&ED_2012_8_6",
+      "question": "Which change in Earth's surface is most directly related to the water cycle?\nA. deposition of sediments\nB. uplifting of a mountain\nC. formation of ocean trenches\nD. movement of tectonic plates",
+      "prediction": "B",
+      "reference": "A",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_SC_401360",
+      "question": "The freezing point of water is a\nA. physical property.\nB. chemical property.\nC. chemical change.\nD. physical change.",
+      "prediction": "D",
+      "reference": "A",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_402341",
+      "question": "In what order are the Sun, Moon, and Earth during a total lunar eclipse?\nA. Earth-Moon-Sun\nB. Earth-Sun-Moon\nC. Moon-Sun-Earth\nD. Moon-Earth-Sun",
+      "prediction": "B",
+      "reference": "D",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    }
+  ],
+  "coverage_all_selected": {
+    "subject_from_type_subject_or_unique_id": {
+      "unknown": 100
+    },
+    "level": {
+      "unknown": 100
+    },
+    "subject_level": {
+      "unknown / unknown": 100
+    }
+  },
+  "usage_evaluation_all_attempts": {
+    "calls": 2276,
+    "prompt_tokens": 1550266,
+    "completion_tokens": 187739,
+    "total_tokens": 1738005,
+    "incomplete_outputs": 0,
+    "invalid_judge_schema_outputs": 0,
+    "format_retries": 0
+  },
+  "usage_optimization_counted_once": {
+    "calls": 702,
+    "prompt_tokens": 333074,
+    "completion_tokens": 61819,
+    "total_tokens": 394893,
+    "incomplete_outputs": 0,
+    "invalid_judge_schema_outputs": 0,
+    "format_retries": 0
+  },
+  "usage_artifact_total": {
+    "calls": 2978,
+    "prompt_tokens": 1883340,
+    "completion_tokens": 249558,
+    "total_tokens": 2132898,
+    "incomplete_outputs": 0,
+    "invalid_judge_schema_outputs": 0,
+    "format_retries": 0
+  },
+  "structural_or_score_replay_issues": [],
+  "cost_note": "Frozen previously optimized prompts do not incur new optimization; a copied source optimization is counted once only.",
+  "independent_exact_label_checks": 100
+}

@@ -1,0 +1,622 @@
+{
+  "review_method": "Independently inspect every originally incorrect answer; check all originally correct but nonidentical expressions; retain the exact original problem and reference. No model calls and no result changes.",
+  "conditions": {
+    "math500_100": {
+      "raw_correct": 72,
+      "correct_after_uniform_review": 79,
+      "representation_false_negatives": 7,
+      "false_positives_found": 0,
+      "incorrect_answer_checks": [
+        {
+          "id": "math500:test:71",
+          "prediction": "1247",
+          "reference": "2516_8",
+          "decision": "remain_incorrect",
+          "reason": "Binary groups010 101 001 110 give2516_8, not1247."
+        },
+        {
+          "id": "math500:test:44",
+          "prediction": "1.06",
+          "reference": "1.25",
+          "decision": "remain_incorrect",
+          "reason": "South displacement1 and east0.75 give distance1.25, not1.06."
+        },
+        {
+          "id": "math500:test:327",
+          "prediction": "",
+          "reference": "15",
+          "decision": "remain_incorrect",
+          "reason": "The constraints givea=-2,b=-5,c=-5/2 inP=(x-1)(x-4)(x-c)+ax+b, henceP(5)=15. An empty final or110 is not this answer."
+        },
+        {
+          "id": "math500:test:409",
+          "prediction": "2√5",
+          "reference": "2 \\sqrt{5}",
+          "decision": "equivalent_representation",
+          "reason": "The hyperbola center is(5,7); horizontal a=1 and asymptote slope b/a=2, so2c=2sqrt(5). Unicode radical is equivalent."
+        },
+        {
+          "id": "math500:test:15",
+          "prediction": "",
+          "reference": "6 - 5i",
+          "decision": "remain_incorrect",
+          "reason": "Translate byc to obtainsqrt(2)-3sqrt(2)i, rotate by(1+i)/sqrt(2) to obtain4-2i, then addc=2-3i to obtain6-5i. Neither an empty final nor the returned radical expression equals it."
+        },
+        {
+          "id": "math500:test:249",
+          "prediction": "15",
+          "reference": "17",
+          "decision": "remain_incorrect",
+          "reason": "17*19=323=14*23+1, while15*17=255=11*23+2."
+        },
+        {
+          "id": "math500:test:245",
+          "prediction": "-10x + 5",
+          "reference": "-13x+3",
+          "decision": "remain_incorrect",
+          "reason": "Reduce even powers to1 and odd powers tox: even coefficient sum3, odd sum-13."
+        },
+        {
+          "id": "math500:test:326",
+          "prediction": "-0.09",
+          "reference": "\\frac{9}{100}",
+          "decision": "remain_incorrect",
+          "reason": "sin(A+B)sin(B-A)=sin(B)^2-sin(A)^2=0.25-0.16=0.09."
+        },
+        {
+          "id": "math500:test:9",
+          "prediction": "2",
+          "reference": "4",
+          "decision": "remain_incorrect",
+          "reason": "Possible values are121,122,126,144, according to the left boundary of the subexpression ending in+1."
+        },
+        {
+          "id": "math500:test:454",
+          "prediction": "y = -3/4x - 1/4",
+          "reference": "y = 2x + 3",
+          "decision": "remain_incorrect",
+          "reason": "The matrix is[[4,-1],[2,1]], so(x,2x+1) maps to(2x-1,4x+1), whose equation isY=2X+3."
+        },
+        {
+          "id": "math500:test:235",
+          "prediction": "5/9",
+          "reference": "\\frac 59",
+          "decision": "equivalent_representation",
+          "reason": "7/9-4/9+2/9=5/9. TeX frac followed by single digits5 and9 denotes5/9."
+        },
+        {
+          "id": "math500:test:213",
+          "prediction": "1",
+          "reference": "2",
+          "decision": "remain_incorrect",
+          "reason": "F(n+1)/(F(n)F(n+2))=1/F(n)-1/F(n+2); the sum telescopes to1/F1+1/F2=2."
+        },
+        {
+          "id": "math500:test:438",
+          "prediction": "6",
+          "reference": "4",
+          "decision": "remain_incorrect",
+          "reason": "137/500=0.274, whose last nonzero decimal digit is4."
+        },
+        {
+          "id": "math500:test:70",
+          "prediction": "40",
+          "reference": "40_9",
+          "decision": "equivalent_representation",
+          "reason": "Base9 subtraction58_9-18_9=40_9; the requested-base context makes digit string40 the same answer."
+        },
+        {
+          "id": "math500:test:90",
+          "prediction": "15",
+          "reference": "\\frac{3}{2}",
+          "decision": "remain_incorrect",
+          "reason": "The requested multiplier is reciprocal(2/3)=3/2, not the resulting value15."
+        },
+        {
+          "id": "math500:test:73",
+          "prediction": "3√3⁄4",
+          "reference": "\\frac{3\\sqrt{3}}{4}",
+          "decision": "equivalent_representation",
+          "reason": "sqrt(9*2+9)/sqrt(9*2-2)=sqrt(27)/4=3sqrt(3)/4. Unicode radical and fraction slash are equivalent."
+        },
+        {
+          "id": "math500:test:309",
+          "prediction": "15",
+          "reference": "14",
+          "decision": "remain_incorrect",
+          "reason": "Distinct factors3,4,7 have product84 and sum14; the proposed15 is higher."
+        },
+        {
+          "id": "math500:test:204",
+          "prediction": "",
+          "reference": "0",
+          "decision": "remain_incorrect",
+          "reason": "Four distinct unit complex numbers summing tozero form two opposite pairs, so at least one pair-sum factor iszero and the full product iszero. An empty final or16 is notzero."
+        },
+        {
+          "id": "math500:test:103",
+          "prediction": "2, 3",
+          "reference": "(3,4]",
+          "decision": "remain_incorrect",
+          "reason": "The non-fixed real two-cycle of the logistic map exists for3<lambda<=4, not forlambda2 or3."
+        },
+        {
+          "id": "math500:test:281",
+          "prediction": "36",
+          "reference": "36^\\circ",
+          "decision": "equivalent_representation",
+          "reason": "The tip angle of the regular-pentagon star is36 degrees. The requested angular measure and reference degree unit support an implicit degree symbol."
+        },
+        {
+          "id": "math500:test:435",
+          "prediction": "(-∞, 2) ∪ (3, ∞)",
+          "reference": "(-\\infty, 2) \\cup (3, \\infty)",
+          "decision": "equivalent_representation",
+          "reason": "The denominator requires(x-2)(x-3)>0, hencex<2 orx>3. Unicode infinity/union are the same open intervals."
+        },
+        {
+          "id": "math500:test:497",
+          "prediction": "2 + sqrt(2)",
+          "reference": "\\frac{7}{2}",
+          "decision": "remain_incorrect",
+          "reason": "The octagon fits a2-by2 square with four right triangles of legs0.5 removed:4-4*(0.5*0.5/2)=7/2."
+        },
+        {
+          "id": "math500:test:101",
+          "prediction": "130",
+          "reference": "850",
+          "decision": "remain_incorrect",
+          "reason": "Letz=13-1/x, so the tenz values are unit roots ofz^10=-1. Then|1/x|^2=170-26Re(z); conjugate-pair sum ofRe(z) is0, yielding5*170=850."
+        },
+        {
+          "id": "math500:test:349",
+          "prediction": "1260",
+          "reference": "10080",
+          "decision": "remain_incorrect",
+          "reason": "All8! assignments are identified under4 rotations of the square, so8!/4=10080."
+        },
+        {
+          "id": "math500:test:351",
+          "prediction": "-1/16",
+          "reference": "\\frac{1}{16}",
+          "decision": "remain_incorrect",
+          "reason": "The productcos(t)cos(2t)cos(4t)cos(8t)=sin(16t)/(16sin(t)); fort=2pi/15 the ratio is1/16."
+        },
+        {
+          "id": "math500:test:451",
+          "prediction": "639/4",
+          "reference": "\\frac{639}{40}",
+          "decision": "remain_incorrect",
+          "reason": "53.25*3/10=15.975=639/40;639/4 is ten times too large."
+        },
+        {
+          "id": "math500:test:421",
+          "prediction": "",
+          "reference": "27",
+          "decision": "remain_incorrect",
+          "reason": "For angles summing topi,cos?A+cos?B+cos?C+2cosAcosBcosC=1. Substitutingx,2x,3x gives12x?+14x?-1=0 and coefficient absolute sum27."
+        },
+        {
+          "id": "math500:test:284",
+          "prediction": "3+2√2,3-2√2",
+          "reference": "3 \\pm 2 \\sqrt{2}",
+          "decision": "equivalent_representation",
+          "reason": "The equation reduces to2x/(1+x^2)=1/3, giving the two roots3+2sqrt(2) and3-2sqrt(2). The requested comma list is equivalent to the reference plus-minus form."
+        }
+      ],
+      "correct_nonidentical_expression_checks": [
+        {
+          "id": "math500:test:456",
+          "prediction": "1,-2",
+          "reference": "-2,1",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:279",
+          "prediction": "7π",
+          "reference": "7\\pi",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:360",
+          "prediction": "7/4",
+          "reference": "\\frac{7}{4}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:202",
+          "prediction": "2/3",
+          "reference": "\\frac{2}{3}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:98",
+          "prediction": "2k + 2",
+          "reference": "2k+2",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:266",
+          "prediction": "0.33",
+          "reference": "\\dfrac{33}{100}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:320",
+          "prediction": "-24/25",
+          "reference": "-\\frac{24}{25}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:92",
+          "prediction": "2240/78125",
+          "reference": "\\frac{448}{15625}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:163",
+          "prediction": "-35/9",
+          "reference": "-\\frac{35}{9}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:314",
+          "prediction": "(2, 4)",
+          "reference": "(2,4)",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:364",
+          "prediction": "(1, -16, -4, 43)",
+          "reference": "(1,-16,-4,43)",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:247",
+          "prediction": "10/11",
+          "reference": "\\frac{10}{11}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:389",
+          "prediction": "$\\frac{\\sqrt{21}}{5}$",
+          "reference": "\\frac{\\sqrt{21}}{5}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:181",
+          "prediction": "sqrt(3)/3",
+          "reference": "\\frac{\\sqrt{3}}{3}",
+          "equivalent": true
+        }
+      ]
+    },
+    "math500_100_no_adv2": {
+      "raw_correct": 67,
+      "correct_after_uniform_review": 75,
+      "representation_false_negatives": 8,
+      "false_positives_found": 0,
+      "incorrect_answer_checks": [
+        {
+          "id": "math500:test:71",
+          "prediction": "1247",
+          "reference": "2516_8",
+          "decision": "remain_incorrect",
+          "reason": "Binary groups010 101 001 110 give2516_8, not1247."
+        },
+        {
+          "id": "math500:test:379",
+          "prediction": "12th",
+          "reference": "12",
+          "decision": "equivalent_representation",
+          "reason": "The grade12 ratio11.6/8.6 is closest to1.35. In the explicit grade question,12th and12 denote the same grade."
+        },
+        {
+          "id": "math500:test:327",
+          "prediction": "110",
+          "reference": "15",
+          "decision": "remain_incorrect",
+          "reason": "The constraints givea=-2,b=-5,c=-5/2 inP=(x-1)(x-4)(x-c)+ax+b, henceP(5)=15. An empty final or110 is not this answer."
+        },
+        {
+          "id": "math500:test:44",
+          "prediction": "1.06",
+          "reference": "1.25",
+          "decision": "remain_incorrect",
+          "reason": "South displacement1 and east0.75 give distance1.25, not1.06."
+        },
+        {
+          "id": "math500:test:15",
+          "prediction": "-1 - 3√2 + (-1 + √2)i",
+          "reference": "6 - 5i",
+          "decision": "remain_incorrect",
+          "reason": "Translate byc to obtainsqrt(2)-3sqrt(2)i, rotate by(1+i)/sqrt(2) to obtain4-2i, then addc=2-3i to obtain6-5i. Neither an empty final nor the returned radical expression equals it."
+        },
+        {
+          "id": "math500:test:249",
+          "prediction": "15",
+          "reference": "17",
+          "decision": "remain_incorrect",
+          "reason": "17*19=323=14*23+1, while15*17=255=11*23+2."
+        },
+        {
+          "id": "math500:test:409",
+          "prediction": "2√5",
+          "reference": "2 \\sqrt{5}",
+          "decision": "equivalent_representation",
+          "reason": "The hyperbola center is(5,7); horizontal a=1 and asymptote slope b/a=2, so2c=2sqrt(5). Unicode radical is equivalent."
+        },
+        {
+          "id": "math500:test:245",
+          "prediction": "-10x + 5",
+          "reference": "-13x+3",
+          "decision": "remain_incorrect",
+          "reason": "Reduce even powers to1 and odd powers tox: even coefficient sum3, odd sum-13."
+        },
+        {
+          "id": "math500:test:9",
+          "prediction": "2",
+          "reference": "4",
+          "decision": "remain_incorrect",
+          "reason": "Possible values are121,122,126,144, according to the left boundary of the subexpression ending in+1."
+        },
+        {
+          "id": "math500:test:234",
+          "prediction": "49",
+          "reference": "34",
+          "decision": "remain_incorrect",
+          "reason": "A translationg(x)=f(x+5) shifts all three roots by-5; root sum49 becomes34."
+        },
+        {
+          "id": "math500:test:294",
+          "prediction": "71",
+          "reference": "58",
+          "decision": "remain_incorrect",
+          "reason": "Three consecutive integers have sum divisible by3. The largest three-digit palindrome below220 divisible by3 is171, giving56,57,58."
+        },
+        {
+          "id": "math500:test:235",
+          "prediction": "5/9",
+          "reference": "\\frac 59",
+          "decision": "equivalent_representation",
+          "reason": "7/9-4/9+2/9=5/9. TeX frac followed by single digits5 and9 denotes5/9."
+        },
+        {
+          "id": "math500:test:326",
+          "prediction": "-0.0125",
+          "reference": "\\frac{9}{100}",
+          "decision": "remain_incorrect",
+          "reason": "sin(A+B)sin(B-A)=sin(B)^2-sin(A)^2=0.25-0.16=0.09."
+        },
+        {
+          "id": "math500:test:473",
+          "prediction": "4.5",
+          "reference": "7",
+          "decision": "remain_incorrect",
+          "reason": "Top row sum2n+1 equals middle row sum3n-6 only atn=7."
+        },
+        {
+          "id": "math500:test:213",
+          "prediction": "1",
+          "reference": "2",
+          "decision": "remain_incorrect",
+          "reason": "F(n+1)/(F(n)F(n+2))=1/F(n)-1/F(n+2); the sum telescopes to1/F1+1/F2=2."
+        },
+        {
+          "id": "math500:test:70",
+          "prediction": "40",
+          "reference": "40_9",
+          "decision": "equivalent_representation",
+          "reason": "Base9 subtraction58_9-18_9=40_9; the requested-base context makes digit string40 the same answer."
+        },
+        {
+          "id": "math500:test:438",
+          "prediction": "6",
+          "reference": "4",
+          "decision": "remain_incorrect",
+          "reason": "137/500=0.274, whose last nonzero decimal digit is4."
+        },
+        {
+          "id": "math500:test:90",
+          "prediction": "15",
+          "reference": "\\frac{3}{2}",
+          "decision": "remain_incorrect",
+          "reason": "The requested multiplier is reciprocal(2/3)=3/2, not the resulting value15."
+        },
+        {
+          "id": "math500:test:204",
+          "prediction": "16",
+          "reference": "0",
+          "decision": "remain_incorrect",
+          "reason": "Four distinct unit complex numbers summing tozero form two opposite pairs, so at least one pair-sum factor iszero and the full product iszero. An empty final or16 is notzero."
+        },
+        {
+          "id": "math500:test:73",
+          "prediction": "3√3⁄4",
+          "reference": "\\frac{3\\sqrt{3}}{4}",
+          "decision": "equivalent_representation",
+          "reason": "sqrt(9*2+9)/sqrt(9*2-2)=sqrt(27)/4=3sqrt(3)/4. Unicode radical and fraction slash are equivalent."
+        },
+        {
+          "id": "math500:test:454",
+          "prediction": "y = -3/4x - 1/4",
+          "reference": "y = 2x + 3",
+          "decision": "remain_incorrect",
+          "reason": "The matrix is[[4,-1],[2,1]], so(x,2x+1) maps to(2x-1,4x+1), whose equation isY=2X+3."
+        },
+        {
+          "id": "math500:test:309",
+          "prediction": "15",
+          "reference": "14",
+          "decision": "remain_incorrect",
+          "reason": "Distinct factors3,4,7 have product84 and sum14; the proposed15 is higher."
+        },
+        {
+          "id": "math500:test:101",
+          "prediction": "10",
+          "reference": "850",
+          "decision": "remain_incorrect",
+          "reason": "Letz=13-1/x, so the tenz values are unit roots ofz^10=-1. Then|1/x|^2=170-26Re(z); conjugate-pair sum ofRe(z) is0, yielding5*170=850."
+        },
+        {
+          "id": "math500:test:103",
+          "prediction": "2, 3",
+          "reference": "(3,4]",
+          "decision": "remain_incorrect",
+          "reason": "The non-fixed real two-cycle of the logistic map exists for3<lambda<=4, not forlambda2 or3."
+        },
+        {
+          "id": "math500:test:152",
+          "prediction": "64/3",
+          "reference": "8",
+          "decision": "remain_incorrect",
+          "reason": "UsingA=(0,3),B=(0,0),C=(3,0),E=(1.5,1.5),N=(2,1),G=(1,1), the area ratioENG/ABC is1/18;144/18=8."
+        },
+        {
+          "id": "math500:test:281",
+          "prediction": "36",
+          "reference": "36^\\circ",
+          "decision": "equivalent_representation",
+          "reason": "The tip angle of the regular-pentagon star is36 degrees. The requested angular measure and reference degree unit support an implicit degree symbol."
+        },
+        {
+          "id": "math500:test:435",
+          "prediction": "(-∞, 2) ∪ (3, ∞)",
+          "reference": "(-\\infty, 2) \\cup (3, \\infty)",
+          "decision": "equivalent_representation",
+          "reason": "The denominator requires(x-2)(x-3)>0, hencex<2 orx>3. Unicode infinity/union are the same open intervals."
+        },
+        {
+          "id": "math500:test:349",
+          "prediction": "1260",
+          "reference": "10080",
+          "decision": "remain_incorrect",
+          "reason": "All8! assignments are identified under4 rotations of the square, so8!/4=10080."
+        },
+        {
+          "id": "math500:test:351",
+          "prediction": "-1/16",
+          "reference": "\\frac{1}{16}",
+          "decision": "remain_incorrect",
+          "reason": "The productcos(t)cos(2t)cos(4t)cos(8t)=sin(16t)/(16sin(t)); fort=2pi/15 the ratio is1/16."
+        },
+        {
+          "id": "math500:test:451",
+          "prediction": "639/4",
+          "reference": "\\frac{639}{40}",
+          "decision": "remain_incorrect",
+          "reason": "53.25*3/10=15.975=639/40;639/4 is ten times too large."
+        },
+        {
+          "id": "math500:test:497",
+          "prediction": "2 + sqrt(2)",
+          "reference": "\\frac{7}{2}",
+          "decision": "remain_incorrect",
+          "reason": "The octagon fits a2-by2 square with four right triangles of legs0.5 removed:4-4*(0.5*0.5/2)=7/2."
+        },
+        {
+          "id": "math500:test:421",
+          "prediction": "13",
+          "reference": "27",
+          "decision": "remain_incorrect",
+          "reason": "For angles summing topi,cos?A+cos?B+cos?C+2cosAcosBcosC=1. Substitutingx,2x,3x gives12x?+14x?-1=0 and coefficient absolute sum27."
+        },
+        {
+          "id": "math500:test:284",
+          "prediction": "3 + 2√2, 3 - 2√2",
+          "reference": "3 \\pm 2 \\sqrt{2}",
+          "decision": "equivalent_representation",
+          "reason": "The equation reduces to2x/(1+x^2)=1/3, giving the two roots3+2sqrt(2) and3-2sqrt(2). The requested comma list is equivalent to the reference plus-minus form."
+        }
+      ],
+      "correct_nonidentical_expression_checks": [
+        {
+          "id": "math500:test:456",
+          "prediction": "1,-2",
+          "reference": "-2,1",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:279",
+          "prediction": "7π",
+          "reference": "7\\pi",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:360",
+          "prediction": "7/4",
+          "reference": "\\frac{7}{4}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:202",
+          "prediction": "2/3",
+          "reference": "\\frac{2}{3}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:98",
+          "prediction": "2k + 2",
+          "reference": "2k+2",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:266",
+          "prediction": "0.33",
+          "reference": "\\dfrac{33}{100}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:320",
+          "prediction": "$-\\frac{24}{25}$",
+          "reference": "-\\frac{24}{25}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:92",
+          "prediction": "2240/78125",
+          "reference": "\\frac{448}{15625}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:163",
+          "prediction": "-35/9",
+          "reference": "-\\frac{35}{9}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:314",
+          "prediction": "(2, 4)",
+          "reference": "(2,4)",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:364",
+          "prediction": "(1, -16, -4, 43)",
+          "reference": "(1,-16,-4,43)",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:247",
+          "prediction": "10/11",
+          "reference": "\\frac{10}{11}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:389",
+          "prediction": "$\\frac{\\sqrt{21}}{5}$",
+          "reference": "\\frac{\\sqrt{21}}{5}",
+          "equivalent": true
+        },
+        {
+          "id": "math500:test:181",
+          "prediction": "sqrt(3)/3",
+          "reference": "\\frac{\\sqrt{3}}{3}",
+          "equivalent": true
+        }
+      ]
+    }
+  },
+  "new_rules_applied_to_both_conditions": true,
+  "unresolved_scoring_cases": []
+}

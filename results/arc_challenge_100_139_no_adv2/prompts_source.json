@@ -1,0 +1,11 @@
+{
+  "optimization_origin": "results/arc_challenge_100 on server 254",
+  "new_optimization_calls": 0,
+  "source_optimization_calls": 702,
+  "prompts": "Unchanged frozen MASPO prompts from the completed 254 optimization",
+  "all_100_questions_evaluated_anew": true,
+  "code_commit": "3d2a46e551ef60f151027c6fc7539ef92b344586",
+  "paired_run": "arc_challenge_100_139",
+  "server": "139",
+  "gpu_index": 4
+}

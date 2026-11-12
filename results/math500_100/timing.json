@@ -1,0 +1,13 @@
+{
+  "invocation_elapsed_seconds": [
+    877.818,
+    20.261,
+    91.262
+  ],
+  "cumulative_active_seconds": 989.341,
+  "includes_failed_and_recovery_attempts": true,
+  "queue_wait_excluded": true,
+  "phases_included": [
+    "evaluation"
+  ]
+}

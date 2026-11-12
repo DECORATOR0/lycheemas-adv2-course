@@ -1,0 +1,22 @@
+{
+  "selected_examples": 100,
+  "recorded_examples": 100,
+  "completed_examples": 100,
+  "errors": 0,
+  "terminal_rejected": 0,
+  "correct": 75,
+  "accuracy_full_denominator": 0.75,
+  "gate_attempt_decisions": {
+    "pass": 0,
+    "retry": 0,
+    "reject": 0
+  },
+  "messages_accepted_after_retry": 0,
+  "model_calls": 1102,
+  "prompt_tokens": 1032216,
+  "completion_tokens": 223277,
+  "invocation_elapsed_s": 485.077,
+  "status": "complete",
+  "scoring_review": "rescore_audit.json",
+  "scoring_revision": "math_notation_v2"
+}

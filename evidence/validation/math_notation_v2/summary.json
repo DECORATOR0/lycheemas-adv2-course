@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "tests": 0,
+    "ruff": 0
+  },
+  "test_count": 29,
+  "runs": {
+    "math500": {
+      "checked": 20,
+      "correct_after": 15,
+      "changed_ids": [],
+      "all_result_files_byte_unchanged": true,
+      "windows_gbk_stdout_ok": true
+    },
+    "math500_100": {
+      "checked": 96,
+      "correct_after": 79,
+      "changed_ids": [
+        "math500:test:409",
+        "math500:test:235",
+        "math500:test:70",
+        "math500:test:73",
+        "math500:test:281",
+        "math500:test:435",
+        "math500:test:284"
+      ],
+      "all_result_files_byte_unchanged": true,
+      "windows_gbk_stdout_ok": true
+    },
+    "math500_100_no_adv2": {
+      "checked": 100,
+      "correct_after": 75,
+      "changed_ids": [
+        "math500:test:379",
+        "math500:test:409",
+        "math500:test:235",
+        "math500:test:70",
+        "math500:test:73",
+        "math500:test:281",
+        "math500:test:435",
+        "math500:test:284"
+      ],
+      "all_result_files_byte_unchanged": true,
+      "windows_gbk_stdout_ok": true
+    }
+  }
+}

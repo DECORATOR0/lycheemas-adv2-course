@@ -1,0 +1,7 @@
+{
+  "evaluation_gate": false,
+  "selection_identical_to_source": true,
+  "prompts_identical_to_source": true,
+  "new_optimization_calls": 0,
+  "same_server_pair": true
+}

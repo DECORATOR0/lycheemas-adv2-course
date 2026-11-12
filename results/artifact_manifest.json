@@ -1,5 +1,20 @@
 [
   {
+    "directory": "results/arc_challenge_100",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Scores unchanged"
+  },
+  {
+    "directory": "results/arc_challenge_100_139",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Scores unchanged"
+  },
+  {
+    "directory": "results/arc_challenge_100_139_no_adv2",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Scores unchanged"
+  },
+  {
     "directory": "results/arc_easy",
     "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
     "scoring_processing": "Scores unchanged"
@@ -11,6 +26,16 @@
   },
   {
     "directory": "results/math500",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Uniform rescoring documented in rescore_audit.json"
+  },
+  {
+    "directory": "results/math500_100",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Uniform rescoring documented in rescore_audit.json"
+  },
+  {
+    "directory": "results/math500_100_no_adv2",
     "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
     "scoring_processing": "Uniform rescoring documented in rescore_audit.json"
   },

@@ -1,0 +1,165 @@
+{
+  "run_name": "arc_challenge_100_139_no_adv2",
+  "state": "review_complete",
+  "selected": 100,
+  "append_only_result_events": 100,
+  "latest_records": 100,
+  "completed": 100,
+  "error_ids": [],
+  "missing_ids": [],
+  "terminal_rejected": 0,
+  "correct_saved": 91,
+  "accuracy_saved_full_denominator": 0.91,
+  "changed_roles": [],
+  "prompt_application_checks": 1100,
+  "complete_audit_source_checks": 0,
+  "gate_attempt_decisions": {
+    "pass": 0,
+    "retry": 0,
+    "reject": 0
+  },
+  "rejection_checks": [],
+  "retry_pass_transitions": [],
+  "manual_scoring_candidates": [
+    {
+      "id": "arc_challenge_test_Mercury_7219678",
+      "question": "Desalination removes salt from water. Removing salt from water can be risky because the process is expensive and slow. Sometimes the technology does not work. A beach community's surface and ground water was decreasing. The community decided to construct a large-scale plant to remove salt from the bay water. The plan to construct a salt-removing plant was accepted because the community\nA. needed increased resources.\nB. had access to advanced technology.\nC. had unlimited financial resources.\nD. needed to ease social pressures.",
+      "prediction": "D",
+      "reference": "A",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_NAEP_2000_8_S11+10",
+      "question": "All of the following would be helpful in separating a mixture of sand and salt EXCEPT\nA. a magnet\nB. a glass cup\nC. a filter paper and funnel\nD. water",
+      "prediction": "B",
+      "reference": "A",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7235638",
+      "question": "Images from the Voyager and the Galileo spacecraft provide evidence Europa has a liquid ocean under a surface of ice that results in part from distinctive, surface-cracking patterns produced by which events?\nA. volcanic eruptions\nB. tectonic movements\nC. asteroid impacts\nD. solar flares",
+      "prediction": "B",
+      "reference": "C",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_175053",
+      "question": "A science student notices that the contents of one of the test tubes in an experiment are bubbling and changing colors. Before completing the experiment, the student records that the substance in this particular test tube is undergoing a chemical change. The student's statement is an example of\nA. an observation.\nB. a hypothesis.\nC. a conclusion.\nD. an inference.",
+      "prediction": "A",
+      "reference": "D",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7139650",
+      "question": "Some new cars use special braking systems to recover energy when the brakes are applied. This energy is stored in special batteries and is used to power the electric motor. What type of energy are the brakes storing as they slow down the car?\nA. gravitational\nB. kinetic\nC. potential\nD. thermal",
+      "prediction": "D",
+      "reference": "C",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7212888",
+      "question": "Researchers at a science laboratory have found ways to make carbon nanotubes from recycled plastic grocery bags. These nanotubes are then used as components of batteries. This approach best illustrates the ability of technology to\nA. increase resource availability.\nB. improve existing products.\nC. deplete available resources.\nD. cause environmental degradation.",
+      "prediction": "B",
+      "reference": "A",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_184730",
+      "question": "Two organisms mate and produce offspring. Which of the following statements best explains why the offspring are unable to reproduce?\nA. The parents are of a different genus and a different species.\nB. The parents are of a different species, but of the same genus.\nC. The parents are of the same genus and of the same species.\nD. The parents are of the same species, but of a different genus.",
+      "prediction": "A",
+      "reference": "B",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_7172708",
+      "question": "There are several theories that exist concerning the way dinosaurs became extinct. If new evidence is found that appears to challenge a particular theory on dinosaur extinction, what happens to the old theory?\nA. It is replaced.\nB. It is modified.\nC. It becomes law.\nD. It becomes suspect.",
+      "prediction": "D",
+      "reference": "B",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    },
+    {
+      "id": "arc_challenge_test_Mercury_402341",
+      "question": "In what order are the Sun, Moon, and Earth during a total lunar eclipse?\nA. Earth-Moon-Sun\nB. Earth-Sun-Moon\nC. Moon-Sun-Earth\nD. Moon-Earth-Sun",
+      "prediction": "B",
+      "reference": "D",
+      "score": {
+        "correct": false,
+        "scorer": "option_exact"
+      },
+      "representation_check": false
+    }
+  ],
+  "coverage_all_selected": {
+    "subject_from_type_subject_or_unique_id": {
+      "unknown": 100
+    },
+    "level": {
+      "unknown": 100
+    },
+    "subject_level": {
+      "unknown / unknown": 100
+    }
+  },
+  "usage_evaluation_all_attempts": {
+    "calls": 1100,
+    "prompt_tokens": 489228,
+    "completion_tokens": 98522,
+    "total_tokens": 587750,
+    "incomplete_outputs": 0,
+    "invalid_judge_schema_outputs": 0,
+    "format_retries": 0
+  },
+  "usage_optimization_counted_once": {
+    "calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "incomplete_outputs": 0,
+    "invalid_judge_schema_outputs": 0,
+    "format_retries": 0
+  },
+  "usage_artifact_total": {
+    "calls": 1100,
+    "prompt_tokens": 489228,
+    "completion_tokens": 98522,
+    "total_tokens": 587750,
+    "incomplete_outputs": 0,
+    "invalid_judge_schema_outputs": 0,
+    "format_retries": 0
+  },
+  "structural_or_score_replay_issues": [],
+  "cost_note": "Frozen previously optimized prompts do not incur new optimization; a copied source optimization is counted once only.",
+  "independent_exact_label_checks": 100
+}

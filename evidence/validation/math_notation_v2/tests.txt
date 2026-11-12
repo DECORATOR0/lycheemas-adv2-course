@@ -1,0 +1,41 @@
+test_actual_maspo_optimizes_five_shared_roles (test_course.CourseTests.test_actual_maspo_optimizes_five_shared_roles) ... ok
+test_arc_challenge_uses_choice_workflow_and_preserves_numeric_labels (test_course.CourseTests.test_arc_challenge_uses_choice_workflow_and_preserves_numeric_labels) ... ok
+test_candidate_prompt_is_shared_and_reexecutes_both_rounds (test_course.CourseTests.test_candidate_prompt_is_shared_and_reexecutes_both_rounds) ... ok
+test_data_leakage_rejected (test_course.CourseTests.test_data_leakage_rejected) ... ok
+test_disable_adv2_only_removes_audits_from_cli_evaluation (test_course.CourseTests.test_disable_adv2_only_removes_audits_from_cli_evaluation) ... arc_easy 1/1 ok correct=True
+{"selected_examples": 1, "recorded_examples": 1, "completed_examples": 1, "errors": 0, "terminal_rejected": 0, "correct": 1, "accuracy_full_denominator": 1.0, "gate_attempt_decisions": {"pass": 11, "retry": 0, "reject": 0}, "messages_accepted_after_retry": 0, "model_calls": 22, "prompt_tokens": 22, "completion_tokens": 22, "invocation_elapsed_s": 0.032, "status": "complete"}
+{"selected_examples": 1, "recorded_examples": 1, "completed_examples": 1, "errors": 0, "terminal_rejected": 0, "correct": 1, "accuracy_full_denominator": 1.0, "gate_attempt_decisions": {"pass": 11, "retry": 0, "reject": 0}, "messages_accepted_after_retry": 0, "model_calls": 22, "prompt_tokens": 22, "completion_tokens": 22, "invocation_elapsed_s": 0.0, "status": "complete"}
+arc_easy 1/1 ok correct=True
+{"selected_examples": 1, "recorded_examples": 1, "completed_examples": 1, "errors": 0, "terminal_rejected": 0, "correct": 1, "accuracy_full_denominator": 1.0, "gate_attempt_decisions": {"pass": 0, "retry": 0, "reject": 0}, "messages_accepted_after_retry": 0, "model_calls": 11, "prompt_tokens": 11, "completion_tokens": 11, "invocation_elapsed_s": 0.016, "status": "complete"}
+{"selected_examples": 1, "recorded_examples": 1, "completed_examples": 1, "errors": 0, "terminal_rejected": 0, "correct": 1, "accuracy_full_denominator": 1.0, "gate_attempt_decisions": {"pass": 0, "retry": 0, "reject": 0}, "messages_accepted_after_retry": 0, "model_calls": 11, "prompt_tokens": 11, "completion_tokens": 11, "invocation_elapsed_s": 0.0, "status": "complete"}
+ok
+test_full_denominator_includes_errors_and_rejections (test_course.CourseTests.test_full_denominator_includes_errors_and_rejections) ... ok
+test_incomplete_json_is_retried_and_never_accepted (test_course.CourseTests.test_incomplete_json_is_retried_and_never_accepted) ... ok
+test_malformed_comparison_cannot_win (test_course.CourseTests.test_malformed_comparison_cannot_win) ... ok
+test_math_and_choice_scoring (test_course.CourseTests.test_math_and_choice_scoring) ... ok
+test_native_langgraph_and_graphview_match (test_course.CourseTests.test_native_langgraph_and_graphview_match) ... Executing <Task pending name='Task-157' coro=<CourseTests.test_native_langgraph_and_graphview_match() running at <delivery-root>\repo\tests\test_course.py:254> wait_for=<Task pending name='Task-158' coro=<RunnableCallable.ainvoke() running at <local-user>\AppData\Local\Temp\lychee-course-graph-test\langgraph\_internal\_runnable.py:484> cb=[Task.task_wakeup()] created at <local-user>\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:422> cb=[_run_until_complete_cb() at <local-user>\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:181] created at <local-user>\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py:100> took 0.687 seconds
+ok
+test_proposal_budget_is_independent_and_truncation_fails (test_course.CourseTests.test_proposal_budget_is_independent_and_truncation_fails) ... ok
+test_rejection_is_absent_in_spatial_temporal_and_final (test_course.CourseTests.test_rejection_is_absent_in_spatial_temporal_and_final) ... ok
+test_restricted_arithmetic_runs_and_refuses_external_operations (test_course.CourseTests.test_restricted_arithmetic_runs_and_refuses_external_operations) ... ok
+test_resume_rejects_same_id_changed_data_or_prompts (test_course.CourseTests.test_resume_rejects_same_id_changed_data_or_prompts) ... ok
+test_retry_propagates_only_corrected_output (test_course.CourseTests.test_retry_propagates_only_corrected_output) ... ok
+test_text_truncation_retries_concisely_with_accurate_call_records (test_course.CourseTests.test_text_truncation_retries_concisely_with_accurate_call_records) ... ok
+test_topology_exact_spatial_temporal (test_course.CourseTests.test_topology_exact_spatial_temporal) ... ok
+test_unicode_pi_matches_latex_pi_without_changing_value (test_course.CourseTests.test_unicode_pi_matches_latex_pi_without_changing_value) ... ok
+test_valid_json_at_length_limit_is_complete_without_retry (test_course.CourseTests.test_valid_json_at_length_limit_is_complete_without_retry) ... ok
+test_missing_verdict_retries_without_defaulting_to_pass (test_io_schema.JudgeSchemaTests.test_missing_verdict_retries_without_defaulting_to_pass) ... ok
+test_wrong_types_and_missing_feedback_fail_shape_validation (test_io_schema.JudgeSchemaTests.test_wrong_types_and_missing_feedback_fail_shape_validation) ... ok
+test_base_annotation_requires_requested_base (test_math_scoring.MathNotationTests.test_base_annotation_requires_requested_base) ... ok
+test_degree_suffix_in_angle_context (test_math_scoring.MathNotationTests.test_degree_suffix_in_angle_context) ... ok
+test_grade_ordinals_require_explicit_grade_question (test_math_scoring.MathNotationTests.test_grade_ordinals_require_explicit_grade_question) ... ok
+test_interval_notation_keeps_endpoints_and_order (test_math_scoring.MathNotationTests.test_interval_notation_keeps_endpoints_and_order) ... ok
+test_plus_minus_only_expands_requested_root_lists (test_math_scoring.MathNotationTests.test_plus_minus_only_expands_requested_root_lists) ... ok
+test_rescore_dry_run_and_complete_preserved_audit (test_math_scoring.MathNotationTests.test_rescore_dry_run_and_complete_preserved_audit) ... ok
+test_tex_fraction_single_token_arguments (test_math_scoring.MathNotationTests.test_tex_fraction_single_token_arguments) ... ok
+test_unicode_radicals_preserve_scope (test_math_scoring.MathNotationTests.test_unicode_radicals_preserve_scope) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 1.382s
+
+OK

@@ -1,0 +1,31 @@
+test_actual_maspo_optimizes_five_shared_roles (test_course.CourseTests) ... ok
+test_arc_challenge_uses_choice_workflow_and_preserves_numeric_labels (test_course.CourseTests) ... ok
+test_candidate_prompt_is_shared_and_reexecutes_both_rounds (test_course.CourseTests) ... ok
+test_data_leakage_rejected (test_course.CourseTests) ... ok
+test_disable_adv2_only_removes_audits_from_cli_evaluation (test_course.CourseTests) ... arc_easy 1/1 ok correct=True
+{"selected_examples": 1, "recorded_examples": 1, "completed_examples": 1, "errors": 0, "terminal_rejected": 0, "correct": 1, "accuracy_full_denominator": 1.0, "gate_attempt_decisions": {"pass": 11, "retry": 0, "reject": 0}, "messages_accepted_after_retry": 0, "model_calls": 22, "prompt_tokens": 22, "completion_tokens": 22, "invocation_elapsed_s": 0.011, "status": "complete"}
+{"selected_examples": 1, "recorded_examples": 1, "completed_examples": 1, "errors": 0, "terminal_rejected": 0, "correct": 1, "accuracy_full_denominator": 1.0, "gate_attempt_decisions": {"pass": 11, "retry": 0, "reject": 0}, "messages_accepted_after_retry": 0, "model_calls": 22, "prompt_tokens": 22, "completion_tokens": 22, "invocation_elapsed_s": 0.0, "status": "complete"}
+arc_easy 1/1 ok correct=True
+{"selected_examples": 1, "recorded_examples": 1, "completed_examples": 1, "errors": 0, "terminal_rejected": 0, "correct": 1, "accuracy_full_denominator": 1.0, "gate_attempt_decisions": {"pass": 0, "retry": 0, "reject": 0}, "messages_accepted_after_retry": 0, "model_calls": 11, "prompt_tokens": 11, "completion_tokens": 11, "invocation_elapsed_s": 0.004, "status": "complete"}
+{"selected_examples": 1, "recorded_examples": 1, "completed_examples": 1, "errors": 0, "terminal_rejected": 0, "correct": 1, "accuracy_full_denominator": 1.0, "gate_attempt_decisions": {"pass": 0, "retry": 0, "reject": 0}, "messages_accepted_after_retry": 0, "model_calls": 11, "prompt_tokens": 11, "completion_tokens": 11, "invocation_elapsed_s": 0.0, "status": "complete"}
+ok
+test_full_denominator_includes_errors_and_rejections (test_course.CourseTests) ... ok
+test_incomplete_json_is_retried_and_never_accepted (test_course.CourseTests) ... ok
+test_malformed_comparison_cannot_win (test_course.CourseTests) ... ok
+test_math_and_choice_scoring (test_course.CourseTests) ... ok
+test_native_langgraph_and_graphview_match (test_course.CourseTests) ... Executing <Task pending name='Task-142' coro=<IsolatedAsyncioTestCase._asyncioLoopRunner() running at <model-environment>/lib/python3.10/unittest/async_case.py:101> wait_for=<Future pending cb=[shield.<locals>._outer_done_callback() at <model-environment>/lib/python3.10/asyncio/tasks.py:864, Task.task_wakeup()] created at <model-environment>/lib/python3.10/asyncio/base_events.py:429> created at <model-environment>/lib/python3.10/unittest/async_case.py:117> took 0.645 seconds
+ok
+test_proposal_budget_is_independent_and_truncation_fails (test_course.CourseTests) ... ok
+test_rejection_is_absent_in_spatial_temporal_and_final (test_course.CourseTests) ... ok
+test_restricted_arithmetic_runs_and_refuses_external_operations (test_course.CourseTests) ... ok
+test_resume_rejects_same_id_changed_data_or_prompts (test_course.CourseTests) ... ok
+test_retry_propagates_only_corrected_output (test_course.CourseTests) ... ok
+test_text_truncation_retries_concisely_with_accurate_call_records (test_course.CourseTests) ... ok
+test_topology_exact_spatial_temporal (test_course.CourseTests) ... ok
+test_unicode_pi_matches_latex_pi_without_changing_value (test_course.CourseTests) ... ok
+test_valid_json_at_length_limit_is_complete_without_retry (test_course.CourseTests) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.043s
+
+OK

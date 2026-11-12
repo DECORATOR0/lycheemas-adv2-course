@@ -1,0 +1,9 @@
+{
+  "source_public_run": "results/math500",
+  "original_optimization_calls": 790,
+  "new_optimization_calls": 0,
+  "training_examples": 4,
+  "test_design": "Original 20 IDs plus seed43 random 80 from the remaining 480; all 100 evaluated anew",
+  "generation_max_tokens": 2048,
+  "initial_results_preserved": true
+}

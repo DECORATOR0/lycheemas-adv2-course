@@ -1,0 +1,485 @@
+{
+  "checked_at": "2026-11-12T15:30:32.192058+08:00",
+  "models": {
+    "object": "list",
+    "data": [
+      {
+        "id": "Qwen3-8B",
+        "object": "model",
+        "created": 1794468631,
+        "owned_by": "vllm",
+        "root": "Qwen3-8B",
+        "parent": null,
+        "max_model_len": 16384,
+        "permission": [
+          {
+            "id": "modelperm-9309820adb62fa3a",
+            "object": "model_permission",
+            "created": 1794468631,
+            "allow_create_engine": false,
+            "allow_sampling": true,
+            "allow_logprobs": true,
+            "allow_search_indices": false,
+            "allow_view": true,
+            "allow_fine_tuning": false,
+            "organization": "*",
+            "group": null,
+            "is_blocking": false
+          }
+        ]
+      }
+    ]
+  },
+  "concurrency": 8,
+  "passed": true,
+  "results": [
+    {
+      "index": 0,
+      "request": {
+        "model": "Qwen3-8B",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with only the integer answer: 17+23."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 64,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "id": "chatcmpl-b22ec9ca8d54cc1f",
+        "object": "chat.completion",
+        "created": 1794468632,
+        "model": "Qwen3-8B",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "40",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 29,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "elapsed_s": 0.223,
+      "answer_correct": true,
+      "thinking_content_present": false
+    },
+    {
+      "index": 1,
+      "request": {
+        "model": "Qwen3-8B",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with only the integer answer: 18+23."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 64,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "id": "chatcmpl-af91fa7b00ffdb10",
+        "object": "chat.completion",
+        "created": 1794468632,
+        "model": "Qwen3-8B",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "41",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 29,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "elapsed_s": 0.257,
+      "answer_correct": true,
+      "thinking_content_present": false
+    },
+    {
+      "index": 2,
+      "request": {
+        "model": "Qwen3-8B",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with only the integer answer: 19+23."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 64,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "id": "chatcmpl-a541d4e64c087457",
+        "object": "chat.completion",
+        "created": 1794468632,
+        "model": "Qwen3-8B",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "42",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 29,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "elapsed_s": 0.257,
+      "answer_correct": true,
+      "thinking_content_present": false
+    },
+    {
+      "index": 3,
+      "request": {
+        "model": "Qwen3-8B",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with only the integer answer: 20+23."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 64,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "id": "chatcmpl-9fe8e11428b78c08",
+        "object": "chat.completion",
+        "created": 1794468632,
+        "model": "Qwen3-8B",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "43",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 29,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "elapsed_s": 0.255,
+      "answer_correct": true,
+      "thinking_content_present": false
+    },
+    {
+      "index": 4,
+      "request": {
+        "model": "Qwen3-8B",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with only the integer answer: 21+23."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 64,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "id": "chatcmpl-bfe6b7a75c7d933c",
+        "object": "chat.completion",
+        "created": 1794468632,
+        "model": "Qwen3-8B",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "44",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 29,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "elapsed_s": 0.255,
+      "answer_correct": true,
+      "thinking_content_present": false
+    },
+    {
+      "index": 5,
+      "request": {
+        "model": "Qwen3-8B",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with only the integer answer: 22+23."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 64,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "id": "chatcmpl-baf8155eec336d40",
+        "object": "chat.completion",
+        "created": 1794468632,
+        "model": "Qwen3-8B",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "45",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 29,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "elapsed_s": 0.255,
+      "answer_correct": true,
+      "thinking_content_present": false
+    },
+    {
+      "index": 6,
+      "request": {
+        "model": "Qwen3-8B",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with only the integer answer: 23+23."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 64,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "id": "chatcmpl-a2c127b91f47b294",
+        "object": "chat.completion",
+        "created": 1794468632,
+        "model": "Qwen3-8B",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "46",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 29,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "elapsed_s": 0.254,
+      "answer_correct": true,
+      "thinking_content_present": false
+    },
+    {
+      "index": 7,
+      "request": {
+        "model": "Qwen3-8B",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with only the integer answer: 24+23."
+          }
+        ],
+        "temperature": 0,
+        "max_tokens": 64,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "response": {
+        "id": "chatcmpl-b5a027c55d137eef",
+        "object": "chat.completion",
+        "created": 1794468632,
+        "model": "Qwen3-8B",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "47",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "prompt_tokens": 26,
+          "total_tokens": 29,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      },
+      "elapsed_s": 0.253,
+      "answer_correct": true,
+      "thinking_content_present": false
+    }
+  ]
+}

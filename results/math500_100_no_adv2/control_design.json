@@ -1,0 +1,10 @@
+{
+  "configuration_differences": {
+    "evaluation_gate": [
+      true,
+      false
+    ]
+  },
+  "selection_identical": true,
+  "prompts_identical": true
+}

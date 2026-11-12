@@ -4,11 +4,13 @@
 
 组员：熊思远（2023312323）、余思成（2023311605）。课程报告日期：2026-11-12。
 
-- [课程报告与安装附录](docs/report/课程报告.md)
-- [Word 报告](docs/report/运行前优化-熊思远-余思成.docx) · [PDF 报告](docs/report/运行前优化-熊思远-余思成.pdf)
+- [合并课程报告](docs/report/expanded/课程报告.md)
+- [Word 报告](docs/report/expanded/运行前优化-熊思远-余思成.docx) · [PDF 报告](docs/report/expanded/运行前优化-熊思远-余思成.pdf)
+- [运行参数、百题对照、调用成本与复查](docs/extension_details.md)
 - [框架适配、模块位置和两轮信息流](docs/architecture.md)
 - [历史主实验的逐题证据和复算方法](evidence/reproduction/README.md)
 - [数据来源、固定抽样和许可](evidence/data/SOURCES.md)
+- [百题扩测数据与抽样记录](evidence/data/extension/README.md)
 
 ## 执行流程
 
@@ -58,9 +60,9 @@ python scripts/run_course.py \
 
 `--phase optimize` 只生成提示词产物；`--phase eval` 加载同一输出目录中的提示词并执行测试。重复相同命令可恢复运行，已完成题会跳过，失败题可重试；结果与全部调用记录均保留。修改会影响结果的参数时使用新输出目录。
 
-支持 `gsm8k`、`math500`（内部名 `math`）、`arc_easy`、`openbookqa`。切换 benchmark 时同时切换对应 train/test 文件和输出目录。各 benchmark 可以依次运行，题目之间通过 `--concurrency` 并发；一题内部维持固定两轮顺序。
+支持 `gsm8k`、`math500`（内部名 `math`）、`arc_easy`、`arc_challenge`、`openbookqa`。切换 benchmark 时同时切换对应 train/test 文件和输出目录。各 benchmark 可以依次运行，题目之间通过 `--concurrency` 并发；一题内部维持固定两轮顺序。
 
-提示词提议预算由 `--proposal-max-tokens` 单独控制，默认 1536。MATH 设为 3072，角色生成在优化阶段为 1024，最终测试阶段为 2048；其余三个 benchmark 的角色生成均为 1024。未完成的文本或 JSON 最多追加两次格式重试，每次响应及用量均记录，仍不完整则报错。
+提示词提议预算由 `--proposal-max-tokens` 单独控制，默认 1536。MATH 设为 3072，角色生成在优化阶段为 1024，最终测试阶段为 2048；其他 benchmark 的角色生成均为 1024。未完成的文本或 JSON 最多追加两次格式重试，每次响应及用量均记录，仍不完整则报错。
 
 MATH 的两个阶段使用同一组选题和已完成的优化产物：
 
@@ -84,9 +86,47 @@ python scripts/run_course.py --phase eval --benchmark math500 \
   --max-tokens 2048 --proposal-max-tokens 3072
 ```
 
+### 复用提示词运行无 ADv2 对照
+
+在新目录中复制开启组的提示词及搜索记录，使用 `--phase eval --disable-adv2`，不重复优化。对照组与开启组使用同一模型服务、相同题目和生成参数。以下 ARC-Challenge 命令使用保存的百题配置：
+
+```bash
+mkdir -p runs/arc-challenge-off
+cp results/arc_challenge_100/prompts.json runs/arc-challenge-off/
+cp results/arc_challenge_100/prompts_stats.json runs/arc-challenge-off/
+python scripts/run_course.py --phase eval --benchmark arc_challenge \
+  --train-file evidence/data/extension/arc_challenge_train.jsonl \
+  --test-file evidence/data/extension/arc_challenge_test100.jsonl \
+  --output runs/arc-challenge-off \
+  --base-url http://127.0.0.1:8000/v1 --model Qwen3-8B \
+  --train-n 4 --eval-n 100 --concurrency 8 --seed 42 \
+  --depth 1 --eval-batch 4 --beam-width 2 --max-retries 1 \
+  --engine langgraph --max-tokens 1024 --proposal-max-tokens 1536 \
+  --disable-adv2
+```
+
+MATH 百题对照使用相应的训练文件、`evidence/data/extension/math500_test100.jsonl` 和 MATH 优化提示词，保持 `max_tokens=2048`、`proposal_max_tokens=3072`。关闭 ADv2 后仍执行相同的 11 个节点，省去审核与语义反馈重生成；客户端输出完整性重试继续生效。`config.json` 中开关记录为 `evaluation_gate`，配对结果保存在不同目录。
+
 ## 结果与证据
 
-2026-11-12 的真实组合实验使用 Qwen3-8B、单张 40GB A100、非思考模式和 LangGraph 执行。每项使用 4 道训练题优化、20 道独立测试题，全部 80 题完成：
+### 百题同机开关对照
+
+每项任务在同一服务器、同一模型服务上比较开启与关闭 ADv2。题目、冻结角色提示词和生成参数相同，仅切换 `evaluation_gate`；两组都重新推理全部 100 题，不重复运行 MASPO。
+
+| 数据集 | 服务器 | 开启 ADv2 | 关闭 ADv2 | 差值（百分点） |
+|---|---|---:|---:|---:|
+| MATH500 | 254 | [79/100（79%）](results/math500_100/summary.json) | [75/100（75%）](results/math500_100_no_adv2/summary.json) | +4 |
+| ARC-Challenge | 139 | [91/100（91%）](results/arc_challenge_100_139/summary.json) | [91/100（91%）](results/arc_challenge_100_139_no_adv2/summary.json) | 0 |
+
+MATH500 在本次百题测试中由 75% 增至 79%，净提高 4 个百分点；ARC-Challenge 两组均为 91%。数学仅开启组答对 4 题、仅关闭组答对 0 题；ARC 则分别有 2 题，收益与损失相抵。逐题复核见 [MATH](evidence/validation/extension/math500_final_review.md) 和 [ARC](evidence/validation/extension/arc_challenge_final_review.md)。
+
+MATH 百题包含原 20 题与 seed=43 新抽取的 80 题，使用既有优化提示词；ARC-Challenge 先在 254 独立优化，再在 139 的 48GB RTX 4090 上运行两组同机对照。254 的原 ARC 运行 91/100 及其 702 次优化调用完整保留。所有任务使用 Qwen3-8B 非思考模式、LangGraph、五 Agent 两轮与 final，题目并发为 8。
+
+数学两组按同一确定性等价规则复评，原模型输出和调用用量不变；审计见 [开启组](results/math500_100/rescore_audit.json) 和 [关闭组](results/math500_100_no_adv2/rescore_audit.json)。MATH 题 454 的缺字段审核恢复单独保存在 [client_recovery.json](results/math500_100/client_recovery.json)，原 99 道完成记录保持不变。
+
+### 初始四项可用性测试
+
+初始测试均使用 4 道训练题优化、20 道独立测试题，共 80/80 题完成。原结果保持如下：
 
 | 数据集 | 正确 / 全部测试 | 准确率 | 重试次数 | 阻断消息 | 修订后通过 |
 |---|---:|---:|---:|---:|---:|
@@ -95,13 +135,15 @@ python scripts/run_course.py --phase eval --benchmark math500 \
 | [ARC-Easy](results/arc_easy/summary.json) | 18 / 20 | 90% | 14 | 11 | 3 |
 | [OpenBookQA](results/openbookqa/summary.json) | 19 / 20 | 95% | 35 | 27 | 8 |
 
-MASPO 改变了 GSM8K 的 E、MATH 的 C、ARC-Easy 的 D 提示词；OpenBookQA 完成搜索后保留初始提示词。运行时自然触发了反馈重生成与阻断；“修订后通过”表示审核器接受，实际答案既有改对，也有改错或保持原值的情况。逐项复核见 `evidence/validation/*_live_review.*`，报告举出 GSM8K 题 54 的正确初稿被误判案例。
+MASPO 改变了 GSM8K 的 E、MATH 的 C、ARC-Easy 的 D 提示词；OpenBookQA 完成搜索后保留初始提示词。“修订后通过”表示审核器接受，具体答案可能改对、改错或保持原值。报告给出实际纠错及正确初稿被误判的案例，逐项记录保存在 `evidence/validation/*_live_review.*`。
 
-MATH 完成优化后，将全部 20 道测试统一改为 2048 token 上限运行，再按原配置恢复两道执行错误题。最终评分对全部 20 题统一应用数学等价规则，修复 `7π` 与 `7\pi` 的格式误判；原输出与旧评分均保留在[重评分记录](results/math500/rescore_audit.json)中。重算命令为 `python scripts/rescore_math.py results/math500`。
+### 功能验证与调用成本
 
-17 项工程测试在实验服务器通过，另有真实模型三条门控路径探针全部通过；探针的草稿与修订文本为预设内容，详见[测试记录](evidence/validation/tests.txt)与[探针记录](evidence/validation/gate_probe/summary.json)。
+初始 17 项工程测试在服务器通过；扩展和开关代码也经过各阶段服务器验证，139 上 19 项测试全部通过。最终数学评分版本另通过 29 项本地回归测试及 Ruff 检查，见 [最终评分验证](evidence/validation/math_notation_v2/summary.json)。真实模型的三条门控控制路径全部通过；预设草稿探针见 [记录](evidence/validation/gate_probe/summary.json)，139 的 8 并发非思考请求验证见 [服务探针](evidence/validation/139/service_probe.json)。
 
-全部完成流程及保留的中止尝试共 5,181 次模型调用，输入 3,857,368 token、输出 605,077 token。MATH 成本包含一次已完成优化的 790 次调用、最终测试及恢复的 490 次调用；另计首次失败优化 314 次和旧 1024-token 测试 459 次。原始记录分别保存在 `results/math500`、`results/math500_initial_failed` 和 `results/math500_eval1024_incomplete`，复用的优化不重复计费。
+初始实验及其保留的中止尝试共 5,181 次模型调用；后续五项运行新增 9,880 次，合计 15,061 次，输入 11,698,496 token、输出 1,757,360 token。所有失败与恢复调用均计入；MATH 原 790 次优化仅计在初始账本，ARC 702 次优化仅计在 254 原运行。逐项成本、版本及复算方法见 [实验细节](docs/extension_details.md)。
+
+### 历史主实验复算
 
 历史复算使用同批完整数学主运行的原评分字段：
 
@@ -111,7 +153,7 @@ MATH 完成优化后，将全部 20 道测试统一改为 2048 token 上限运�
 | MATH500 | 398 / 500 | 79.60% | 2026-04-23 |
 | GSM8K 独立重复 | 1213 / 1319 | 91.96% | 2026-07-11 |
 
-论文 v1 Table 1 的相应结果为 91.74% 和 78.40%。归档主配置使用 Qwen3.5-9B 选择器、top-20 后选择 1–5 个指标、60% 通过阈值；v1 使用 GPT-4.1-mini 选择器、直接 top-5 和零容忍审核。版本与配置说明见[历史证据](evidence/reproduction/README.md)。
+论文 v1 Table 1 的相应结果为 91.74% 和 78.40%。归档主配置使用 Qwen3.5-9B 选择器、top-20 后选择 1–5 个指标、60% 通过阈值；v1 使用 GPT-4.1-mini 选择器、直接 top-5 和零容忍审核。版本与配置说明见 [历史证据](evidence/reproduction/README.md)。
 
 ```bash
 python evidence/reproduction/verify_records.py
@@ -125,8 +167,9 @@ python evidence/reproduction/verify_records.py
 | `prompts.json`、`prompts_stats.json`、`evaluation_prompts.json` | 优化提示词、搜索统计和测试实际提示词快照 |
 | `results.jsonl` | 最终答案、评分、可见来源、每次门控与重试 |
 | `summary.json` | 完成数、完整分母准确率和门控统计 |
-| `calls.jsonl` | 逐次模型调用、响应、用途、完整性检查和全部尝试用量 |
-| MATH 的 `optimization_calls.jsonl`、`prompts_source.json` | 复用优化的调用与两阶段预算来源 |
+| `calls.jsonl` | 全部调用、响应、用途、完整性检查和用量 |
+| `prompts_source.json`、MATH 的 `optimization_calls.jsonl` | 冻结提示词和复用优化来源 |
+| `rescore_audit.json`、`client_recovery.json` | 统一数学评分及指定错误题恢复记录 |
 
 ## 方法与来源
 
@@ -136,4 +179,4 @@ python evidence/reproduction/verify_records.py
 - [MASPO](https://arxiv.org/abs/2605.06623)
 - [LycheeMAS](https://github.com/ecoli-hit/LycheeMAS)
 
-数据、复用代码与新代码的来源和许可分别随对应目录保存，代码来源见 [THIRD_PARTY.md](THIRD_PARTY.md)。报告对应代码版本为 `8635db0c51a6d07a6d67707b0b5480d50ad87fc1`。
+数据、复用代码与新代码的来源和许可分别随对应目录保存，代码来源见 [THIRD_PARTY.md](THIRD_PARTY.md)。各阶段运行与最终评分代码版本见 [版本对应表](docs/extension_details.md#实际环境与版本)。

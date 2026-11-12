@@ -1,0 +1,8 @@
+{
+  "checks": {
+    "tests": 0,
+    "ruff": 0
+  },
+  "test_count": 19,
+  "scope": "CLI ADv2 toggle with mocked HTTP, full existing engineering suite, Ruff"
+}

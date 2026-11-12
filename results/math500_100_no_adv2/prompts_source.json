@@ -1,0 +1,7 @@
+{
+  "matched_adv2_run": "results/math500_100",
+  "new_optimization_calls": 0,
+  "only_configuration_difference": "evaluation_gate: true -> false",
+  "prompts": "Copied unchanged from completed ADv2 run",
+  "all_100_questions_evaluated_anew": true
+}

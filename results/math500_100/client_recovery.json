@@ -1,0 +1,11 @@
+{
+  "initial_runtime_code": "84f5389586800512402fd9999573f6539343c738",
+  "recovered_question_ids": [
+    "math500:test:454"
+  ],
+  "schema_retry_patch": "d2941ba808a91c47b5aac08508f020cbda667609",
+  "recovery_scope": "Only the one failed question was resumed. The other 99 completed question records were preserved.",
+  "reason": "Two syntactically valid JSON responses omitted the violations key. They were rejected, never treated as passes. Missing audit schema now enters the existing bounded output-format retry, with at most two additional responses.",
+  "original_failed_attempts_preserved": true,
+  "model_outputs_unmodified": true
+}
