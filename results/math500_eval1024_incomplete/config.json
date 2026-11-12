@@ -1,0 +1,73 @@
+{
+  "benchmark": "math",
+  "train_file": "evidence/data/math500_train.jsonl",
+  "test_file": "evidence/data/math500_test.jsonl",
+  "model": "Qwen3-8B",
+  "train_n": 4,
+  "eval_n": 20,
+  "max_tokens": 1024,
+  "proposal_max_tokens": 3072,
+  "seed": 42,
+  "depth": 1,
+  "eval_batch": 4,
+  "beam_width": 2,
+  "max_retries": 1,
+  "engine": "langgraph",
+  "enable_thinking": false,
+  "rounds": 2,
+  "agents": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "train_ids": [
+    "math500:train:5238",
+    "math500:train:912",
+    "math500:train:204",
+    "math500:train:2006"
+  ],
+  "test_ids": [
+    "math500:test:327",
+    "math500:test:57",
+    "math500:test:12",
+    "math500:test:379",
+    "math500:test:140",
+    "math500:test:125",
+    "math500:test:114",
+    "math500:test:71",
+    "math500:test:377",
+    "math500:test:52",
+    "math500:test:346",
+    "math500:test:456",
+    "math500:test:279",
+    "math500:test:44",
+    "math500:test:302",
+    "math500:test:216",
+    "math500:test:16",
+    "math500:test:15",
+    "math500:test:47",
+    "math500:test:111"
+  ],
+  "indicators": [
+    {
+      "id": "task_fidelity",
+      "description": "Use the original task facts, units, conditions and requested quantity; do not introduce contradictory assumptions.",
+      "keywords": []
+    },
+    {
+      "id": "reasoning_validity",
+      "description": "Arithmetic, algebra and logical steps must be valid and support the stated result; check any reported tool result.",
+      "keywords": []
+    },
+    {
+      "id": "answer_consistency",
+      "description": "A stated answer must agree with the message's own derivation and available evidence; do not propagate a known unresolved contradiction.",
+      "keywords": []
+    }
+  ],
+  "optimization_gate": false,
+  "evaluation_gate": true,
+  "shared_prompts_across_rounds": true
+}

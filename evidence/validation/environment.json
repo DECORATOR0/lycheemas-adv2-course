@@ -1,0 +1,19 @@
+{
+  "python": "3.10.19",
+  "system": "Linux",
+  "packages": {
+    "langgraph": "1.2.20",
+    "langchain-core": "1.7.7",
+    "sympy": "1.14.0",
+    "pydantic": "2.12.4",
+    "vllm": "0.19.1",
+    "torch": "2.10.0",
+    "transformers": "5.6.0.dev0"
+  },
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "executor_and_judge": "Qwen3-8B",
+  "thinking_enabled": false,
+  "vllm_max_model_len": 16384,
+  "vllm_max_num_seqs": 16,
+  "request_concurrency": 8
+}

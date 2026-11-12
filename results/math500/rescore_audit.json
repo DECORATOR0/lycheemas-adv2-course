@@ -1,0 +1,20 @@
+{
+  "checked_examples": 20,
+  "changed_examples": [
+    {
+      "id": "math500:test:279",
+      "prediction": "7π",
+      "reference": "7\\pi",
+      "old_score": {
+        "correct": false,
+        "scorer": "unsupported_or_not_equal"
+      },
+      "new_score": {
+        "correct": true,
+        "scorer": "normalized_exact"
+      }
+    }
+  ],
+  "correct_after": 15,
+  "reason": "Uniform deterministic answer equivalence scoring; Unicode pi and LaTeX pi normalized identically. Model outputs are unchanged."
+}

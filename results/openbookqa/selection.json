@@ -1,0 +1,558 @@
+{
+  "train": [
+    {
+      "id": "openbookqa_train_89",
+      "question": "Water evaporates less\nA. on a hot street\nB. in a basement\nC. on a sunny day\nD. next to a window",
+      "choices": {
+        "text": [
+          "on a hot street",
+          "in a basement",
+          "on a sunny day",
+          "next to a window"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "B",
+      "source_id": "89",
+      "source_index": 912,
+      "split": "train",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_train_7-890",
+      "question": "A bird makes its home in various places, such as\nA. groves of plants\nB. waterways\nC. city streets\nD. public parks",
+      "choices": {
+        "text": [
+          "groves of plants",
+          "waterways",
+          "city streets",
+          "public parks"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "A",
+      "source_id": "7-890",
+      "source_index": 204,
+      "split": "train",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_train_11-331",
+      "question": "Lava is found above the ground because when there is lava there is\nA. a soft song\nB. a frontal lobe\nC. a small indent\nD. a movement happening",
+      "choices": {
+        "text": [
+          "a soft song",
+          "a frontal lobe",
+          "a small indent",
+          "a movement happening"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "D",
+      "source_id": "11-331",
+      "source_index": 2253,
+      "split": "train",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_train_8-439",
+      "question": "Consuming a hot liquid can\nA. Remove years of rust on a knife\nB. sooth a pained esophagus\nC. Cleanse the soul for God\nD. Cure blindness in a child",
+      "choices": {
+        "text": [
+          "Remove years of rust on a knife",
+          "sooth a pained esophagus",
+          "Cleanse the soul for God",
+          "Cure blindness in a child"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "B",
+      "source_id": "8-439",
+      "source_index": 1143,
+      "split": "train",
+      "benchmark": "openbookqa"
+    }
+  ],
+  "test": [
+    {
+      "id": "openbookqa_test_8-493",
+      "question": "In the hottest months in the hottest desert, creatures such as birds may find water to drink\nA. in sticks\nB. in pebbles\nC. in sand\nD. in spiked plants",
+      "choices": {
+        "text": [
+          "in sticks",
+          "in pebbles",
+          "in sand",
+          "in spiked plants"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "D",
+      "source_id": "8-493",
+      "source_index": 327,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_8-393",
+      "question": "A construction group wants to put a shopping center in town, but the only place available is a small nature park with a trail. Deer and other wildlife frequent the park, since it is the only place in the city where trees and fresh water are available for them. The construction group decides to build the shopping center, which means that\nA. the deer are moved to a zoo\nB. the trail is expanded\nC. the mall has a nature park in it\nD. the wildlife environment is destroyed",
+      "choices": {
+        "text": [
+          "the deer are moved to a zoo",
+          "the trail is expanded",
+          "the mall has a nature park in it",
+          "the wildlife environment is destroyed"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "D",
+      "source_id": "8-393",
+      "source_index": 57,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_8-201",
+      "question": "A red-tailed hawk is searching for prey. It is most likely to swoop down on\nA. an eagle\nB. a cow\nC. a gecko\nD. a deer",
+      "choices": {
+        "text": [
+          "an eagle",
+          "a cow",
+          "a gecko",
+          "a deer"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "C",
+      "source_id": "8-201",
+      "source_index": 12,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_998",
+      "question": "Which animal is hiding from a predator?\nA. a tadpole losing its tail as it grows\nB. an angler fish using its Esca to lure another fish\nC. an octopus mimicking the color and texture of a rocky outcrop\nD. a great white shark breaching the water's surface",
+      "choices": {
+        "text": [
+          "a tadpole losing its tail as it grows",
+          "an angler fish using its Esca to lure another fish",
+          "an octopus mimicking the color and texture of a rocky outcrop",
+          "a great white shark breaching the water's surface"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "C",
+      "source_id": "998",
+      "source_index": 379,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_769",
+      "question": "It takes more water to fill a bathtub than a\nA. lake\nB. pool\nC. stomach\nD. holding tank",
+      "choices": {
+        "text": [
+          "lake",
+          "pool",
+          "stomach",
+          "holding tank"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "C",
+      "source_id": "769",
+      "source_index": 140,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_9-199",
+      "question": "Since density = mass / volume, denser liquids such as water sink more than\nA. baby oil\nB. corn syrup or\nC. milk\nD. honey",
+      "choices": {
+        "text": [
+          "baby oil",
+          "corn syrup or",
+          "milk",
+          "honey"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "A",
+      "source_id": "9-199",
+      "source_index": 125,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_9-501",
+      "question": "What may have been formed by a volcano?\nA. Mt. McKinley\nB. Lake Pontchartrain\nC. The great lakes\nD. Niagara Falls",
+      "choices": {
+        "text": [
+          "Mt. McKinley",
+          "Lake Pontchartrain",
+          "The great lakes",
+          "Niagara Falls"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "A",
+      "source_id": "9-501",
+      "source_index": 114,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_8-260",
+      "question": "Decaying vegetation is part of the process that\nA. enables nuclear power to function\nB. enables to emitting of light beams\nC. enables gas powered motors to operate\nD. enables windmills to power electric grids",
+      "choices": {
+        "text": [
+          "enables nuclear power to function",
+          "enables to emitting of light beams",
+          "enables gas powered motors to operate",
+          "enables windmills to power electric grids"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "C",
+      "source_id": "8-260",
+      "source_index": 71,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_7-208",
+      "question": "After a storm\nA. ponds may dry out\nB. flowers will wilt and wither\nC. creek beds may be spilling over\nD. drinking water will be in short supply",
+      "choices": {
+        "text": [
+          "ponds may dry out",
+          "flowers will wilt and wither",
+          "creek beds may be spilling over",
+          "drinking water will be in short supply"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "C",
+      "source_id": "7-208",
+      "source_index": 377,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_7-50",
+      "question": "Overpopulation of an organism can\nA. strain the resources of an ecosystem\nB. cause boundless growth of resources\nC. lead to extinction of the organism\nD. cause the ecosystem to flourish",
+      "choices": {
+        "text": [
+          "strain the resources of an ecosystem",
+          "cause boundless growth of resources",
+          "lead to extinction of the organism",
+          "cause the ecosystem to flourish"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "A",
+      "source_id": "7-50",
+      "source_index": 52,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_1698",
+      "question": "Corn is sometimes used to make\nA. a simple alcohol\nB. water\nC. glass\nD. milk",
+      "choices": {
+        "text": [
+          "a simple alcohol",
+          "water",
+          "glass",
+          "milk"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "A",
+      "source_id": "1698",
+      "source_index": 346,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_7-179",
+      "question": "If a nail is Fe, that nail is\nA. foreign\nB. atomic 26\nC. nickel\nD. atomic 12",
+      "choices": {
+        "text": [
+          "foreign",
+          "atomic 26",
+          "nickel",
+          "atomic 12"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "B",
+      "source_id": "7-179",
+      "source_index": 456,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_7-685",
+      "question": "The majority of a lizard's diet consists of\nA. fleas\nB. crawlies\nC. gummy worms\nD. berries",
+      "choices": {
+        "text": [
+          "fleas",
+          "crawlies",
+          "gummy worms",
+          "berries"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "B",
+      "source_id": "7-685",
+      "source_index": 279,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_1759",
+      "question": "Thermometers\nA. can help you monitor a fever\nB. indicate levels of mercury in the blood\nC. read exactly at 98.6 degrees\nD. are used only for babies",
+      "choices": {
+        "text": [
+          "can help you monitor a fever",
+          "indicate levels of mercury in the blood",
+          "read exactly at 98.6 degrees",
+          "are used only for babies"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "A",
+      "source_id": "1759",
+      "source_index": 44,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_1506",
+      "question": "What is an example of clear weather meaning sunny weather?\nA. more stars are visible on clear nights\nB. cloud cover protects from sunburn\nC. clear days will be warmer\nD. fewer clouds allow for more sunlight",
+      "choices": {
+        "text": [
+          "more stars are visible on clear nights",
+          "cloud cover protects from sunburn",
+          "clear days will be warmer",
+          "fewer clouds allow for more sunlight"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "D",
+      "source_id": "1506",
+      "source_index": 302,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_170",
+      "question": "Which pair don't reproduce the same way?\nA. rabbit and hare\nB. mule and hinny\nC. cat and catfish\nD. caterpillar and butterfly",
+      "choices": {
+        "text": [
+          "rabbit and hare",
+          "mule and hinny",
+          "cat and catfish",
+          "caterpillar and butterfly"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "C",
+      "source_id": "170",
+      "source_index": 216,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_9-675",
+      "question": "A person wants to be able to have more natural power in their home. They choose to cease using a traditional electric company to source this electricity, and so decide to install\nA. sun grafts\nB. sunlight shields\nC. panels collecting sunlight\nD. solar bees",
+      "choices": {
+        "text": [
+          "sun grafts",
+          "sunlight shields",
+          "panels collecting sunlight",
+          "solar bees"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "C",
+      "source_id": "9-675",
+      "source_index": 16,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_7-414",
+      "question": "As gasoline costs rise, alternative fuels are being used, which means that\nA. wind power will be expensive\nB. gas costs will rise\nC. oil costs will be maintained\nD. gasoline will be needed less",
+      "choices": {
+        "text": [
+          "wind power will be expensive",
+          "gas costs will rise",
+          "oil costs will be maintained",
+          "gasoline will be needed less"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "D",
+      "source_id": "7-414",
+      "source_index": 15,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_8-79",
+      "question": "A balloon is filled with helium for a party. After the party, the balloons are left in the living room, where a fireplace is heating the room. The balloons\nA. expand\nB. melt\nC. shrink\nD. fall",
+      "choices": {
+        "text": [
+          "expand",
+          "melt",
+          "shrink",
+          "fall"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "A",
+      "source_id": "8-79",
+      "source_index": 47,
+      "split": "test",
+      "benchmark": "openbookqa"
+    },
+    {
+      "id": "openbookqa_test_7-394",
+      "question": "Light from further away may appear to be less bright than other, closer sources, such as in which instance?\nA. the sun is always bright\nB. the moon is brighter than stars\nC. the moon is brighter than a floodlight\nD. the sun is darker than the moon",
+      "choices": {
+        "text": [
+          "the sun is always bright",
+          "the moon is brighter than stars",
+          "the moon is brighter than a floodlight",
+          "the sun is darker than the moon"
+        ],
+        "label": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "answer": "B",
+      "source_id": "7-394",
+      "source_index": 111,
+      "split": "test",
+      "benchmark": "openbookqa"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "benchmark": "openbookqa",
+  "train_file": "evidence/data/openbookqa_train.jsonl",
+  "test_file": "evidence/data/openbookqa_test.jsonl",
+  "model": "Qwen3-8B",
+  "train_n": 4,
+  "eval_n": 20,
+  "max_tokens": 1024,
+  "proposal_max_tokens": 1536,
+  "seed": 42,
+  "depth": 1,
+  "eval_batch": 4,
+  "beam_width": 2,
+  "max_retries": 1,
+  "engine": "langgraph",
+  "enable_thinking": false,
+  "rounds": 2,
+  "agents": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "train_ids": [
+    "openbookqa_train_89",
+    "openbookqa_train_7-890",
+    "openbookqa_train_11-331",
+    "openbookqa_train_8-439"
+  ],
+  "test_ids": [
+    "openbookqa_test_8-493",
+    "openbookqa_test_8-393",
+    "openbookqa_test_8-201",
+    "openbookqa_test_998",
+    "openbookqa_test_769",
+    "openbookqa_test_9-199",
+    "openbookqa_test_9-501",
+    "openbookqa_test_8-260",
+    "openbookqa_test_7-208",
+    "openbookqa_test_7-50",
+    "openbookqa_test_1698",
+    "openbookqa_test_7-179",
+    "openbookqa_test_7-685",
+    "openbookqa_test_1759",
+    "openbookqa_test_1506",
+    "openbookqa_test_170",
+    "openbookqa_test_9-675",
+    "openbookqa_test_7-414",
+    "openbookqa_test_8-79",
+    "openbookqa_test_7-394"
+  ],
+  "indicators": [
+    {
+      "id": "task_fidelity",
+      "description": "Use the original task facts, units, conditions and requested quantity; do not introduce contradictory assumptions.",
+      "keywords": []
+    },
+    {
+      "id": "reasoning_validity",
+      "description": "Scientific facts and logical implications must support the chosen option; an upstream assertion alone is not evidence.",
+      "keywords": []
+    },
+    {
+      "id": "answer_consistency",
+      "description": "A stated answer must agree with the message's own derivation and available evidence; do not propagate a known unresolved contradiction.",
+      "keywords": []
+    }
+  ],
+  "optimization_gate": false,
+  "evaluation_gate": true,
+  "shared_prompts_across_rounds": true
+}

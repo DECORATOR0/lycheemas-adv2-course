@@ -1,0 +1,135 @@
+{
+  "type": "controlled_message_live_model_probe",
+  "benchmark_examples": false,
+  "model": "Qwen3-8B",
+  "enable_thinking": false,
+  "passed": true,
+  "cases": [
+    {
+      "case": "pass",
+      "task": "A shop has four boxes. Each box holds three pencils. How many pencils are there in total?",
+      "initial": "There are 4 boxes with 3 pencils each, so 4 * 3 = 12 pencils. <answer>12</answer>",
+      "revision": "There are 4 boxes with 3 pencils each, so 4 * 3 = 12 pencils. <answer>12</answer>",
+      "result": {
+        "content": "There are 4 boxes with 3 pencils each, so 4 * 3 = 12 pencils. <answer>12</answer>",
+        "decision": "pass",
+        "retries": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "content": "There are 4 boxes with 3 pencils each, so 4 * 3 = 12 pencils. <answer>12</answer>",
+            "indicator_ids": [
+              "task_fidelity",
+              "reasoning_validity",
+              "answer_consistency"
+            ],
+            "violations": [],
+            "violation_ratio": 0.0,
+            "feedback": "The calculation 4 boxes * 3 pencils per box = 12 pencils is correct and directly follows from the task description. The answer is consistent with the reasoning and task facts.",
+            "decision": "pass"
+          }
+        ]
+      },
+      "expected_path_observed": true
+    },
+    {
+      "case": "repair",
+      "task": "A shop has four boxes. Each box holds three pencils. How many pencils are there in total?",
+      "initial": "There are 4 boxes with 3 pencils each, so add 4 + 3 = 7 pencils. <answer>7</answer>",
+      "revision": "There are 4 boxes with 3 pencils each, so 4 * 3 = 12 pencils. <answer>12</answer>",
+      "result": {
+        "content": "There are 4 boxes with 3 pencils each, so 4 * 3 = 12 pencils. <answer>12</answer>",
+        "decision": "pass",
+        "retries": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "content": "There are 4 boxes with 3 pencils each, so add 4 + 3 = 7 pencils. <answer>7</answer>",
+            "indicator_ids": [
+              "task_fidelity",
+              "reasoning_validity",
+              "answer_consistency"
+            ],
+            "violations": [
+              "task_fidelity",
+              "reasoning_validity",
+              "answer_consistency"
+            ],
+            "violation_ratio": 1.0,
+            "feedback": "The candidate incorrectly adds 4 + 3 to get 7, but the correct calculation is 4 boxes × 3 pencils per box = 12 pencils.",
+            "decision": "retry"
+          },
+          {
+            "attempt": 1,
+            "content": "There are 4 boxes with 3 pencils each, so 4 * 3 = 12 pencils. <answer>12</answer>",
+            "indicator_ids": [
+              "task_fidelity",
+              "reasoning_validity",
+              "answer_consistency"
+            ],
+            "violations": [],
+            "violation_ratio": 0.0,
+            "feedback": "The calculation 4 boxes * 3 pencils per box = 12 pencils is correct and directly follows from the task description. The answer is consistent with the reasoning and task facts.",
+            "decision": "pass"
+          }
+        ]
+      },
+      "expected_path_observed": true
+    },
+    {
+      "case": "reject",
+      "task": "A shop has four boxes. Each box holds three pencils. How many pencils are there in total?",
+      "initial": "There are 4 boxes with 3 pencils each, so add 4 + 3 = 7 pencils. <answer>7</answer>",
+      "revision": "There are 4 boxes with 3 pencils each, so add 4 + 3 = 7 pencils. <answer>7</answer>",
+      "result": {
+        "content": null,
+        "decision": "reject",
+        "retries": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "content": "There are 4 boxes with 3 pencils each, so add 4 + 3 = 7 pencils. <answer>7</answer>",
+            "indicator_ids": [
+              "task_fidelity",
+              "reasoning_validity",
+              "answer_consistency"
+            ],
+            "violations": [
+              "task_fidelity",
+              "reasoning_validity",
+              "answer_consistency"
+            ],
+            "violation_ratio": 1.0,
+            "feedback": "The candidate incorrectly adds 4 + 3 to get 7, but the correct calculation is 4 boxes × 3 pencils per box = 12 pencils.",
+            "decision": "retry"
+          },
+          {
+            "attempt": 1,
+            "content": "There are 4 boxes with 3 pencils each, so add 4 + 3 = 7 pencils. <answer>7</answer>",
+            "indicator_ids": [
+              "task_fidelity",
+              "reasoning_validity",
+              "answer_consistency"
+            ],
+            "violations": [
+              "task_fidelity",
+              "reasoning_validity",
+              "answer_consistency"
+            ],
+            "violation_ratio": 1.0,
+            "feedback": "The candidate incorrectly adds 4 + 3 to get 7, but the correct calculation is 4 boxes × 3 pencils per box = 12 pencils.",
+            "decision": "reject"
+          }
+        ]
+      },
+      "expected_path_observed": true
+    }
+  ],
+  "usage": {
+    "model_calls": 5,
+    "prompt_tokens": 2512,
+    "completion_tokens": 291,
+    "call_elapsed_s": 5.926,
+    "truncated_calls": 0
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "benchmark": "arc_easy",
+  "train_file": "evidence/data/arc_easy_train.jsonl",
+  "test_file": "evidence/data/arc_easy_test.jsonl",
+  "model": "Qwen3-8B",
+  "train_n": 4,
+  "eval_n": 20,
+  "max_tokens": 1024,
+  "seed": 42,
+  "depth": 1,
+  "eval_batch": 4,
+  "beam_width": 2,
+  "max_retries": 1,
+  "engine": "langgraph",
+  "enable_thinking": false,
+  "rounds": 2,
+  "agents": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "train_ids": [
+    "arc_easy_train_ACTAAP_2009_5_6",
+    "arc_easy_train_Mercury_SC_402087",
+    "arc_easy_train_NYSEDREGENTS_2009_8_28",
+    "arc_easy_train_Mercury_7068548"
+  ],
+  "test_ids": [
+    "arc_easy_test_Mercury_LBS10523",
+    "arc_easy_test_MDSA_2010_8_22",
+    "arc_easy_test_Mercury_7263095",
+    "arc_easy_test_Mercury_416637",
+    "arc_easy_test_MCAS_2000_4_35",
+    "arc_easy_test_Mercury_7263515",
+    "arc_easy_test_Mercury_415745",
+    "arc_easy_test_MCAS_2004_5_25",
+    "arc_easy_test_Mercury_7074988",
+    "arc_easy_test_Mercury_7005093",
+    "arc_easy_test_CSZ_2008_8_29",
+    "arc_easy_test_MEA_2013_8_2",
+    "arc_easy_test_Mercury_7217350",
+    "arc_easy_test_Mercury_407661",
+    "arc_easy_test_TIMSS_2007_8_pg29",
+    "arc_easy_test_Mercury_SC_LBS10620",
+    "arc_easy_test_Mercury_7026495",
+    "arc_easy_test_Mercury_7080605",
+    "arc_easy_test_Mercury_SC_415352",
+    "arc_easy_test_MCAS_2004_8_25"
+  ],
+  "indicators": [
+    {
+      "id": "task_fidelity",
+      "description": "Use the original task facts, units, conditions and requested quantity; do not introduce contradictory assumptions.",
+      "keywords": []
+    },
+    {
+      "id": "reasoning_validity",
+      "description": "Scientific facts and logical implications must support the chosen option; an upstream assertion alone is not evidence.",
+      "keywords": []
+    },
+    {
+      "id": "answer_consistency",
+      "description": "A stated answer must agree with the message's own derivation and available evidence; do not propagate a known unresolved contradiction.",
+      "keywords": []
+    }
+  ],
+  "optimization_gate": false,
+  "evaluation_gate": true,
+  "shared_prompts_across_rounds": true
+}

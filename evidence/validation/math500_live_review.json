@@ -1,0 +1,168 @@
+{
+  "review_date": "2026-11-12",
+  "source": "results/math500",
+  "append_only_result_events": 22,
+  "latest_completed_examples": 20,
+  "correct": 15,
+  "errors": 0,
+  "prompt_application_checks": 220,
+  "judge_payload_checks": 245,
+  "changed_roles": [
+    "C"
+  ],
+  "gate_attempt_decisions": {
+    "pass": 215,
+    "retry": 11,
+    "reject": 5
+  },
+  "rejection_checks": [
+    {
+      "id": "math500:test:327",
+      "node": "A",
+      "downstream_contexts_reconstructed": true
+    },
+    {
+      "id": "math500:test:327",
+      "node": "B",
+      "downstream_contexts_reconstructed": true
+    },
+    {
+      "id": "math500:test:327",
+      "node": "C",
+      "downstream_contexts_reconstructed": true
+    },
+    {
+      "id": "math500:test:327",
+      "node": "A_r2",
+      "downstream_contexts_reconstructed": true
+    },
+    {
+      "id": "math500:test:327",
+      "node": "C_r2",
+      "downstream_contexts_reconstructed": true
+    }
+  ],
+  "accepted_after_retry_review": [
+    {
+      "id": "math500:test:327",
+      "node": "D",
+      "before": "110",
+      "after": "26",
+      "before_correct": false,
+      "after_correct": false
+    },
+    {
+      "id": "math500:test:327",
+      "node": "B_r2",
+      "before": "110",
+      "after": "110",
+      "before_correct": false,
+      "after_correct": false
+    },
+    {
+      "id": "math500:test:377",
+      "node": "A",
+      "before": "6",
+      "after": "6",
+      "before_correct": true,
+      "after_correct": true
+    },
+    {
+      "id": "math500:test:279",
+      "node": "C_r2",
+      "before": "7π",
+      "after": "7π",
+      "before_correct": true,
+      "after_correct": true
+    },
+    {
+      "id": "math500:test:302",
+      "node": "A",
+      "before": "5",
+      "after": "135",
+      "before_correct": true,
+      "after_correct": false
+    },
+    {
+      "id": "math500:test:15",
+      "node": "final",
+      "before": "-3 - 3√2 - (5 + 3√2)i",
+      "after": "-3 - 3√2 - (8 + 3√2)i",
+      "before_correct": false,
+      "after_correct": false
+    }
+  ],
+  "usage_optimization_counted_once": {
+    "model_calls": 790,
+    "prompt_tokens": 599214,
+    "completion_tokens": 108242,
+    "total_tokens": 707456,
+    "incomplete_outputs": 0,
+    "format_retries": 0
+  },
+  "usage_evaluation_all_attempts": {
+    "model_calls": 490,
+    "prompt_tokens": 605493,
+    "completion_tokens": 84564,
+    "total_tokens": 690057,
+    "incomplete_outputs": 3,
+    "format_retries": 1
+  },
+  "usage_pipeline_with_resume": {
+    "model_calls": 1280,
+    "prompt_tokens": 1204707,
+    "completion_tokens": 192806,
+    "total_tokens": 1397513,
+    "incomplete_outputs": 3,
+    "format_retries": 1
+  },
+  "usage_latest_completed_records": {
+    "model_calls": 463,
+    "prompt_tokens": 583607,
+    "completion_tokens": 76004
+  },
+  "rescore_audit": {
+    "checked_examples": 20,
+    "changed_examples": [
+      {
+        "id": "math500:test:279",
+        "prediction": "7π",
+        "reference": "7\\pi",
+        "old_score": {
+          "correct": false,
+          "scorer": "unsupported_or_not_equal"
+        },
+        "new_score": {
+          "correct": true,
+          "scorer": "normalized_exact"
+        }
+      }
+    ],
+    "correct_after": 15,
+    "reason": "Uniform deterministic answer equivalence scoring; Unicode pi and LaTeX pi normalized identically. Model outputs are unchanged."
+  },
+  "required_fixes": [],
+  "manual_recovered_items": [
+    {
+      "id": "math500:test:327",
+      "prediction": "10",
+      "reference": "15",
+      "correct": false,
+      "reason": "Writing P=(x-1)(x-4)(x-c)+ax+b gives 2a+b=2c-4 and 3a+b=2c-6, hence a=-2,b=-5,c=-5/2 and P(5)=15. The response drops b while simplifying the first equation."
+    },
+    {
+      "id": "math500:test:377",
+      "prediction": "6",
+      "reference": "6",
+      "correct": true,
+      "reason": "4!=24; the exponent tower is even, and powers of4 end in6 for every even exponent."
+    }
+  ],
+  "interpretation_notes": [
+    "The 22 append-only records retain two earlier error events; the latest record per ID yields20 completed examples.",
+    "Incomplete client outputs are retained and charged but not returned to the graph; matching uses complete generated content and the actual prompt, not the first same-purpose event.",
+    "The six retry-pass messages contain one correct-to-wrong, two correct-to-correct, and three wrong-to-wrong transitions.",
+    "The copied790-call optimization source is counted once. Do not add its parent artifact total again.",
+    "summary.json costs sum the latest successful record usage; full evaluation costs include earlier failed attempts and are given in usage_all_attempts.json."
+  ]
+}

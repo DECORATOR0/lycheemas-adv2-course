@@ -1,0 +1,11 @@
+{
+  "status": "failed_during_optimization",
+  "test_examples_executed": 0,
+  "reason": "Candidate proposal reached the 1536-token limit before closing its prompt tag",
+  "model_calls": 314,
+  "prompt_tokens": 227594,
+  "completion_tokens": 48991,
+  "truncated_calls": 1,
+  "proposal_max_tokens": 1536,
+  "recovery": "Run the same selected data in a fresh directory with proposal_max_tokens=3072"
+}

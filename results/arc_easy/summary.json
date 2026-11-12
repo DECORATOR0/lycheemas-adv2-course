@@ -1,0 +1,20 @@
+{
+  "selected_examples": 20,
+  "recorded_examples": 20,
+  "completed_examples": 20,
+  "errors": 0,
+  "terminal_rejected": 0,
+  "correct": 18,
+  "accuracy_full_denominator": 0.9,
+  "gate_attempt_decisions": {
+    "pass": 209,
+    "retry": 14,
+    "reject": 11
+  },
+  "messages_accepted_after_retry": 3,
+  "model_calls": 468,
+  "prompt_tokens": 303364,
+  "completion_tokens": 38731,
+  "invocation_elapsed_s": 88.627,
+  "status": "complete"
+}

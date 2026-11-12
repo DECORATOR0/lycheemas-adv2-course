@@ -1,0 +1,515 @@
+{
+  "review_date": "2026-11-12",
+  "artifact_directory": "repo/results/openbookqa",
+  "review_method": "Read original artifacts; reconstruct every accepted-input context and initial generation prompt; independently sum call events; inspect incorrect items and identified retry cases.",
+  "records": {
+    "test": 20,
+    "training_actually_used": 4,
+    "correct": 19,
+    "errors": 0
+  },
+  "model": "Qwen3-8B",
+  "engine": "langgraph",
+  "changed_roles": [],
+  "prompt_application_checks": 220,
+  "gate_attempt_decisions": {
+    "pass": 193,
+    "retry": 35,
+    "reject": 27
+  },
+  "rejection_checks": [
+    {
+      "task_id": "openbookqa_test_8-260",
+      "node": "A",
+      "direct_consumers_checked": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "A_r2",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-260",
+      "node": "A_r2",
+      "direct_consumers_checked": [
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "A",
+      "direct_consumers_checked": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "A_r2",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "B",
+      "direct_consumers_checked": [
+        "C",
+        "D",
+        "E",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "C",
+      "direct_consumers_checked": [
+        "D",
+        "E",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "D",
+      "direct_consumers_checked": [
+        "E",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "E",
+      "direct_consumers_checked": [
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "A_r2",
+      "direct_consumers_checked": [
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "B_r2",
+      "direct_consumers_checked": [
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "C_r2",
+      "direct_consumers_checked": [
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "D_r2",
+      "direct_consumers_checked": [
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_8-493",
+      "node": "E_r2",
+      "direct_consumers_checked": [
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_7-685",
+      "node": "A",
+      "direct_consumers_checked": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "A_r2",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_7-685",
+      "node": "A_r2",
+      "direct_consumers_checked": [
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "A",
+      "direct_consumers_checked": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "A_r2",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "B",
+      "direct_consumers_checked": [
+        "C",
+        "D",
+        "E",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "C",
+      "direct_consumers_checked": [
+        "D",
+        "E",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "D",
+      "direct_consumers_checked": [
+        "E",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "E",
+      "direct_consumers_checked": [
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "A_r2",
+      "direct_consumers_checked": [
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "B_r2",
+      "direct_consumers_checked": [
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "C_r2",
+      "direct_consumers_checked": [
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "D_r2",
+      "direct_consumers_checked": [
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "E_r2",
+      "direct_consumers_checked": [
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_7-394",
+      "node": "A",
+      "direct_consumers_checked": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "A_r2",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_7-394",
+      "node": "B",
+      "direct_consumers_checked": [
+        "C",
+        "D",
+        "E",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "openbookqa_test_7-394",
+      "node": "D_r2",
+      "direct_consumers_checked": [
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    }
+  ],
+  "isolation": {
+    "shared_ids": [],
+    "shared_question_count": 0,
+    "test_questions_in_optimization": [],
+    "judge_payload_keys_verified": true
+  },
+  "usage_all_phases": {
+    "calls": 1028,
+    "prompt_tokens": 586089,
+    "completion_tokens": 97393,
+    "total_tokens": 683482,
+    "finish_reasons": {
+      "stop": 1028
+    },
+    "purposes": {
+      "A": 48,
+      "B": 48,
+      "C": 54,
+      "D": 64,
+      "E": 67,
+      "A_r2": 44,
+      "B_r2": 46,
+      "C_r2": 54,
+      "D_r2": 63,
+      "E_r2": 66,
+      "final": 65,
+      "maspo_propose": 10,
+      "maspo_compare": 144,
+      "adv2_judge": 255
+    }
+  },
+  "usage_optimization": {
+    "calls": 518,
+    "prompt_tokens": 259879,
+    "completion_tokens": 50315,
+    "total_tokens": 310194,
+    "finish_reasons": {
+      "stop": 518
+    },
+    "purposes": {
+      "A": 20,
+      "B": 24,
+      "C": 32,
+      "D": 40,
+      "E": 44,
+      "A_r2": 20,
+      "B_r2": 24,
+      "C_r2": 32,
+      "D_r2": 40,
+      "E_r2": 44,
+      "final": 44,
+      "maspo_propose": 10,
+      "maspo_compare": 144
+    }
+  },
+  "usage_test_only": {
+    "calls": 510,
+    "prompt_tokens": 326210,
+    "completion_tokens": 47078,
+    "total_tokens": 373288,
+    "finish_reasons": {
+      "stop": 510
+    },
+    "purposes": {
+      "A": 28,
+      "adv2_judge": 255,
+      "B": 24,
+      "C": 22,
+      "D": 24,
+      "E": 23,
+      "A_r2": 24,
+      "B_r2": 22,
+      "C_r2": 22,
+      "D_r2": 23,
+      "E_r2": 22,
+      "final": 21
+    }
+  },
+  "manual_incorrect_item_review": [
+    {
+      "id": "openbookqa_test_9-501",
+      "reference": "A",
+      "prediction": "None of the options",
+      "correct": false,
+      "reason": "The final answer is not a provided option and does not match dataset label A. NPS attributes Mount McKinley's uplift to tectonic processes along the Denali fault system. This supports a factual concern with treating this item as an unambiguous scientific error; the benchmark label and 19/20 score are preserved.",
+      "source": "https://www.nps.gov/articles/nps-geodiversity-atlas-denali-national-park-preserve-alaska.htm"
+    }
+  ],
+  "accepted_after_retry_item_review": [
+    {
+      "task_id": "openbookqa_test_9-501",
+      "node": "A",
+      "reference": "A",
+      "initial_answer": "A",
+      "accepted_answer": "None of the options",
+      "classification": "label_matching_to_label_nonmatching",
+      "classification_basis": "Exact match with original dataset answer, without changing labels",
+      "manual_reason": "Dataset match decreases A to a non-option answer. The geological explanation raises a factual issue; this classification describes the unchanged benchmark-label criterion, not a definitive factual downgrade."
+    },
+    {
+      "task_id": "openbookqa_test_9-199",
+      "node": "A",
+      "reference": "A",
+      "initial_answer": "A",
+      "accepted_answer": "A",
+      "classification": "label_matching_to_label_matching",
+      "classification_basis": "Exact match with original dataset answer, without changing labels",
+      "manual_reason": "A remains A; explanation of relative liquid densities is reworded."
+    },
+    {
+      "task_id": "openbookqa_test_9-199",
+      "node": "D",
+      "reference": "A",
+      "initial_answer": "A",
+      "accepted_answer": "A",
+      "classification": "label_matching_to_label_matching",
+      "classification_basis": "Exact match with original dataset answer, without changing labels",
+      "manual_reason": "A remains A; the reviewer retracts its criticism of wording in an earlier agent's already-correct conclusion."
+    },
+    {
+      "task_id": "openbookqa_test_8-260",
+      "node": "B",
+      "reference": "C",
+      "initial_answer": "C",
+      "accepted_answer": "C",
+      "classification": "label_matching_to_label_matching",
+      "classification_basis": "Exact match with original dataset answer, without changing labels",
+      "manual_reason": "C remains C, but revised reasoning says 'not C' before ultimately selecting C. A pass does not establish a repaired explanation."
+    },
+    {
+      "task_id": "openbookqa_test_1698",
+      "node": "E",
+      "reference": "A",
+      "initial_answer": "C",
+      "accepted_answer": "A",
+      "classification": "label_nonmatching_to_label_matching",
+      "classification_basis": "Exact match with original dataset answer, without changing labels",
+      "manual_reason": "Genuine option correction C to A: choosing message C had been confused with answering the question about corn-derived alcohol."
+    },
+    {
+      "task_id": "openbookqa_test_1759",
+      "node": "A",
+      "reference": "A",
+      "initial_answer": "A",
+      "accepted_answer": "A",
+      "classification": "label_matching_to_label_matching",
+      "classification_basis": "Exact match with original dataset answer, without changing labels",
+      "manual_reason": "A remains A; a temperature wording clarification, not an answer correction."
+    },
+    {
+      "task_id": "openbookqa_test_1759",
+      "node": "D",
+      "reference": "A",
+      "initial_answer": "C",
+      "accepted_answer": "A",
+      "classification": "label_nonmatching_to_label_matching",
+      "classification_basis": "Exact match with original dataset answer, without changing labels",
+      "manual_reason": "Genuine option correction C to A: choosing message C had been confused with answering the thermometer question."
+    },
+    {
+      "task_id": "openbookqa_test_769",
+      "node": "final",
+      "reference": "C",
+      "initial_answer": "C",
+      "accepted_answer": "C",
+      "classification": "label_matching_to_label_matching",
+      "classification_basis": "Exact match with original dataset answer, without changing labels",
+      "manual_reason": "C remains C; both versions retain inconsistent opening wording about more versus less water, while the final option matches the question and label."
+    }
+  ],
+  "required_code_or_score_fixes": [],
+  "interpretation_notes": [
+    "MASPO used four training examples and retained the original prompts after evaluating candidates; zero changed roles does not mean optimization was skipped.",
+    "Eight accepted-after-retry messages comprise two nonmatching-to-matching, five matching-to-matching, and one matching-to-non-option transition against the original dataset labels.",
+    "Item 9-501 remains incorrect under the benchmark label A; NPS geological evidence warrants separating benchmark disagreement from factual-error claims.",
+    "All 27 rejections are isolated from downstream consumers; this verifies intervention execution rather than judge correctness.",
+    "summary.json usage covers held-out evaluation only; full calls.jsonl includes optimization."
+  ]
+}

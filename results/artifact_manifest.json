@@ -1,0 +1,32 @@
+[
+  {
+    "directory": "results/arc_easy",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Scores unchanged"
+  },
+  {
+    "directory": "results/gsm8k",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Scores unchanged"
+  },
+  {
+    "directory": "results/math500",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Uniform rescoring documented in rescore_audit.json"
+  },
+  {
+    "directory": "results/math500_eval1024_incomplete",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Scores unchanged"
+  },
+  {
+    "directory": "results/math500_initial_failed",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Scores unchanged"
+  },
+  {
+    "directory": "results/openbookqa",
+    "configuration_path_processing": "train_file and test_file changed to repository-relative data paths; traceback environment prefixes generalized; model outputs, selected samples and token usage unchanged",
+    "scoring_processing": "Scores unchanged"
+  }
+]

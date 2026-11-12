@@ -1,0 +1,280 @@
+{
+  "review_date": "2026-11-12",
+  "artifact_directory": "results/arc_easy",
+  "review_method": "Read original artifacts; reconstruct every accepted-input context and initial generation prompt; independently sum call events; inspect incorrect items and identified retry cases.",
+  "records": {
+    "test": 20,
+    "training_actually_used": 4,
+    "correct": 18,
+    "errors": 0
+  },
+  "model": "Qwen3-8B",
+  "engine": "langgraph",
+  "changed_roles": [
+    "D"
+  ],
+  "prompt_application_checks": 220,
+  "gate_attempt_decisions": {
+    "pass": 209,
+    "retry": 14,
+    "reject": 11
+  },
+  "rejection_checks": [
+    {
+      "task_id": "arc_easy_test_Mercury_415745",
+      "node": "B",
+      "direct_consumers_checked": [
+        "C",
+        "D",
+        "E",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_415745",
+      "node": "A_r2",
+      "direct_consumers_checked": [
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "A",
+      "direct_consumers_checked": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "A_r2",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "B",
+      "direct_consumers_checked": [
+        "C",
+        "D",
+        "E",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "C",
+      "direct_consumers_checked": [
+        "D",
+        "E",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "D",
+      "direct_consumers_checked": [
+        "E",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "E",
+      "direct_consumers_checked": [
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "A_r2",
+      "direct_consumers_checked": [
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "B_r2",
+      "direct_consumers_checked": [
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "C_r2",
+      "direct_consumers_checked": [
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_416637",
+      "node": "D_r2",
+      "direct_consumers_checked": [
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    }
+  ],
+  "isolation": {
+    "shared_ids": [],
+    "shared_question_count": 0,
+    "test_questions_in_optimization": [],
+    "judge_payload_keys_verified": true
+  },
+  "usage_all_phases": {
+    "calls": 866,
+    "prompt_tokens": 479610,
+    "completion_tokens": 77499,
+    "total_tokens": 557109,
+    "finish_reasons": {
+      "stop": 866
+    },
+    "purposes": {
+      "A": 47,
+      "B": 46,
+      "C": 45,
+      "D": 54,
+      "E": 53,
+      "A_r2": 46,
+      "B_r2": 45,
+      "C_r2": 45,
+      "D_r2": 53,
+      "E_r2": 52,
+      "final": 52,
+      "maspo_propose": 10,
+      "maspo_compare": 84,
+      "adv2_judge": 234
+    }
+  },
+  "usage_optimization": {
+    "calls": 398,
+    "prompt_tokens": 176246,
+    "completion_tokens": 38768,
+    "total_tokens": 215014,
+    "finish_reasons": {
+      "stop": 398
+    },
+    "purposes": {
+      "A": 24,
+      "B": 24,
+      "C": 24,
+      "D": 32,
+      "E": 32,
+      "A_r2": 24,
+      "B_r2": 24,
+      "C_r2": 24,
+      "D_r2": 32,
+      "E_r2": 32,
+      "final": 32,
+      "maspo_propose": 10,
+      "maspo_compare": 84
+    }
+  },
+  "usage_test_only": {
+    "calls": 468,
+    "prompt_tokens": 303364,
+    "completion_tokens": 38731,
+    "total_tokens": 342095,
+    "finish_reasons": {
+      "stop": 468
+    },
+    "purposes": {
+      "A": 23,
+      "adv2_judge": 234,
+      "B": 22,
+      "C": 21,
+      "D": 22,
+      "E": 21,
+      "A_r2": 22,
+      "B_r2": 21,
+      "C_r2": 21,
+      "D_r2": 21,
+      "E_r2": 20,
+      "final": 20
+    }
+  },
+  "manual_incorrect_item_review": [
+    {
+      "id": "arc_easy_test_Mercury_415745",
+      "reference": "C",
+      "prediction": "B",
+      "correct": false,
+      "reason": "Electromagnetic waves can propagate in vacuum, unlike mechanical waves; energy transmission is not exclusive to electromagnetic waves. The initial A answer C was correct, and judge feedback caused a wrong revision to B.",
+      "source": "https://science.nasa.gov/ems/02_anatomy/"
+    },
+    {
+      "id": "arc_easy_test_Mercury_416637",
+      "reference": "A",
+      "prediction": "C",
+      "correct": false,
+      "reason": "The dataset answer is A. The final response acknowledges shared reproduction by mitosis but dismisses it because it is not unique. The question asks for a shared characteristic, so this dismissal does not follow the question. Exact-option scoring is correct."
+    }
+  ],
+  "accepted_after_retry_item_review": [
+    {
+      "task_id": "arc_easy_test_Mercury_415745",
+      "node": "A",
+      "reference": "C",
+      "initial_answer": "C",
+      "accepted_answer": "B",
+      "classification": "correct_to_wrong"
+    },
+    {
+      "task_id": "arc_easy_test_MEA_2013_8_2",
+      "node": "D",
+      "reference": "B",
+      "initial_answer": "C",
+      "accepted_answer": "B",
+      "classification": "wrong_to_correct"
+    },
+    {
+      "task_id": "arc_easy_test_Mercury_407661",
+      "node": "A",
+      "reference": "D",
+      "initial_answer": "D",
+      "accepted_answer": "D",
+      "classification": "correct_to_correct"
+    }
+  ],
+  "required_code_or_score_fixes": [],
+  "interpretation_notes": [
+    "MASPO used four training examples selected from the eight-example prepared training bank.",
+    "The three accepted-after-retry messages contain one wrong-to-correct, one correct-to-wrong and one correct-to-correct revision; they are not three verified error corrections.",
+    "All eleven rejections were isolated from graph consumers. Rejection execution does not establish correctness of the judge decision.",
+    "summary.json usage covers held-out evaluation only; optimization plus evaluation agrees with the complete calls.jsonl event stream."
+  ]
+}

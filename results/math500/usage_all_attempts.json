@@ -1,0 +1,27 @@
+{
+  "optimization": {
+    "model_calls": 790,
+    "prompt_tokens": 599214,
+    "completion_tokens": 108242,
+    "output_limit_hits": 0,
+    "incomplete_outputs": 0,
+    "format_retries": 0
+  },
+  "evaluation_all_attempts": {
+    "model_calls": 490,
+    "prompt_tokens": 605493,
+    "completion_tokens": 84564,
+    "output_limit_hits": 3,
+    "incomplete_outputs": 3,
+    "format_retries": 1
+  },
+  "successful_pipeline_with_resume": {
+    "model_calls": 1280,
+    "prompt_tokens": 1204707,
+    "completion_tokens": 192806,
+    "output_limit_hits": 3,
+    "incomplete_outputs": 3,
+    "format_retries": 1
+  },
+  "selection": "Optimization events copied from the completed optimization in math500_eval1024_incomplete; evaluation events include both earlier failed examples and their same-configuration resumes. No model outputs removed."
+}

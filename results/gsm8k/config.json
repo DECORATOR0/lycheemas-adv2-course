@@ -1,0 +1,72 @@
+{
+  "benchmark": "gsm8k",
+  "train_file": "evidence/data/gsm8k_train.jsonl",
+  "test_file": "evidence/data/gsm8k_test.jsonl",
+  "model": "Qwen3-8B",
+  "train_n": 4,
+  "eval_n": 20,
+  "max_tokens": 1024,
+  "seed": 42,
+  "depth": 1,
+  "eval_batch": 4,
+  "beam_width": 2,
+  "max_retries": 1,
+  "engine": "langgraph",
+  "enable_thinking": false,
+  "rounds": 2,
+  "agents": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "train_ids": [
+    "gsm8k:train:5238",
+    "gsm8k:train:912",
+    "gsm8k:train:204",
+    "gsm8k:train:2006"
+  ],
+  "test_ids": [
+    "gsm8k:test:1309",
+    "gsm8k:test:228",
+    "gsm8k:test:51",
+    "gsm8k:test:563",
+    "gsm8k:test:501",
+    "gsm8k:test:457",
+    "gsm8k:test:285",
+    "gsm8k:test:209",
+    "gsm8k:test:1116",
+    "gsm8k:test:178",
+    "gsm8k:test:1209",
+    "gsm8k:test:864",
+    "gsm8k:test:65",
+    "gsm8k:test:61",
+    "gsm8k:test:191",
+    "gsm8k:test:447",
+    "gsm8k:test:476",
+    "gsm8k:test:1034",
+    "gsm8k:test:1232",
+    "gsm8k:test:54"
+  ],
+  "indicators": [
+    {
+      "id": "task_fidelity",
+      "description": "Use the original task facts, units, conditions and requested quantity; do not introduce contradictory assumptions.",
+      "keywords": []
+    },
+    {
+      "id": "reasoning_validity",
+      "description": "Arithmetic, algebra and logical steps must be valid and support the stated result; check any reported tool result.",
+      "keywords": []
+    },
+    {
+      "id": "answer_consistency",
+      "description": "A stated answer must agree with the message's own derivation and available evidence; do not propagate a known unresolved contradiction.",
+      "keywords": []
+    }
+  ],
+  "optimization_gate": false,
+  "evaluation_gate": true,
+  "shared_prompts_across_rounds": true
+}

@@ -1,0 +1,21 @@
+{
+  "selected_examples": 20,
+  "recorded_examples": 20,
+  "completed_examples": 20,
+  "errors": 0,
+  "terminal_rejected": 0,
+  "correct": 15,
+  "accuracy_full_denominator": 0.75,
+  "gate_attempt_decisions": {
+    "pass": 215,
+    "retry": 11,
+    "reject": 5
+  },
+  "messages_accepted_after_retry": 6,
+  "model_calls": 463,
+  "prompt_tokens": 583607,
+  "completion_tokens": 76004,
+  "invocation_elapsed_s": 135.544,
+  "status": "complete",
+  "scoring_review": "rescore_audit.json"
+}

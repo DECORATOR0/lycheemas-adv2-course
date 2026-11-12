@@ -1,0 +1,48 @@
+{
+  "misalignment_rates": {
+    "per_agent": {
+      "A": [
+        0.5
+      ],
+      "B": [
+        0.375
+      ],
+      "C": [
+        0.375
+      ],
+      "D": [
+        0.625
+      ],
+      "E": [
+        0.75
+      ]
+    }
+  },
+  "kendall_scores": {
+    "per_agent": {
+      "A": [],
+      "B": [],
+      "C": [],
+      "D": [],
+      "E": []
+    }
+  },
+  "final_scores": {
+    "A": 0.0,
+    "B": 0.0,
+    "C": 0.0,
+    "D": 0.0,
+    "E": 0.30000000000000004
+  },
+  "usage": {
+    "model_calls": 790,
+    "prompt_tokens": 429794,
+    "completion_tokens": 74066,
+    "call_elapsed_s": 1143.889,
+    "truncated_calls": 0
+  },
+  "elapsed_s": 215.239,
+  "changed_roles": [
+    "E"
+  ]
+}

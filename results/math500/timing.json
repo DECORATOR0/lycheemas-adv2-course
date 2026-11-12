@@ -1,0 +1,9 @@
+{
+  "evaluation_invocations_s": [
+    213.595,
+    135.544
+  ],
+  "evaluation_active_runtime_s": 349.139,
+  "optimization_elapsed_s": 414.035,
+  "scope": "Cumulative measured invocation times; human inspection and repair intervals excluded"
+}

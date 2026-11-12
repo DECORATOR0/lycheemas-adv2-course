@@ -1,0 +1,10 @@
+{
+  "status": "incomplete_evaluation",
+  "optimization_completed": true,
+  "completed_examples": 19,
+  "selected_examples": 20,
+  "errors": 1,
+  "reason": "Final node of test327 reached output budget1024",
+  "replacement_evaluation": "results/math500",
+  "previous_test_calls": 459
+}

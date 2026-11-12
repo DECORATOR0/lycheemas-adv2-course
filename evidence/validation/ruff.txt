@@ -1,0 +1,7 @@
+Date: 2026-11-12
+Environment: Windows local, Ruff installed in an isolated temporary directory
+Command: python -m ruff check src scripts tests
+Result: All checks passed!
+
+The final cleanup removed one unused asyncio import from tests/test_course.py.
+Runtime behavior was unchanged; server test evidence is retained in tests.txt.

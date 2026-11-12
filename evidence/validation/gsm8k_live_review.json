@@ -1,0 +1,166 @@
+{
+  "review_date": "2026-11-12",
+  "artifact_directory": "results/gsm8k",
+  "review_method": "Read original artifacts; reconstruct every accepted-input context and initial generation prompt; independently sum call events; inspect all incorrect GSM8K items.",
+  "records": {
+    "test": 20,
+    "training_actually_used": 4,
+    "correct": 16,
+    "errors": 0
+  },
+  "model": "Qwen3-8B",
+  "engine": "langgraph",
+  "changed_roles": [
+    "E"
+  ],
+  "prompt_application_checks": 220,
+  "gate_attempt_decisions": {
+    "pass": 218,
+    "retry": 2,
+    "reject": 2
+  },
+  "rejection_checks": [
+    {
+      "task_id": "gsm8k:test:54",
+      "node": "A",
+      "direct_consumers_checked": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "A_r2",
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    },
+    {
+      "task_id": "gsm8k:test:54",
+      "node": "A_r2",
+      "direct_consumers_checked": [
+        "B_r2",
+        "C_r2",
+        "D_r2",
+        "E_r2",
+        "final"
+      ],
+      "all_inputs_reconstructed_from_accepted_sources": true
+    }
+  ],
+  "isolation": {
+    "shared_ids": [],
+    "shared_question_count": 0,
+    "test_questions_in_optimization": [],
+    "judge_payload_keys_verified": true
+  },
+  "usage_all_phases": {
+    "calls": 1234,
+    "prompt_tokens": 764829,
+    "completion_tokens": 114851,
+    "total_tokens": 879680,
+    "finish_reasons": {
+      "stop": 1234
+    },
+    "purposes": {
+      "A": 49,
+      "B": 56,
+      "C": 64,
+      "D": 72,
+      "E": 80,
+      "A_r2": 49,
+      "B_r2": 56,
+      "C_r2": 64,
+      "D_r2": 72,
+      "E_r2": 80,
+      "final": 80,
+      "maspo_propose": 10,
+      "maspo_compare": 280,
+      "adv2_judge": 222
+    }
+  },
+  "usage_optimization": {
+    "calls": 790,
+    "prompt_tokens": 429794,
+    "completion_tokens": 74066,
+    "total_tokens": 503860,
+    "finish_reasons": {
+      "stop": 790
+    },
+    "purposes": {
+      "A": 28,
+      "B": 36,
+      "C": 44,
+      "D": 52,
+      "E": 60,
+      "A_r2": 28,
+      "B_r2": 36,
+      "C_r2": 44,
+      "D_r2": 52,
+      "E_r2": 60,
+      "final": 60,
+      "maspo_propose": 10,
+      "maspo_compare": 280
+    }
+  },
+  "usage_test_only": {
+    "calls": 444,
+    "prompt_tokens": 335035,
+    "completion_tokens": 40785,
+    "total_tokens": 375820,
+    "finish_reasons": {
+      "stop": 444
+    },
+    "purposes": {
+      "A": 21,
+      "adv2_judge": 222,
+      "B": 20,
+      "C": 20,
+      "D": 20,
+      "E": 20,
+      "A_r2": 21,
+      "B_r2": 20,
+      "C_r2": 20,
+      "D_r2": 20,
+      "E_r2": 20,
+      "final": 20
+    }
+  },
+  "manual_incorrect_item_review": [
+    {
+      "id": "gsm8k:test:563",
+      "reference": "12",
+      "prediction": "Insufficient information",
+      "correct": false,
+      "reason": "12 + (12 - 4) = 20 birthday candles; 20 / 5 * 3 = 12 dollars."
+    },
+    {
+      "id": "gsm8k:test:1309",
+      "reference": "2280",
+      "prediction": "2180",
+      "correct": false,
+      "reason": "430 + (430 + 320) + 300 + (300 + 400) = 2280."
+    },
+    {
+      "id": "gsm8k:test:209",
+      "reference": "145",
+      "prediction": "1450",
+      "correct": false,
+      "reason": "20 dozen = 240 cups; (6 * 6000 - 1200) / 240 = 145 per cup."
+    },
+    {
+      "id": "gsm8k:test:54",
+      "reference": "40",
+      "prediction": "55",
+      "correct": false,
+      "reason": "Patchy has 3 * 7 = 21 kittens; 7 + 21 + 12 = 40. Final answer wrongly applies the factor 3 to Trixie's 12."
+    }
+  ],
+  "required_code_or_score_fixes": [],
+  "interpretation_notes": [
+    "MASPO used four training examples selected from the eight-example prepared training bank.",
+    "In item 54, A and A_r2 initially produced the correct answer 40; the judge wrongly rejected it and suggested an incorrect interpretation. These events demonstrate functioning intervention and isolation, not successful error detection.",
+    "summary.json call/token totals cover held-out evaluation only; prompts_stats.json covers optimization. Their sum agrees with calls.jsonl."
+  ]
+}

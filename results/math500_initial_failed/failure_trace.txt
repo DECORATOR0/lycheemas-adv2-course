@@ -1,0 +1,31 @@
+MASPO: math, train=4, depth=1
+  [maspo] A: depth 1/1 best=0.000
+  [maspo] B: depth 1/1 best=0.000
+Traceback (most recent call last):
+  File "<experiment-root>/repo/scripts/run_course.py", line 9, in <module>
+    main()
+  File "<experiment-root>/repo/src/lychee_mas/course/cli.py", line 188, in main
+    asyncio.run(run(args))
+  File "<model-python-env>/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "<model-python-env>/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "<experiment-root>/repo/src/lychee_mas/course/cli.py", line 112, in run
+    prompts, statistics = await optimizer._optimize_with_limits(view)
+  File "<experiment-root>/repo/src/lychee_mas/methods/prerun/maspo/optimizer.py", line 563, in _optimize_with_limits
+    return await self._optimize_all_fixed_rounds(view)
+  File "<experiment-root>/repo/src/lychee_mas/methods/prerun/maspo/optimizer.py", line 619, in _optimize_all_fixed_rounds
+    await self._optimize_agent_turn(view, state, states,
+  File "<experiment-root>/repo/src/lychee_mas/methods/prerun/maspo/optimizer.py", line 525, in _optimize_agent_turn
+    node_results = await asyncio.gather(*[
+  File "<experiment-root>/repo/src/lychee_mas/methods/prerun/maspo/optimizer.py", line 432, in _process_single_node
+    cand_prompts = await asyncio.gather(
+  File "<experiment-root>/repo/src/lychee_mas/methods/prerun/maspo/optimizer.py", line 262, in _propose_new_prompt
+    raw = await self.proposer_llm(prompt)
+  File "<experiment-root>/repo/src/lychee_mas/methods/prerun/maspo/optimizer.py", line 96, in call
+    return await llm(prompt)
+  File "<experiment-root>/repo/src/lychee_mas/course/io.py", line 117, in propose
+    return await self.call(prompt, purpose="maspo_propose", temperature=0.7, max_tokens=1536)
+  File "<experiment-root>/repo/src/lychee_mas/course/io.py", line 90, in call
+    raise ValueError("generation reached max_tokens; output is incomplete")
+ValueError: generation reached max_tokens; output is incomplete

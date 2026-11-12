@@ -1,0 +1,500 @@
+{"id": "0", "unique_id": "test/precalculus/807.json", "hypothesis": "(3, \\frac{\\pi}{2})", "gold_value": null, "is_correct": true}
+{"id": "1", "unique_id": "test/intermediate_algebra/1994.json", "hypothesis": "p - q", "gold_value": null, "is_correct": true}
+{"id": "2", "unique_id": "test/algebra/2584.json", "hypothesis": "\\frac{14}{3}", "gold_value": null, "is_correct": true}
+{"id": "3", "unique_id": "test/number_theory/572.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "4", "unique_id": "test/algebra/1349.json", "hypothesis": "Evelyn", "gold_value": null, "is_correct": false}
+{"id": "5", "unique_id": "test/prealgebra/1622.json", "hypothesis": "42", "gold_value": null, "is_correct": true}
+{"id": "6", "unique_id": "test/number_theory/515.json", "hypothesis": "27", "gold_value": null, "is_correct": true}
+{"id": "7", "unique_id": "test/precalculus/927.json", "hypothesis": "90^\\circ", "gold_value": null, "is_correct": true}
+{"id": "8", "unique_id": "test/algebra/2036.json", "hypothesis": "3\\sqrt{13}", "gold_value": null, "is_correct": true}
+{"id": "9", "unique_id": "test/prealgebra/1139.json", "hypothesis": "2", "gold_value": null, "is_correct": false}
+{"id": "10", "unique_id": "test/number_theory/1032.json", "hypothesis": "2220", "gold_value": null, "is_correct": true}
+{"id": "11", "unique_id": "test/intermediate_algebra/1197.json", "hypothesis": "\\frac{11}{168}", "gold_value": null, "is_correct": false}
+{"id": "12", "unique_id": "test/number_theory/737.json", "hypothesis": "234", "gold_value": null, "is_correct": false}
+{"id": "13", "unique_id": "test/geometry/248.json", "hypothesis": "5", "gold_value": null, "is_correct": true}
+{"id": "14", "unique_id": "test/precalculus/1303.json", "hypothesis": "\\sqrt{51}", "gold_value": null, "is_correct": true}
+{"id": "15", "unique_id": "test/precalculus/990.json", "hypothesis": "6 - 5i", "gold_value": null, "is_correct": true}
+{"id": "16", "unique_id": "test/intermediate_algebra/134.json", "hypothesis": "-50", "gold_value": null, "is_correct": true}
+{"id": "17", "unique_id": "test/precalculus/1199.json", "hypothesis": "\\pi", "gold_value": null, "is_correct": true}
+{"id": "18", "unique_id": "test/geometry/434.json", "hypothesis": "27", "gold_value": null, "is_correct": false}
+{"id": "19", "unique_id": "test/intermediate_algebra/1000.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "20", "unique_id": "test/algebra/1098.json", "hypothesis": "6 + 9i", "gold_value": null, "is_correct": true}
+{"id": "21", "unique_id": "test/intermediate_algebra/607.json", "hypothesis": "13535", "gold_value": null, "is_correct": true}
+{"id": "22", "unique_id": "test/algebra/1837.json", "hypothesis": "5", "gold_value": null, "is_correct": true}
+{"id": "23", "unique_id": "test/algebra/2193.json", "hypothesis": "5", "gold_value": null, "is_correct": false}
+{"id": "24", "unique_id": "test/algebra/2427.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "25", "unique_id": "test/intermediate_algebra/1388.json", "hypothesis": "-2, 1", "gold_value": null, "is_correct": false}
+{"id": "26", "unique_id": "test/counting_and_probability/525.json", "hypothesis": "1440", "gold_value": null, "is_correct": false}
+{"id": "27", "unique_id": "test/prealgebra/1840.json", "hypothesis": "78", "gold_value": null, "is_correct": true}
+{"id": "28", "unique_id": "test/precalculus/779.json", "hypothesis": "-2 + 7i", "gold_value": null, "is_correct": true}
+{"id": "29", "unique_id": "test/counting_and_probability/666.json", "hypothesis": "225", "gold_value": null, "is_correct": true}
+{"id": "30", "unique_id": "test/number_theory/864.json", "hypothesis": "52_8", "gold_value": null, "is_correct": true}
+{"id": "31", "unique_id": "test/prealgebra/1302.json", "hypothesis": "11\\sqrt{2}", "gold_value": null, "is_correct": false}
+{"id": "32", "unique_id": "test/counting_and_probability/134.json", "hypothesis": "720", "gold_value": null, "is_correct": true}
+{"id": "33", "unique_id": "test/algebra/1072.json", "hypothesis": "\\frac{243}{625}", "gold_value": null, "is_correct": true}
+{"id": "34", "unique_id": "test/counting_and_probability/119.json", "hypothesis": "-125", "gold_value": null, "is_correct": true}
+{"id": "35", "unique_id": "test/number_theory/627.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "36", "unique_id": "test/intermediate_algebra/428.json", "hypothesis": "3, 5, 7", "gold_value": null, "is_correct": true}
+{"id": "37", "unique_id": "test/geometry/967.json", "hypothesis": "72", "gold_value": null, "is_correct": true}
+{"id": "38", "unique_id": "test/algebra/24.json", "hypothesis": "2000", "gold_value": null, "is_correct": true}
+{"id": "39", "unique_id": "test/number_theory/45.json", "hypothesis": "23", "gold_value": null, "is_correct": true}
+{"id": "40", "unique_id": "test/prealgebra/930.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "41", "unique_id": "test/geometry/627.json", "hypothesis": "17", "gold_value": null, "is_correct": true}
+{"id": "42", "unique_id": "test/algebra/2214.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "43", "unique_id": "test/intermediate_algebra/1454.json", "hypothesis": "\\sqrt{1025} + \\sqrt{2125} + \\sqrt{50}", "gold_value": null, "is_correct": false}
+{"id": "44", "unique_id": "test/prealgebra/1558.json", "hypothesis": "1.25", "gold_value": null, "is_correct": true}
+{"id": "45", "unique_id": "test/geometry/178.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "46", "unique_id": "test/precalculus/285.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "47", "unique_id": "test/algebra/305.json", "hypothesis": "5", "gold_value": null, "is_correct": true}
+{"id": "48", "unique_id": "test/algebra/1265.json", "hypothesis": "\\frac{3}{2}", "gold_value": null, "is_correct": true}
+{"id": "49", "unique_id": "test/prealgebra/1388.json", "hypothesis": "83", "gold_value": null, "is_correct": true}
+{"id": "50", "unique_id": "test/number_theory/1055.json", "hypothesis": "203", "gold_value": null, "is_correct": true}
+{"id": "51", "unique_id": "test/intermediate_algebra/1217.json", "hypothesis": "x^5 - x^4 + x^3 - x^2 + x - 1", "gold_value": null, "is_correct": true}
+{"id": "52", "unique_id": "test/prealgebra/951.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "53", "unique_id": "test/precalculus/1105.json", "hypothesis": "-\\frac{\\pi}{6}", "gold_value": null, "is_correct": true}
+{"id": "54", "unique_id": "test/prealgebra/572.json", "hypothesis": "0.15", "gold_value": null, "is_correct": true}
+{"id": "55", "unique_id": "test/algebra/187.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "56", "unique_id": "test/algebra/769.json", "hypothesis": "11", "gold_value": null, "is_correct": true}
+{"id": "57", "unique_id": "test/intermediate_algebra/1168.json", "hypothesis": "16", "gold_value": null, "is_correct": true}
+{"id": "58", "unique_id": "test/algebra/722.json", "hypothesis": "9901", "gold_value": null, "is_correct": true}
+{"id": "59", "unique_id": "test/prealgebra/1247.json", "hypothesis": "5", "gold_value": null, "is_correct": true}
+{"id": "60", "unique_id": "test/intermediate_algebra/956.json", "hypothesis": "\\left(-\\frac{13}{4}, \\frac{3}{4}, -71\\right)", "gold_value": null, "is_correct": false}
+{"id": "61", "unique_id": "test/intermediate_algebra/1247.json", "hypothesis": "-256", "gold_value": null, "is_correct": true}
+{"id": "62", "unique_id": "test/precalculus/675.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "63", "unique_id": "test/intermediate_algebra/279.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "64", "unique_id": "test/precalculus/1146.json", "hypothesis": "-\\frac{35}{128}", "gold_value": null, "is_correct": false}
+{"id": "65", "unique_id": "test/prealgebra/1747.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "66", "unique_id": "test/algebra/2046.json", "hypothesis": "x^3 + 3x - 6", "gold_value": null, "is_correct": true}
+{"id": "67", "unique_id": "test/prealgebra/1233.json", "hypothesis": "10\\%", "gold_value": null, "is_correct": false}
+{"id": "68", "unique_id": "test/precalculus/1313.json", "hypothesis": "46", "gold_value": null, "is_correct": true}
+{"id": "69", "unique_id": "test/intermediate_algebra/207.json", "hypothesis": "-1", "gold_value": null, "is_correct": true}
+{"id": "70", "unique_id": "test/number_theory/46.json", "hypothesis": "40_9", "gold_value": null, "is_correct": true}
+{"id": "71", "unique_id": "test/number_theory/516.json", "hypothesis": "2526", "gold_value": null, "is_correct": false}
+{"id": "72", "unique_id": "test/geometry/456.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "73", "unique_id": "test/algebra/2253.json", "hypothesis": "\\frac{3\\sqrt{3}}{4}", "gold_value": null, "is_correct": true}
+{"id": "74", "unique_id": "test/precalculus/24313.json", "hypothesis": "\\cot x", "gold_value": null, "is_correct": true}
+{"id": "75", "unique_id": "test/counting_and_probability/1114.json", "hypothesis": "\\frac{11}{36}", "gold_value": null, "is_correct": true}
+{"id": "76", "unique_id": "test/intermediate_algebra/623.json", "hypothesis": "0", "gold_value": null, "is_correct": true}
+{"id": "77", "unique_id": "test/algebra/1004.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "78", "unique_id": "test/intermediate_algebra/47.json", "hypothesis": "(-2, 1)", "gold_value": null, "is_correct": true}
+{"id": "79", "unique_id": "test/prealgebra/192.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "80", "unique_id": "test/intermediate_algebra/1849.json", "hypothesis": "1", "gold_value": null, "is_correct": false}
+{"id": "81", "unique_id": "test/algebra/1035.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "82", "unique_id": "test/algebra/2700.json", "hypothesis": "\\frac{3}{2}", "gold_value": null, "is_correct": true}
+{"id": "83", "unique_id": "test/intermediate_algebra/2046.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "84", "unique_id": "test/algebra/893.json", "hypothesis": "-1", "gold_value": null, "is_correct": true}
+{"id": "85", "unique_id": "test/geometry/353.json", "hypothesis": "\\sqrt{5}", "gold_value": null, "is_correct": true}
+{"id": "86", "unique_id": "test/prealgebra/307.json", "hypothesis": "240", "gold_value": null, "is_correct": true}
+{"id": "87", "unique_id": "test/algebra/567.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "88", "unique_id": "test/algebra/892.json", "hypothesis": "-2", "gold_value": null, "is_correct": false}
+{"id": "89", "unique_id": "test/number_theory/357.json", "hypothesis": "21", "gold_value": null, "is_correct": true}
+{"id": "90", "unique_id": "test/prealgebra/1761.json", "hypothesis": "\\frac{3}{2}", "gold_value": null, "is_correct": true}
+{"id": "91", "unique_id": "test/algebra/2023.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "92", "unique_id": "test/counting_and_probability/377.json", "hypothesis": "\\frac{2240}{78125}", "gold_value": null, "is_correct": true}
+{"id": "93", "unique_id": "test/algebra/873.json", "hypothesis": "33", "gold_value": null, "is_correct": true}
+{"id": "94", "unique_id": "test/prealgebra/1646.json", "hypothesis": "130^\\circ", "gold_value": null, "is_correct": false}
+{"id": "95", "unique_id": "test/precalculus/34.json", "hypothesis": "-4", "gold_value": null, "is_correct": true}
+{"id": "96", "unique_id": "test/intermediate_algebra/662.json", "hypothesis": "3", "gold_value": null, "is_correct": false}
+{"id": "97", "unique_id": "test/prealgebra/105.json", "hypothesis": "west", "gold_value": null, "is_correct": false}
+{"id": "98", "unique_id": "test/prealgebra/1924.json", "hypothesis": "2k + 2", "gold_value": null, "is_correct": true}
+{"id": "99", "unique_id": "test/precalculus/1300.json", "hypothesis": "\\begin{pmatrix} -\\frac{1}{3} \\\\ \\frac{2}{3} \\\\ \\frac{5}{3} \\end{pmatrix}", "gold_value": null, "is_correct": false}
+{"id": "100", "unique_id": "test/geometry/183.json", "hypothesis": "70", "gold_value": null, "is_correct": false}
+{"id": "101", "unique_id": "test/intermediate_algebra/582.json", "hypothesis": "850", "gold_value": null, "is_correct": true}
+{"id": "102", "unique_id": "test/intermediate_algebra/431.json", "hypothesis": "(a + 5)(b + 2)", "gold_value": null, "is_correct": true}
+{"id": "103", "unique_id": "test/intermediate_algebra/558.json", "hypothesis": "(1, 3)", "gold_value": null, "is_correct": false}
+{"id": "104", "unique_id": "test/intermediate_algebra/362.json", "hypothesis": "40", "gold_value": null, "is_correct": true}
+{"id": "105", "unique_id": "test/prealgebra/1804.json", "hypothesis": "29", "gold_value": null, "is_correct": true}
+{"id": "106", "unique_id": "test/intermediate_algebra/515.json", "hypothesis": "\\frac{4}{3}", "gold_value": null, "is_correct": true}
+{"id": "107", "unique_id": "test/number_theory/914.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "108", "unique_id": "test/intermediate_algebra/894.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "109", "unique_id": "test/precalculus/44.json", "hypothesis": "120^\\circ", "gold_value": null, "is_correct": true}
+{"id": "110", "unique_id": "test/intermediate_algebra/345.json", "hypothesis": "14", "gold_value": null, "is_correct": false}
+{"id": "111", "unique_id": "test/counting_and_probability/23957.json", "hypothesis": "210", "gold_value": null, "is_correct": true}
+{"id": "112", "unique_id": "test/algebra/2058.json", "hypothesis": "13", "gold_value": null, "is_correct": true}
+{"id": "113", "unique_id": "test/algebra/2593.json", "hypothesis": "8000", "gold_value": null, "is_correct": true}
+{"id": "114", "unique_id": "test/intermediate_algebra/1898.json", "hypothesis": "-5", "gold_value": null, "is_correct": true}
+{"id": "115", "unique_id": "test/counting_and_probability/1060.json", "hypothesis": "1260", "gold_value": null, "is_correct": true}
+{"id": "116", "unique_id": "test/algebra/2157.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "117", "unique_id": "test/algebra/2251.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "118", "unique_id": "test/intermediate_algebra/232.json", "hypothesis": "81", "gold_value": null, "is_correct": true}
+{"id": "119", "unique_id": "test/prealgebra/1733.json", "hypothesis": "-9", "gold_value": null, "is_correct": true}
+{"id": "120", "unique_id": "test/intermediate_algebra/128.json", "hypothesis": "\\text{odd}", "gold_value": null, "is_correct": false}
+{"id": "121", "unique_id": "test/prealgebra/505.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "122", "unique_id": "test/algebra/1332.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "123", "unique_id": "test/geometry/283.json", "hypothesis": "2", "gold_value": null, "is_correct": false}
+{"id": "124", "unique_id": "test/algebra/972.json", "hypothesis": "\\frac{11}{2}", "gold_value": null, "is_correct": true}
+{"id": "125", "unique_id": "test/algebra/2232.json", "hypothesis": "-3", "gold_value": null, "is_correct": true}
+{"id": "126", "unique_id": "test/intermediate_algebra/1063.json", "hypothesis": "1 + 266i", "gold_value": null, "is_correct": false}
+{"id": "127", "unique_id": "test/number_theory/847.json", "hypothesis": "4210_5", "gold_value": null, "is_correct": true}
+{"id": "128", "unique_id": "test/algebra/661.json", "hypothesis": "36", "gold_value": null, "is_correct": true}
+{"id": "129", "unique_id": "test/geometry/1140.json", "hypothesis": "\\frac{3840}{289}", "gold_value": null, "is_correct": true}
+{"id": "130", "unique_id": "test/number_theory/753.json", "hypothesis": "3", "gold_value": null, "is_correct": false}
+{"id": "131", "unique_id": "test/algebra/246.json", "hypothesis": "8", "gold_value": null, "is_correct": true}
+{"id": "132", "unique_id": "test/prealgebra/1686.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "133", "unique_id": "test/prealgebra/1807.json", "hypothesis": "120", "gold_value": null, "is_correct": true}
+{"id": "134", "unique_id": "test/intermediate_algebra/1126.json", "hypothesis": "16", "gold_value": null, "is_correct": true}
+{"id": "135", "unique_id": "test/prealgebra/1297.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "136", "unique_id": "test/intermediate_algebra/2022.json", "hypothesis": "64", "gold_value": null, "is_correct": true}
+{"id": "137", "unique_id": "test/number_theory/1257.json", "hypothesis": "204_5", "gold_value": null, "is_correct": true}
+{"id": "138", "unique_id": "test/counting_and_probability/430.json", "hypothesis": "\\frac{1}{30}", "gold_value": null, "is_correct": false}
+{"id": "139", "unique_id": "test/intermediate_algebra/1151.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "140", "unique_id": "test/number_theory/156.json", "hypothesis": "13", "gold_value": null, "is_correct": true}
+{"id": "141", "unique_id": "test/number_theory/612.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "142", "unique_id": "test/counting_and_probability/159.json", "hypothesis": "28800", "gold_value": null, "is_correct": true}
+{"id": "143", "unique_id": "test/precalculus/477.json", "hypothesis": "3\\sqrt{5}", "gold_value": null, "is_correct": true}
+{"id": "144", "unique_id": "test/precalculus/43.json", "hypothesis": "(15, -29)", "gold_value": null, "is_correct": true}
+{"id": "145", "unique_id": "test/intermediate_algebra/1408.json", "hypothesis": "2\\cos\\left(85 \\cos^{-1}\\left( \\frac{1 + \\sqrt{5}}{4} \\right) \\right)", "gold_value": null, "is_correct": true}
+{"id": "146", "unique_id": "test/algebra/1519.json", "hypothesis": "\\frac{\\sqrt{3}}{3}", "gold_value": null, "is_correct": true}
+{"id": "147", "unique_id": "test/intermediate_algebra/966.json", "hypothesis": "12\\sqrt{2}", "gold_value": null, "is_correct": false}
+{"id": "148", "unique_id": "test/algebra/988.json", "hypothesis": "11", "gold_value": null, "is_correct": true}
+{"id": "149", "unique_id": "test/number_theory/931.json", "hypothesis": "49", "gold_value": null, "is_correct": true}
+{"id": "150", "unique_id": "test/intermediate_algebra/964.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "151", "unique_id": "test/precalculus/986.json", "hypothesis": "144", "gold_value": null, "is_correct": true}
+{"id": "152", "unique_id": "test/geometry/172.json", "hypothesis": "8", "gold_value": null, "is_correct": true}
+{"id": "153", "unique_id": "test/counting_and_probability/230.json", "hypothesis": "\\frac{2}{21}", "gold_value": null, "is_correct": true}
+{"id": "154", "unique_id": "test/geometry/880.json", "hypothesis": "6\\sqrt{5}", "gold_value": null, "is_correct": false}
+{"id": "155", "unique_id": "test/counting_and_probability/803.json", "hypothesis": "\\frac{1}{4}", "gold_value": null, "is_correct": true}
+{"id": "156", "unique_id": "test/precalculus/117.json", "hypothesis": "150", "gold_value": null, "is_correct": false}
+{"id": "157", "unique_id": "test/intermediate_algebra/1410.json", "hypothesis": "\\frac{6}{5}", "gold_value": null, "is_correct": true}
+{"id": "158", "unique_id": "test/algebra/2570.json", "hypothesis": "2107", "gold_value": null, "is_correct": true}
+{"id": "159", "unique_id": "test/algebra/621.json", "hypothesis": "3.21", "gold_value": null, "is_correct": true}
+{"id": "160", "unique_id": "test/number_theory/521.json", "hypothesis": "18", "gold_value": null, "is_correct": true}
+{"id": "161", "unique_id": "test/algebra/1255.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "162", "unique_id": "test/prealgebra/1655.json", "hypothesis": "\\frac{17}{50}", "gold_value": null, "is_correct": true}
+{"id": "163", "unique_id": "test/algebra/2517.json", "hypothesis": "-\\frac{35}{9}", "gold_value": null, "is_correct": true}
+{"id": "164", "unique_id": "test/precalculus/697.json", "hypothesis": "-1.727", "gold_value": null, "is_correct": false}
+{"id": "165", "unique_id": "test/prealgebra/1356.json", "hypothesis": "\\frac{4}{9}", "gold_value": null, "is_correct": true}
+{"id": "166", "unique_id": "test/prealgebra/1003.json", "hypothesis": "\\frac{270}{7}", "gold_value": null, "is_correct": false}
+{"id": "167", "unique_id": "test/algebra/478.json", "hypothesis": "65", "gold_value": null, "is_correct": true}
+{"id": "168", "unique_id": "test/counting_and_probability/181.json", "hypothesis": "4", "gold_value": null, "is_correct": false}
+{"id": "169", "unique_id": "test/geometry/802.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "170", "unique_id": "test/algebra/297.json", "hypothesis": "-136", "gold_value": null, "is_correct": false}
+{"id": "171", "unique_id": "test/prealgebra/1272.json", "hypothesis": "\\frac{13}{15}", "gold_value": null, "is_correct": true}
+{"id": "172", "unique_id": "test/algebra/841.json", "hypothesis": "350", "gold_value": null, "is_correct": true}
+{"id": "173", "unique_id": "test/algebra/686.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "174", "unique_id": "test/algebra/351.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "175", "unique_id": "test/intermediate_algebra/991.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "176", "unique_id": "test/number_theory/598.json", "hypothesis": "0.0000672", "gold_value": null, "is_correct": true}
+{"id": "177", "unique_id": "test/geometry/65.json", "hypothesis": "30", "gold_value": null, "is_correct": false}
+{"id": "178", "unique_id": "test/prealgebra/1113.json", "hypothesis": "60", "gold_value": null, "is_correct": true}
+{"id": "179", "unique_id": "test/precalculus/659.json", "hypothesis": "5x - 7y + 11z + 4 = 0", "gold_value": null, "is_correct": true}
+{"id": "180", "unique_id": "test/prealgebra/1908.json", "hypothesis": "2", "gold_value": null, "is_correct": false}
+{"id": "181", "unique_id": "test/algebra/1275.json", "hypothesis": "\\frac{\\sqrt{3}}{3}", "gold_value": null, "is_correct": true}
+{"id": "182", "unique_id": "test/prealgebra/1922.json", "hypothesis": "1251", "gold_value": null, "is_correct": true}
+{"id": "183", "unique_id": "test/algebra/1082.json", "hypothesis": "23", "gold_value": null, "is_correct": true}
+{"id": "184", "unique_id": "test/intermediate_algebra/183.json", "hypothesis": "(2.2646, \\infty)", "gold_value": null, "is_correct": false}
+{"id": "185", "unique_id": "test/algebra/1214.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "186", "unique_id": "test/number_theory/978.json", "hypothesis": "7", "gold_value": null, "is_correct": true}
+{"id": "187", "unique_id": "test/algebra/2199.json", "hypothesis": "7", "gold_value": null, "is_correct": true}
+{"id": "188", "unique_id": "test/algebra/733.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "189", "unique_id": "test/geometry/702.json", "hypothesis": "160", "gold_value": null, "is_correct": true}
+{"id": "190", "unique_id": "test/counting_and_probability/51.json", "hypothesis": "\\frac{13}{18}", "gold_value": null, "is_correct": true}
+{"id": "191", "unique_id": "test/algebra/109.json", "hypothesis": "0", "gold_value": null, "is_correct": true}
+{"id": "192", "unique_id": "test/geometry/221.json", "hypothesis": "30", "gold_value": null, "is_correct": true}
+{"id": "193", "unique_id": "test/intermediate_algebra/1422.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "194", "unique_id": "test/intermediate_algebra/2196.json", "hypothesis": "\\frac{1}{4}", "gold_value": null, "is_correct": true}
+{"id": "195", "unique_id": "test/intermediate_algebra/591.json", "hypothesis": "24", "gold_value": null, "is_correct": true}
+{"id": "196", "unique_id": "test/algebra/1937.json", "hypothesis": "1600", "gold_value": null, "is_correct": true}
+{"id": "197", "unique_id": "test/number_theory/838.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "198", "unique_id": "test/counting_and_probability/508.json", "hypothesis": "10080", "gold_value": null, "is_correct": true}
+{"id": "199", "unique_id": "test/prealgebra/1907.json", "hypothesis": "17", "gold_value": null, "is_correct": true}
+{"id": "200", "unique_id": "test/prealgebra/2086.json", "hypothesis": "40", "gold_value": null, "is_correct": true}
+{"id": "201", "unique_id": "test/number_theory/149.json", "hypothesis": "66", "gold_value": null, "is_correct": true}
+{"id": "202", "unique_id": "test/algebra/291.json", "hypothesis": "\\frac{2}{3}", "gold_value": null, "is_correct": true}
+{"id": "203", "unique_id": "test/intermediate_algebra/1555.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "204", "unique_id": "test/intermediate_algebra/1510.json", "hypothesis": "16", "gold_value": null, "is_correct": false}
+{"id": "205", "unique_id": "test/precalculus/263.json", "hypothesis": "\\begin{pmatrix} -2 \\\\ -14 \\\\ -7 \\end{pmatrix}", "gold_value": null, "is_correct": true}
+{"id": "206", "unique_id": "test/precalculus/541.json", "hypothesis": "\\left( \\frac{3}{2}, -13 \\right)", "gold_value": null, "is_correct": true}
+{"id": "207", "unique_id": "test/counting_and_probability/389.json", "hypothesis": "28", "gold_value": null, "is_correct": true}
+{"id": "208", "unique_id": "test/number_theory/1201.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "209", "unique_id": "test/number_theory/234.json", "hypothesis": "16", "gold_value": null, "is_correct": true}
+{"id": "210", "unique_id": "test/prealgebra/378.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "211", "unique_id": "test/prealgebra/1555.json", "hypothesis": "5", "gold_value": null, "is_correct": true}
+{"id": "212", "unique_id": "test/algebra/2102.json", "hypothesis": "56", "gold_value": null, "is_correct": true}
+{"id": "213", "unique_id": "test/intermediate_algebra/102.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "214", "unique_id": "test/counting_and_probability/765.json", "hypothesis": "110", "gold_value": null, "is_correct": true}
+{"id": "215", "unique_id": "test/algebra/907.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "216", "unique_id": "test/prealgebra/1436.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "217", "unique_id": "test/number_theory/417.json", "hypothesis": "11111111100", "gold_value": null, "is_correct": true}
+{"id": "218", "unique_id": "test/algebra/864.json", "hypothesis": "(-1, 6)", "gold_value": null, "is_correct": true}
+{"id": "219", "unique_id": "test/counting_and_probability/282.json", "hypothesis": "\\frac{1}{3}", "gold_value": null, "is_correct": false}
+{"id": "220", "unique_id": "test/prealgebra/1961.json", "hypothesis": "\\frac{16}{27}", "gold_value": null, "is_correct": true}
+{"id": "221", "unique_id": "test/number_theory/89.json", "hypothesis": "900", "gold_value": null, "is_correct": true}
+{"id": "222", "unique_id": "test/geometry/547.json", "hypothesis": "150", "gold_value": null, "is_correct": false}
+{"id": "223", "unique_id": "test/number_theory/183.json", "hypothesis": "14", "gold_value": null, "is_correct": true}
+{"id": "224", "unique_id": "test/precalculus/190.json", "hypothesis": "\\frac{9}{256}", "gold_value": null, "is_correct": true}
+{"id": "225", "unique_id": "test/algebra/2159.json", "hypothesis": "11", "gold_value": null, "is_correct": true}
+{"id": "226", "unique_id": "test/counting_and_probability/71.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "227", "unique_id": "test/precalculus/819.json", "hypothesis": "\\text{C}", "gold_value": null, "is_correct": true}
+{"id": "228", "unique_id": "test/precalculus/1056.json", "hypothesis": "288\\pi", "gold_value": null, "is_correct": true}
+{"id": "229", "unique_id": "test/prealgebra/2057.json", "hypothesis": "90", "gold_value": null, "is_correct": true}
+{"id": "230", "unique_id": "test/intermediate_algebra/986.json", "hypothesis": "\\frac{16}{5}", "gold_value": null, "is_correct": true}
+{"id": "231", "unique_id": "test/algebra/1578.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "232", "unique_id": "test/intermediate_algebra/1354.json", "hypothesis": "\\frac{1997}{2}", "gold_value": null, "is_correct": true}
+{"id": "233", "unique_id": "test/precalculus/441.json", "hypothesis": "30", "gold_value": null, "is_correct": false}
+{"id": "234", "unique_id": "test/intermediate_algebra/1837.json", "hypothesis": "34", "gold_value": null, "is_correct": true}
+{"id": "235", "unique_id": "test/prealgebra/153.json", "hypothesis": "\\frac{5}{9}", "gold_value": null, "is_correct": true}
+{"id": "236", "unique_id": "test/precalculus/989.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "237", "unique_id": "test/intermediate_algebra/337.json", "hypothesis": "22", "gold_value": null, "is_correct": true}
+{"id": "238", "unique_id": "test/algebra/975.json", "hypothesis": "-4", "gold_value": null, "is_correct": true}
+{"id": "239", "unique_id": "test/geometry/229.json", "hypothesis": "22", "gold_value": null, "is_correct": false}
+{"id": "240", "unique_id": "test/prealgebra/874.json", "hypothesis": "52^\\circ - 2x^\\circ", "gold_value": null, "is_correct": false}
+{"id": "241", "unique_id": "test/algebra/1143.json", "hypothesis": "17", "gold_value": null, "is_correct": true}
+{"id": "242", "unique_id": "test/algebra/2626.json", "hypothesis": "32348", "gold_value": null, "is_correct": false}
+{"id": "243", "unique_id": "test/geometry/254.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "244", "unique_id": "test/prealgebra/1251.json", "hypothesis": "8", "gold_value": null, "is_correct": true}
+{"id": "245", "unique_id": "test/intermediate_algebra/1210.json", "hypothesis": "-13x + 3", "gold_value": null, "is_correct": true}
+{"id": "246", "unique_id": "test/algebra/1787.json", "hypothesis": "8", "gold_value": null, "is_correct": true}
+{"id": "247", "unique_id": "test/intermediate_algebra/1123.json", "hypothesis": "0", "gold_value": null, "is_correct": false}
+{"id": "248", "unique_id": "test/precalculus/920.json", "hypothesis": "\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}", "gold_value": null, "is_correct": true}
+{"id": "249", "unique_id": "test/number_theory/1065.json", "hypothesis": "17", "gold_value": null, "is_correct": true}
+{"id": "250", "unique_id": "test/algebra/1934.json", "hypothesis": "13", "gold_value": null, "is_correct": true}
+{"id": "251", "unique_id": "test/counting_and_probability/894.json", "hypothesis": "540", "gold_value": null, "is_correct": true}
+{"id": "252", "unique_id": "test/algebra/2064.json", "hypothesis": "81", "gold_value": null, "is_correct": true}
+{"id": "253", "unique_id": "test/prealgebra/1458.json", "hypothesis": "\\frac{1}{8}", "gold_value": null, "is_correct": true}
+{"id": "254", "unique_id": "test/counting_and_probability/1009.json", "hypothesis": "28", "gold_value": null, "is_correct": true}
+{"id": "255", "unique_id": "test/precalculus/452.json", "hypothesis": "\\text{E}", "gold_value": null, "is_correct": true}
+{"id": "256", "unique_id": "test/prealgebra/1995.json", "hypothesis": "\\frac{8}{21}", "gold_value": null, "is_correct": true}
+{"id": "257", "unique_id": "test/geometry/473.json", "hypothesis": "864", "gold_value": null, "is_correct": false}
+{"id": "258", "unique_id": "test/algebra/694.json", "hypothesis": "16", "gold_value": null, "is_correct": true}
+{"id": "259", "unique_id": "test/intermediate_algebra/149.json", "hypothesis": "22", "gold_value": null, "is_correct": true}
+{"id": "260", "unique_id": "test/precalculus/580.json", "hypothesis": "120^\\circ", "gold_value": null, "is_correct": true}
+{"id": "261", "unique_id": "test/geometry/347.json", "hypothesis": "76", "gold_value": null, "is_correct": false}
+{"id": "262", "unique_id": "test/prealgebra/1317.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "263", "unique_id": "test/geometry/483.json", "hypothesis": "15", "gold_value": null, "is_correct": true}
+{"id": "264", "unique_id": "test/geometry/826.json", "hypothesis": "1\\frac{1}{2}", "gold_value": null, "is_correct": false}
+{"id": "265", "unique_id": "test/algebra/524.json", "hypothesis": "4005", "gold_value": null, "is_correct": true}
+{"id": "266", "unique_id": "test/prealgebra/1742.json", "hypothesis": "\\frac{33}{100}", "gold_value": null, "is_correct": true}
+{"id": "267", "unique_id": "test/geometry/226.json", "hypothesis": "180", "gold_value": null, "is_correct": false}
+{"id": "268", "unique_id": "test/number_theory/466.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "269", "unique_id": "test/counting_and_probability/913.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "270", "unique_id": "test/algebra/2551.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "271", "unique_id": "test/number_theory/634.json", "hypothesis": "333", "gold_value": null, "is_correct": true}
+{"id": "272", "unique_id": "test/number_theory/533.json", "hypothesis": "1030", "gold_value": null, "is_correct": true}
+{"id": "273", "unique_id": "test/prealgebra/993.json", "hypothesis": "1250", "gold_value": null, "is_correct": true}
+{"id": "274", "unique_id": "test/geometry/686.json", "hypothesis": "18 + 2\\pi", "gold_value": null, "is_correct": true}
+{"id": "275", "unique_id": "test/algebra/346.json", "hypothesis": "7", "gold_value": null, "is_correct": true}
+{"id": "276", "unique_id": "test/algebra/1282.json", "hypothesis": "11", "gold_value": null, "is_correct": true}
+{"id": "277", "unique_id": "test/prealgebra/1834.json", "hypothesis": "\\sqrt{53}", "gold_value": null, "is_correct": true}
+{"id": "278", "unique_id": "test/number_theory/691.json", "hypothesis": "255", "gold_value": null, "is_correct": true}
+{"id": "279", "unique_id": "test/prealgebra/1512.json", "hypothesis": "4\\pi", "gold_value": null, "is_correct": false}
+{"id": "280", "unique_id": "test/number_theory/1287.json", "hypothesis": "8", "gold_value": null, "is_correct": true}
+{"id": "281", "unique_id": "test/prealgebra/260.json", "hypothesis": "36^\\circ", "gold_value": null, "is_correct": true}
+{"id": "282", "unique_id": "test/algebra/1184.json", "hypothesis": "129", "gold_value": null, "is_correct": true}
+{"id": "283", "unique_id": "test/prealgebra/1787.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "284", "unique_id": "test/precalculus/768.json", "hypothesis": "3 - 2\\sqrt{2},\\ 3 + 2\\sqrt{2},\\ -3 - 2\\sqrt{2},\\ -3 + 2\\sqrt{2}", "gold_value": null, "is_correct": false}
+{"id": "285", "unique_id": "test/intermediate_algebra/1411.json", "hypothesis": "160", "gold_value": null, "is_correct": false}
+{"id": "286", "unique_id": "test/intermediate_algebra/960.json", "hypothesis": "\\frac{1}{2}", "gold_value": null, "is_correct": false}
+{"id": "287", "unique_id": "test/number_theory/631.json", "hypothesis": "36", "gold_value": null, "is_correct": true}
+{"id": "288", "unique_id": "test/precalculus/1172.json", "hypothesis": "\\sqrt{89}", "gold_value": null, "is_correct": false}
+{"id": "289", "unique_id": "test/intermediate_algebra/1300.json", "hypothesis": "16", "gold_value": null, "is_correct": true}
+{"id": "290", "unique_id": "test/algebra/634.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "291", "unique_id": "test/counting_and_probability/25149.json", "hypothesis": "63", "gold_value": null, "is_correct": true}
+{"id": "292", "unique_id": "test/intermediate_algebra/90.json", "hypothesis": "798", "gold_value": null, "is_correct": false}
+{"id": "293", "unique_id": "test/algebra/2486.json", "hypothesis": "\\left( \\frac{3}{5}, \\frac{8}{3} \\right]", "gold_value": null, "is_correct": true}
+{"id": "294", "unique_id": "test/number_theory/488.json", "hypothesis": "58", "gold_value": null, "is_correct": true}
+{"id": "295", "unique_id": "test/precalculus/1201.json", "hypothesis": "11", "gold_value": null, "is_correct": true}
+{"id": "296", "unique_id": "test/intermediate_algebra/754.json", "hypothesis": "\\textbf{(B)}", "gold_value": null, "is_correct": false}
+{"id": "297", "unique_id": "test/number_theory/1172.json", "hypothesis": "105", "gold_value": null, "is_correct": false}
+{"id": "298", "unique_id": "test/precalculus/881.json", "hypothesis": "\\begin{pmatrix} -18 \\\\ -49 \\\\ 96 \\end{pmatrix}", "gold_value": null, "is_correct": true}
+{"id": "299", "unique_id": "test/geometry/1097.json", "hypothesis": "63", "gold_value": null, "is_correct": true}
+{"id": "300", "unique_id": "test/counting_and_probability/339.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "301", "unique_id": "test/prealgebra/1044.json", "hypothesis": "5.4", "gold_value": null, "is_correct": false}
+{"id": "302", "unique_id": "test/prealgebra/465.json", "hypothesis": "5", "gold_value": null, "is_correct": true}
+{"id": "303", "unique_id": "test/geometry/965.json", "hypothesis": "21", "gold_value": null, "is_correct": false}
+{"id": "304", "unique_id": "test/intermediate_algebra/446.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "305", "unique_id": "test/algebra/2257.json", "hypothesis": "\\frac{9}{19}", "gold_value": null, "is_correct": true}
+{"id": "306", "unique_id": "test/intermediate_algebra/1544.json", "hypothesis": "5", "gold_value": null, "is_correct": false}
+{"id": "307", "unique_id": "test/precalculus/695.json", "hypothesis": "(-\\infty, 0]", "gold_value": null, "is_correct": true}
+{"id": "308", "unique_id": "test/geometry/711.json", "hypothesis": "\\frac{3\\sqrt{3}}{2} + 2", "gold_value": null, "is_correct": false}
+{"id": "309", "unique_id": "test/number_theory/203.json", "hypothesis": "14", "gold_value": null, "is_correct": true}
+{"id": "310", "unique_id": "test/algebra/1842.json", "hypothesis": "49", "gold_value": null, "is_correct": true}
+{"id": "311", "unique_id": "test/number_theory/911.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "312", "unique_id": "test/intermediate_algebra/1714.json", "hypothesis": "(5, \\infty)", "gold_value": null, "is_correct": true}
+{"id": "313", "unique_id": "test/prealgebra/1423.json", "hypothesis": "12\\pi", "gold_value": null, "is_correct": true}
+{"id": "314", "unique_id": "test/geometry/1108.json", "hypothesis": "(2, 4)", "gold_value": null, "is_correct": true}
+{"id": "315", "unique_id": "test/algebra/791.json", "hypothesis": "41", "gold_value": null, "is_correct": true}
+{"id": "316", "unique_id": "test/algebra/276.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "317", "unique_id": "test/intermediate_algebra/2152.json", "hypothesis": "2", "gold_value": null, "is_correct": false}
+{"id": "318", "unique_id": "test/algebra/2735.json", "hypothesis": "\\frac{11 + 9a}{20}", "gold_value": null, "is_correct": true}
+{"id": "319", "unique_id": "test/algebra/425.json", "hypothesis": "-128", "gold_value": null, "is_correct": true}
+{"id": "320", "unique_id": "test/geometry/947.json", "hypothesis": "-\\frac{24}{25}", "gold_value": null, "is_correct": true}
+{"id": "321", "unique_id": "test/prealgebra/954.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "322", "unique_id": "test/algebra/1936.json", "hypothesis": "-1", "gold_value": null, "is_correct": true}
+{"id": "323", "unique_id": "test/counting_and_probability/870.json", "hypothesis": "\\frac{1}{3}", "gold_value": null, "is_correct": true}
+{"id": "324", "unique_id": "test/geometry/465.json", "hypothesis": "150", "gold_value": null, "is_correct": false}
+{"id": "325", "unique_id": "test/geometry/73.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "326", "unique_id": "test/precalculus/742.json", "hypothesis": "-0.09", "gold_value": null, "is_correct": false}
+{"id": "327", "unique_id": "test/intermediate_algebra/117.json", "hypothesis": "23", "gold_value": null, "is_correct": false}
+{"id": "328", "unique_id": "test/algebra/2176.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "329", "unique_id": "test/prealgebra/1973.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "330", "unique_id": "test/counting_and_probability/216.json", "hypothesis": "1940", "gold_value": null, "is_correct": true}
+{"id": "331", "unique_id": "test/algebra/509.json", "hypothesis": "\\dfrac{169}{36}", "gold_value": null, "is_correct": false}
+{"id": "332", "unique_id": "test/intermediate_algebra/190.json", "hypothesis": "\\frac{4\\sqrt{3}}{3}", "gold_value": null, "is_correct": false}
+{"id": "333", "unique_id": "test/intermediate_algebra/776.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "334", "unique_id": "test/algebra/1457.json", "hypothesis": "-120", "gold_value": null, "is_correct": true}
+{"id": "335", "unique_id": "test/number_theory/483.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "336", "unique_id": "test/algebra/2592.json", "hypothesis": "26000", "gold_value": null, "is_correct": true}
+{"id": "337", "unique_id": "test/prealgebra/1730.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "338", "unique_id": "test/number_theory/368.json", "hypothesis": "4343_6", "gold_value": null, "is_correct": true}
+{"id": "339", "unique_id": "test/intermediate_algebra/1566.json", "hypothesis": "2k", "gold_value": null, "is_correct": true}
+{"id": "340", "unique_id": "test/precalculus/801.json", "hypothesis": "75.5^\\circ", "gold_value": null, "is_correct": false}
+{"id": "341", "unique_id": "test/algebra/858.json", "hypothesis": "-2", "gold_value": null, "is_correct": true}
+{"id": "342", "unique_id": "test/prealgebra/1238.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "343", "unique_id": "test/counting_and_probability/737.json", "hypothesis": "58500", "gold_value": null, "is_correct": true}
+{"id": "344", "unique_id": "test/intermediate_algebra/1572.json", "hypothesis": "5", "gold_value": null, "is_correct": true}
+{"id": "345", "unique_id": "test/algebra/1529.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "346", "unique_id": "test/algebra/1338.json", "hypothesis": "66", "gold_value": null, "is_correct": true}
+{"id": "347", "unique_id": "test/algebra/1547.json", "hypothesis": "6r^2 - 4r - 24", "gold_value": null, "is_correct": true}
+{"id": "348", "unique_id": "test/counting_and_probability/116.json", "hypothesis": "4495", "gold_value": null, "is_correct": true}
+{"id": "349", "unique_id": "test/counting_and_probability/238.json", "hypothesis": "5040", "gold_value": null, "is_correct": false}
+{"id": "350", "unique_id": "test/number_theory/686.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "351", "unique_id": "test/precalculus/826.json", "hypothesis": "\\frac{1}{16}", "gold_value": null, "is_correct": true}
+{"id": "352", "unique_id": "test/precalculus/1281.json", "hypothesis": "28.56", "gold_value": null, "is_correct": false}
+{"id": "353", "unique_id": "test/counting_and_probability/1014.json", "hypothesis": "480", "gold_value": null, "is_correct": true}
+{"id": "354", "unique_id": "test/algebra/529.json", "hypothesis": "81", "gold_value": null, "is_correct": true}
+{"id": "355", "unique_id": "test/intermediate_algebra/1166.json", "hypothesis": "100", "gold_value": null, "is_correct": true}
+{"id": "356", "unique_id": "test/algebra/1078.json", "hypothesis": "(-\\sqrt{3}, \\sqrt{3})", "gold_value": null, "is_correct": true}
+{"id": "357", "unique_id": "test/prealgebra/1353.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "358", "unique_id": "test/intermediate_algebra/860.json", "hypothesis": "\\text{ellipse}", "gold_value": null, "is_correct": true}
+{"id": "359", "unique_id": "test/intermediate_algebra/1407.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "360", "unique_id": "test/precalculus/96.json", "hypothesis": "\\frac{7}{4}", "gold_value": null, "is_correct": true}
+{"id": "361", "unique_id": "test/intermediate_algebra/1405.json", "hypothesis": "16\\sqrt{3}", "gold_value": null, "is_correct": true}
+{"id": "362", "unique_id": "test/counting_and_probability/14.json", "hypothesis": "\\frac{1}{4}", "gold_value": null, "is_correct": true}
+{"id": "363", "unique_id": "test/algebra/251.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "364", "unique_id": "test/intermediate_algebra/690.json", "hypothesis": "(1, -16, -4, 43)", "gold_value": null, "is_correct": true}
+{"id": "365", "unique_id": "test/number_theory/820.json", "hypothesis": "8", "gold_value": null, "is_correct": true}
+{"id": "366", "unique_id": "test/number_theory/109.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "367", "unique_id": "test/algebra/1199.json", "hypothesis": "1", "gold_value": null, "is_correct": true}
+{"id": "368", "unique_id": "test/geometry/106.json", "hypothesis": "31", "gold_value": null, "is_correct": true}
+{"id": "369", "unique_id": "test/prealgebra/1187.json", "hypothesis": "144", "gold_value": null, "is_correct": false}
+{"id": "370", "unique_id": "test/precalculus/1289.json", "hypothesis": "-41", "gold_value": null, "is_correct": true}
+{"id": "371", "unique_id": "test/intermediate_algebra/955.json", "hypothesis": "17", "gold_value": null, "is_correct": true}
+{"id": "372", "unique_id": "test/geometry/846.json", "hypothesis": "50^\\circ", "gold_value": null, "is_correct": false}
+{"id": "373", "unique_id": "test/algebra/2264.json", "hypothesis": "-1 + 2i", "gold_value": null, "is_correct": false}
+{"id": "374", "unique_id": "test/algebra/1303.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "375", "unique_id": "test/number_theory/427.json", "hypothesis": "25", "gold_value": null, "is_correct": true}
+{"id": "376", "unique_id": "test/geometry/538.json", "hypothesis": "(8, -2)", "gold_value": null, "is_correct": true}
+{"id": "377", "unique_id": "test/number_theory/1185.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "378", "unique_id": "test/prealgebra/1743.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "379", "unique_id": "test/prealgebra/1865.json", "hypothesis": "12^{\\text{th}}", "gold_value": null, "is_correct": false}
+{"id": "380", "unique_id": "test/intermediate_algebra/1992.json", "hypothesis": "(-9, 0) \\cup (0, 9) \\cup (9, 36)", "gold_value": null, "is_correct": false}
+{"id": "381", "unique_id": "test/counting_and_probability/188.json", "hypothesis": "\\frac{4}{9}", "gold_value": null, "is_correct": false}
+{"id": "382", "unique_id": "test/intermediate_algebra/1111.json", "hypothesis": "\\frac{20000}{\\pi}", "gold_value": null, "is_correct": true}
+{"id": "383", "unique_id": "test/algebra/101.json", "hypothesis": "[-2, 7]", "gold_value": null, "is_correct": false}
+{"id": "384", "unique_id": "test/prealgebra/1298.json", "hypothesis": "15x - 80", "gold_value": null, "is_correct": true}
+{"id": "385", "unique_id": "test/prealgebra/2066.json", "hypothesis": "22", "gold_value": null, "is_correct": true}
+{"id": "386", "unique_id": "test/algebra/170.json", "hypothesis": "11", "gold_value": null, "is_correct": true}
+{"id": "387", "unique_id": "test/algebra/849.json", "hypothesis": "18", "gold_value": null, "is_correct": true}
+{"id": "388", "unique_id": "test/algebra/1031.json", "hypothesis": "\\frac{11}{2}", "gold_value": null, "is_correct": true}
+{"id": "389", "unique_id": "test/geometry/795.json", "hypothesis": "\\frac{\\sqrt{21}}{5}", "gold_value": null, "is_correct": true}
+{"id": "390", "unique_id": "test/algebra/853.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "391", "unique_id": "test/algebra/2277.json", "hypothesis": "0", "gold_value": null, "is_correct": true}
+{"id": "392", "unique_id": "test/precalculus/902.json", "hypothesis": "10", "gold_value": null, "is_correct": false}
+{"id": "393", "unique_id": "test/algebra/518.json", "hypothesis": "\\frac{3}{4}", "gold_value": null, "is_correct": true}
+{"id": "394", "unique_id": "test/intermediate_algebra/1791.json", "hypothesis": "-\\frac{3}{8}", "gold_value": null, "is_correct": true}
+{"id": "395", "unique_id": "test/algebra/114.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "396", "unique_id": "test/prealgebra/631.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "397", "unique_id": "test/prealgebra/977.json", "hypothesis": "23", "gold_value": null, "is_correct": true}
+{"id": "398", "unique_id": "test/prealgebra/1991.json", "hypothesis": "\\text{Navin}", "gold_value": null, "is_correct": true}
+{"id": "399", "unique_id": "test/prealgebra/1784.json", "hypothesis": "326.5", "gold_value": null, "is_correct": true}
+{"id": "400", "unique_id": "test/geometry/817.json", "hypothesis": "14(\\sqrt{2} + 1)", "gold_value": null, "is_correct": false}
+{"id": "401", "unique_id": "test/intermediate_algebra/1806.json", "hypothesis": "3", "gold_value": null, "is_correct": false}
+{"id": "402", "unique_id": "test/precalculus/1291.json", "hypothesis": "1 - 12i", "gold_value": null, "is_correct": true}
+{"id": "403", "unique_id": "test/number_theory/928.json", "hypothesis": "1", "gold_value": null, "is_correct": false}
+{"id": "404", "unique_id": "test/counting_and_probability/761.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "405", "unique_id": "test/prealgebra/1572.json", "hypothesis": "60", "gold_value": null, "is_correct": true}
+{"id": "406", "unique_id": "test/number_theory/132.json", "hypothesis": "0", "gold_value": null, "is_correct": true}
+{"id": "407", "unique_id": "test/algebra/1960.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "408", "unique_id": "test/precalculus/398.json", "hypothesis": "\\begin{pmatrix} \\frac{1}{5} \\\\ -\\frac{18}{5} \\end{pmatrix}", "gold_value": null, "is_correct": false}
+{"id": "409", "unique_id": "test/intermediate_algebra/1797.json", "hypothesis": "2\\sqrt{5}", "gold_value": null, "is_correct": true}
+{"id": "410", "unique_id": "test/prealgebra/65.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "411", "unique_id": "test/prealgebra/1227.json", "hypothesis": "60", "gold_value": null, "is_correct": true}
+{"id": "412", "unique_id": "test/intermediate_algebra/2146.json", "hypothesis": "406", "gold_value": null, "is_correct": true}
+{"id": "413", "unique_id": "test/algebra/2680.json", "hypothesis": "5r^5", "gold_value": null, "is_correct": true}
+{"id": "414", "unique_id": "test/algebra/2391.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "415", "unique_id": "test/number_theory/769.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "416", "unique_id": "test/precalculus/681.json", "hypothesis": "\\frac{1}{8}", "gold_value": null, "is_correct": true}
+{"id": "417", "unique_id": "test/algebra/776.json", "hypothesis": "-2", "gold_value": null, "is_correct": true}
+{"id": "418", "unique_id": "test/algebra/1796.json", "hypothesis": "2\\sqrt{5}", "gold_value": null, "is_correct": true}
+{"id": "419", "unique_id": "test/precalculus/145.json", "hypothesis": "\\begin{pmatrix} -7 \\\\ 16 \\\\ 5 \\end{pmatrix}", "gold_value": null, "is_correct": true}
+{"id": "420", "unique_id": "test/precalculus/625.json", "hypothesis": "\\begin{pmatrix} \\frac{16}{49} \\\\ \\frac{48}{49} \\\\ \\frac{24}{49} \\end{pmatrix}", "gold_value": null, "is_correct": false}
+{"id": "421", "unique_id": "test/precalculus/1202.json", "hypothesis": "58", "gold_value": null, "is_correct": false}
+{"id": "422", "unique_id": "test/intermediate_algebra/2015.json", "hypothesis": "\\{-1 - \\sqrt{3}, -1 + \\sqrt{3}, 2\\}", "gold_value": null, "is_correct": false}
+{"id": "423", "unique_id": "test/number_theory/1002.json", "hypothesis": "1440", "gold_value": null, "is_correct": true}
+{"id": "424", "unique_id": "test/algebra/1339.json", "hypothesis": "600", "gold_value": null, "is_correct": true}
+{"id": "425", "unique_id": "test/precalculus/1133.json", "hypothesis": "3R^2", "gold_value": null, "is_correct": true}
+{"id": "426", "unique_id": "test/geometry/843.json", "hypothesis": "6\\sqrt{2}", "gold_value": null, "is_correct": true}
+{"id": "427", "unique_id": "test/algebra/2743.json", "hypothesis": "29", "gold_value": null, "is_correct": true}
+{"id": "428", "unique_id": "test/intermediate_algebra/121.json", "hypothesis": "203.5", "gold_value": null, "is_correct": false}
+{"id": "429", "unique_id": "test/intermediate_algebra/1014.json", "hypothesis": "50", "gold_value": null, "is_correct": true}
+{"id": "430", "unique_id": "test/prealgebra/2019.json", "hypothesis": "4.5", "gold_value": null, "is_correct": true}
+{"id": "431", "unique_id": "test/precalculus/499.json", "hypothesis": "\\left[ \\frac{\\pi^2}{8}, \\frac{\\pi^2}{2} \\right]", "gold_value": null, "is_correct": false}
+{"id": "432", "unique_id": "test/intermediate_algebra/1462.json", "hypothesis": "331", "gold_value": null, "is_correct": true}
+{"id": "433", "unique_id": "test/number_theory/410.json", "hypothesis": "0.35625", "gold_value": null, "is_correct": true}
+{"id": "434", "unique_id": "test/prealgebra/1640.json", "hypothesis": "32", "gold_value": null, "is_correct": true}
+{"id": "435", "unique_id": "test/algebra/2043.json", "hypothesis": "(-\\infty, 2) \\cup (3, \\infty)", "gold_value": null, "is_correct": true}
+{"id": "436", "unique_id": "test/counting_and_probability/10.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "437", "unique_id": "test/algebra/1553.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "438", "unique_id": "test/number_theory/255.json", "hypothesis": "4", "gold_value": null, "is_correct": true}
+{"id": "439", "unique_id": "test/intermediate_algebra/199.json", "hypothesis": "x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1", "gold_value": null, "is_correct": true}
+{"id": "440", "unique_id": "test/algebra/2080.json", "hypothesis": "14", "gold_value": null, "is_correct": true}
+{"id": "441", "unique_id": "test/prealgebra/2037.json", "hypothesis": "550", "gold_value": null, "is_correct": true}
+{"id": "442", "unique_id": "test/algebra/1343.json", "hypothesis": "256", "gold_value": null, "is_correct": true}
+{"id": "443", "unique_id": "test/algebra/668.json", "hypothesis": "45", "gold_value": null, "is_correct": true}
+{"id": "444", "unique_id": "test/counting_and_probability/731.json", "hypothesis": "\\frac{k^2 + 1}{2}", "gold_value": null, "is_correct": false}
+{"id": "445", "unique_id": "test/intermediate_algebra/1779.json", "hypothesis": "15", "gold_value": null, "is_correct": true}
+{"id": "446", "unique_id": "test/algebra/2430.json", "hypothesis": "8", "gold_value": null, "is_correct": true}
+{"id": "447", "unique_id": "test/prealgebra/996.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "448", "unique_id": "test/number_theory/1000.json", "hypothesis": "44", "gold_value": null, "is_correct": true}
+{"id": "449", "unique_id": "test/algebra/2789.json", "hypothesis": "47", "gold_value": null, "is_correct": true}
+{"id": "450", "unique_id": "test/number_theory/13.json", "hypothesis": "64", "gold_value": null, "is_correct": true}
+{"id": "451", "unique_id": "test/number_theory/459.json", "hypothesis": "\\frac{639}{40}", "gold_value": null, "is_correct": true}
+{"id": "452", "unique_id": "test/algebra/1814.json", "hypothesis": "143", "gold_value": null, "is_correct": true}
+{"id": "453", "unique_id": "test/algebra/2476.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "454", "unique_id": "test/precalculus/323.json", "hypothesis": "y = 2x + 3", "gold_value": null, "is_correct": true}
+{"id": "455", "unique_id": "test/counting_and_probability/190.json", "hypothesis": "6", "gold_value": null, "is_correct": true}
+{"id": "456", "unique_id": "test/intermediate_algebra/1102.json", "hypothesis": "1, -2", "gold_value": null, "is_correct": false}
+{"id": "457", "unique_id": "test/number_theory/342.json", "hypothesis": "0", "gold_value": null, "is_correct": true}
+{"id": "458", "unique_id": "test/prealgebra/805.json", "hypothesis": "41", "gold_value": null, "is_correct": true}
+{"id": "459", "unique_id": "test/algebra/2780.json", "hypothesis": "18.90", "gold_value": null, "is_correct": false}
+{"id": "460", "unique_id": "test/prealgebra/914.json", "hypothesis": "105", "gold_value": null, "is_correct": false}
+{"id": "461", "unique_id": "test/algebra/824.json", "hypothesis": "12", "gold_value": null, "is_correct": true}
+{"id": "462", "unique_id": "test/number_theory/679.json", "hypothesis": "59", "gold_value": null, "is_correct": true}
+{"id": "463", "unique_id": "test/algebra/1425.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "464", "unique_id": "test/intermediate_algebra/834.json", "hypothesis": "9", "gold_value": null, "is_correct": true}
+{"id": "465", "unique_id": "test/number_theory/72.json", "hypothesis": "121", "gold_value": null, "is_correct": true}
+{"id": "466", "unique_id": "test/precalculus/703.json", "hypothesis": "8\\pi", "gold_value": null, "is_correct": true}
+{"id": "467", "unique_id": "test/prealgebra/1114.json", "hypothesis": "15", "gold_value": null, "is_correct": false}
+{"id": "468", "unique_id": "test/algebra/224.json", "hypothesis": "8", "gold_value": null, "is_correct": true}
+{"id": "469", "unique_id": "test/algebra/435.json", "hypothesis": "25", "gold_value": null, "is_correct": true}
+{"id": "470", "unique_id": "test/intermediate_algebra/158.json", "hypothesis": "27648", "gold_value": null, "is_correct": true}
+{"id": "471", "unique_id": "test/prealgebra/846.json", "hypothesis": "84", "gold_value": null, "is_correct": true}
+{"id": "472", "unique_id": "test/algebra/2470.json", "hypothesis": "137\\frac{1}{2}", "gold_value": null, "is_correct": true}
+{"id": "473", "unique_id": "test/prealgebra/1930.json", "hypothesis": "\\frac{9}{2}", "gold_value": null, "is_correct": false}
+{"id": "474", "unique_id": "test/intermediate_algebra/752.json", "hypothesis": "3", "gold_value": null, "is_correct": true}
+{"id": "475", "unique_id": "test/counting_and_probability/1003.json", "hypothesis": "29", "gold_value": null, "is_correct": true}
+{"id": "476", "unique_id": "test/prealgebra/1252.json", "hypothesis": "200", "gold_value": null, "is_correct": true}
+{"id": "477", "unique_id": "test/number_theory/22.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "478", "unique_id": "test/intermediate_algebra/1279.json", "hypothesis": "\\frac{2}{1005}", "gold_value": null, "is_correct": true}
+{"id": "479", "unique_id": "test/number_theory/1128.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "480", "unique_id": "test/precalculus/1252.json", "hypothesis": "\\omega, \\omega^2", "gold_value": null, "is_correct": false}
+{"id": "481", "unique_id": "test/intermediate_algebra/1467.json", "hypothesis": "8n^2 + 4n + 1", "gold_value": null, "is_correct": true}
+{"id": "482", "unique_id": "test/number_theory/1090.json", "hypothesis": "202", "gold_value": null, "is_correct": true}
+{"id": "483", "unique_id": "test/precalculus/1082.json", "hypothesis": "\\frac{4(a^2 - (b - c)^2)}{b^2 + c^2 - a^2}", "gold_value": null, "is_correct": false}
+{"id": "484", "unique_id": "test/intermediate_algebra/101.json", "hypothesis": "10", "gold_value": null, "is_correct": true}
+{"id": "485", "unique_id": "test/counting_and_probability/199.json", "hypothesis": "13", "gold_value": null, "is_correct": true}
+{"id": "486", "unique_id": "test/geometry/477.json", "hypothesis": "24\\sqrt{3}", "gold_value": null, "is_correct": false}
+{"id": "487", "unique_id": "test/number_theory/239.json", "hypothesis": "2", "gold_value": null, "is_correct": true}
+{"id": "488", "unique_id": "test/prealgebra/1203.json", "hypothesis": "36", "gold_value": null, "is_correct": false}
+{"id": "489", "unique_id": "test/intermediate_algebra/1365.json", "hypothesis": "15", "gold_value": null, "is_correct": true}
+{"id": "490", "unique_id": "test/intermediate_algebra/1350.json", "hypothesis": "16", "gold_value": null, "is_correct": false}
+{"id": "491", "unique_id": "test/prealgebra/1128.json", "hypothesis": "64", "gold_value": null, "is_correct": true}
+{"id": "492", "unique_id": "test/precalculus/356.json", "hypothesis": "y = -2x", "gold_value": null, "is_correct": true}
+{"id": "493", "unique_id": "test/algebra/2779.json", "hypothesis": "20", "gold_value": null, "is_correct": true}
+{"id": "494", "unique_id": "test/intermediate_algebra/1930.json", "hypothesis": "\\frac{1}{2}", "gold_value": null, "is_correct": false}
+{"id": "495", "unique_id": "test/intermediate_algebra/1981.json", "hypothesis": "(2, 12) \\cup (12, 102)", "gold_value": null, "is_correct": true}
+{"id": "496", "unique_id": "test/intermediate_algebra/1232.json", "hypothesis": "\\dfrac{5}{13}", "gold_value": null, "is_correct": true}
+{"id": "497", "unique_id": "test/geometry/561.json", "hypothesis": "\\frac{11}{4}", "gold_value": null, "is_correct": false}
+{"id": "498", "unique_id": "test/intermediate_algebra/1508.json", "hypothesis": "1", "gold_value": null, "is_correct": false}
+{"id": "499", "unique_id": "test/geometry/615.json", "hypothesis": "106^\\circ", "gold_value": null, "is_correct": true}
