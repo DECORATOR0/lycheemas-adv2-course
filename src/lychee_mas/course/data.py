@@ -68,7 +68,7 @@ def normalize_math(value: str) -> str:
     value = value.replace("\\left", "").replace("\\right", "")
     value = value.replace("\\dfrac", "\\frac").replace("\\tfrac", "\\frac")
     value = value.replace("\\cdot", "*").replace("\\times", "*").replace("^", "**")
-    value = value.replace("\\pi", "pi").replace("\\!", "").replace("\\,", "")
+    value = value.replace("\\pi", "pi").replace("π", "pi").replace("\\!", "").replace("\\,", "")
     for _ in range(8):
         updated = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"((\1)/(\2))", value)
         updated = re.sub(r"\\sqrt\{([^{}]*)\}", r"sqrt(\1)", updated)

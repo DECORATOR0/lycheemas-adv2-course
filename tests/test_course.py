@@ -269,6 +269,11 @@ class CourseTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(score_answer("(2,1)", "(1,2)", "math",
                                       "Find the point coordinates.")["correct"])
 
+    def test_unicode_pi_matches_latex_pi_without_changing_value(self):
+        self.assertTrue(score_answer("7π", r"7\pi", "math")["correct"])
+        self.assertTrue(score_answer(r"7\pi", "7π", "math")["correct"])
+        self.assertFalse(score_answer("7π", r"8\pi", "math")["correct"])
+
     def test_malformed_comparison_cannot_win(self):
         self.assertTrue(parse_comparison_result("reason <choose>A</choose>"))
         self.assertFalse(parse_comparison_result("reason <choose>B</choose>"))
